@@ -1,0 +1,40 @@
+@use "@styles/_functions.scss" as *;
+
+/*
+ * Colors
+ *
+ * configure the colors required for the project here
+ * */
+$white: #ffffff;
+$black: #000000;
+
+/*
+ * Typography and font sizes
+ *
+ * configure the typography and font sizes required for the project here
+ * */
+
+// font familly
+$primary-font: "Inter", sans-serif;
+
+//font-sizes
+$font-base: pxToRem(16);
+
+//font-weight
+$font-regular: 400;
+
+/*
+ * Screen Breakpoints
+ * */
+
+$desktop-xxl: pxToRem(1920);
+$desktop-xl: pxToRem(1600);
+$desktop-l: pxToRem(1440);
+$desktop-m: pxToRem(1200);
+$desktop-s: pxToRem(1024);
+$tablet-l: pxToRem(992);
+$tablet-m: pxToRem(768);
+$tablet-s: pxToRem(640);
+$mobile-l: pxToRem(576);
+$mobile-m: pxTotRem(480);
+$mobile-s: pxToRem(320);
