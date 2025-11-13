@@ -7,6 +7,18 @@
  * */
 $white: #ffffff;
 $black: #000000;
+$blue:#3252DF;
+$blue-2:#003DFC;
+$light-blue:#4A85F6;
+$light-blue-2:#0095FF;
+$dark-blue:#152C5B;
+$gray:#B0B0B0;
+$light-gray:#EFF4FA;
+$gray-2:#BFBFBF;
+$gray-3:#757575;
+$gray-4:#DDDFE1;
+$gray-5:#8F9BB3;
+
 
 /*
  * Typography and font sizes
@@ -16,6 +28,7 @@ $black: #000000;
 
 // font familly
 $primary-font: "Inter", sans-serif;
+$secondary-font: "Poppins" , sans-serif;
 
 //font-sizes
 $font-base: pxToRem(16);
