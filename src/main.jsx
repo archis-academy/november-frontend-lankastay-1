@@ -1,10 +1,10 @@
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Route, Routes } from "react-router";
-import Home from "@pages/home/home";
-import "@src/main.scss";
+import { Home } from './pages/home/home';
+import "@/main.scss";
 
-createRoot(document.getElementById("root")!).render(
+createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
       <Routes>
@@ -12,4 +12,4 @@ createRoot(document.getElementById("root")!).render(
       </Routes>
     </BrowserRouter>
   </StrictMode>,
-);
+)
