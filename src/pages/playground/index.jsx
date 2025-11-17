@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import fetchData from '@src/lib/fetchData';
-import ChoiseCard from '../../Components/ChoiseCard';
+import ChoiseCard from '../../Components/ChoiseCard/ChoiseCard';
 
 const Playground = () => {
   const [cards, setCards] = useState([]);
@@ -19,6 +19,7 @@ const Playground = () => {
           image={card.image}
           key={card.id}
           priceText={card.priceText}
+          isPopularChoise={card.isPopularChoise}
         />
       ))}
     </div>
