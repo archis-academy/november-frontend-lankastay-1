@@ -1,1 +1,41 @@
 @use "./styles/reset" as *;
+
+.choise-card{
+    display: grid;
+    position: relative;
+    color: rgba(255, 255, 255, 1);
+    max-width: 361px;
+}
+.choise-card-top{
+    position: relative;
+}
+.choise-card-image{
+    
+}
+.choise-card-price {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    padding:10px 40px; 
+    background-color:rgba(50, 82, 223, 1);
+    border-bottom-left-radius: 15px;
+    border-top-right-radius: 15px;
+    font-size: 14px;
+    font-weight: 500;
+}
+.choise-card-price-text{
+    font-weight: 300;
+}
+.choise-card-title{
+    position: absolute;
+    bottom: 40px;
+    padding-left: 10px;
+    font-size: 20px;
+}
+.choise-card-location{
+    position: absolute;
+    bottom: 20px;
+    font-size: 15px;
+    font-weight: 300;
+    padding-left: 10px;
+}

@@ -1,0 +1,45 @@
+{
+  "choise-cards": [
+    {
+      "id": 1,
+      "image": "/images/choise-card-images/blue-origin.png",
+      "title": "Blue Origin Fams",
+      "location": "Galle, Sri Lanka",
+      "price": "$200 ",
+      "priceText":"per night"
+
+    },
+    {
+      "id": 2,
+      "image": "/images/choise-card-images/ocean-land.png",
+      "title": "Ocean Land",
+      "location": "Trincomalee, Sri Lanka",
+      "price": "$22 ",
+      "priceText":"per night"
+    },
+    {
+      "id": 3,
+      "image": "/images/choise-card-images/vinna-vill.png",
+      "title": "Vinna Vill",
+      "location": "Beruwala, Sri Lanka",
+      "price": "$62 ",
+      "priceText":"per night"
+    },
+    {
+      "id": 4,
+      "image": "/images/choise-card-images/stark-house.png",
+      "title": "Stark House",
+      "location": "Dehiwala, Sri Lanka",
+      "price": "$856 ",
+      "priceText":"per night"
+    },
+    {
+      "id": 5,
+      "image": "/images/choise-card-images/bobox.png",
+      "title": "Bobox",
+      "location": "Kandy, Sri Lanka",
+      "price": "$72 ",
+      "priceText":"per night"
+    }
+  ]
+}
