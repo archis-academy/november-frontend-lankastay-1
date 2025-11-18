@@ -3,9 +3,14 @@
   position: relative;
   color: rgba(255, 255, 255, 1);
   max-width: 361px;
+  height: auto;
 
   .choiseTop {
     position: relative;
+    .image{
+      width: 100%;
+      height: auto;
+    }
     .price {
       position: absolute;
       top: 0%;
