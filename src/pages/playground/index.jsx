@@ -1,9 +1,12 @@
-import React from 'react'
+import React from 'react';
+import Footer from '../../footer/Footer';
 
 const Playground = () => {
   return (
-    <div>Playground</div>
-  )
-}
+    <div>
+      <Footer />
+    </div>
+  );
+};
 
-export default Playground
+export default Playground;
