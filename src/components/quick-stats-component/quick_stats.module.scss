@@ -1,0 +1,41 @@
+@use "../../styles/_reset.scss" as *; 
+
+.iconCamera {
+  width: 32px;
+  height: 32px;
+  background-image: url('../../../public/images/quic_stats_images/camera.svg');
+  background-size: cover;
+}
+
+.iconTraveller {
+  width: 32px;
+  height: 32px;
+  background-image: url('../../../public/images/quic_stats_images/ic_traveler.svg');
+  background-size: cover;
+}
+
+.iconLocation {
+  width: 32px;
+  height: 32px;
+  background-image: url('../../../public/images/quic_stats_images/location.svg');
+  background-size: cover;
+}
+
+.iconContainer {
+  margin-right: 20px;
+
+}
+
+.iconCard {
+  display: grid;
+  justify-content: center;
+  gap: 10px;
+  p {
+    font-weight: 500;
+    color: rgba(21, 44, 91, 1);
+    span {
+      font-weight: 300;
+      color: rgba(176, 176, 176, 1);
+    }
+  }
+}

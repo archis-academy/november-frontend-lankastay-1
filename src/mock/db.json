@@ -1,0 +1,22 @@
+{
+  "quickStats": [
+    {
+      "id": 1,
+      "number": 2500,
+      "content": "Users",
+      "iconKey": "traveller"
+    },
+    {
+      "id": 2,
+      "number": 200,
+      "content": "Treasure",
+      "iconKey": "camera"
+    },
+    {
+      "id": 3,
+      "number": 100,
+      "content": "Cities",
+      "iconKey": "location"
+    }
+  ]
+}
