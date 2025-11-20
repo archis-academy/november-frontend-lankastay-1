@@ -1,3 +1,5 @@
+import React from 'react';
+import Footer from '../../footer/Footer';
 import { useEffect, useState } from 'react';
 import fetchData from '@src/lib/fetchData';
 import ChoiseCard from '../../Components/ChoiseCard/ChoiseCard';
@@ -11,6 +13,7 @@ const Playground = () => {
 
   return (
     <div>
+
       {cards.map((card) => (
         <ChoiseCard
           title={card.title}
@@ -22,6 +25,8 @@ const Playground = () => {
           isPopularChoise={card.isPopularChoise}
         />
       ))}
+      
+      <Footer />
     </div>
   );
 };
