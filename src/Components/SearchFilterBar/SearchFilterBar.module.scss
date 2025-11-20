@@ -1,0 +1,67 @@
+@use '../../styles/variables.module' as v;
+
+section {
+  padding: 20px 8vw;
+  .searchFilterBar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 30px;
+    align-items: center;
+    border-radius: 42px;
+    background-color: v.$color-surface;
+    .searchFilterBarIcons {
+      display: flex;
+      gap: 20px;
+      .IconDiv {
+        background-color: v.$white;
+        padding: 16px 20px;
+        border-radius: 12px;
+        display: flex;
+        gap: 10px;
+        color: v.$color-text-strong;
+        font-weight: 600;
+        .selectContent {
+          display: flex;
+          gap: 10px;
+        }
+        select {
+          border: none;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1200px) {
+    padding: 20px 4vw;
+    .searchFilterBar {
+      padding: 20px 20px;
+      .searchFilterBarIcons {
+        gap: 10px;
+      }
+    }
+  }
+  @media (max-width: 810px) {
+    padding: 10px 15px;
+    .searchFilterBar {
+      flex-direction: column;
+      gap: 15px;
+      border-radius: 20px;
+      .searchFilterBarIcons {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+        .IconDiv {
+          width: 100%;
+          justify-content: space-between;
+        }
+      }
+      > div:last-child {
+        width: 100%;
+        button {
+          width: 100%;
+          padding: 15px;
+        }
+      }
+    }
+  }
+}

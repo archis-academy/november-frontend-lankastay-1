@@ -1,8 +1,9 @@
 import React from 'react';
-import Footer from '../../footer/Footer';
+import Footer from '../../Components/footer/Footer';
 import { useEffect, useState } from 'react';
-import fetchData from '@src/lib/fetchData';
+import fetchData from '../../lib/fetchData.js';
 import ChoiseCard from '../../Components/ChoiseCard/ChoiseCard';
+import SearchFilterBar from '../../Components/SearchFilterBar/SearchFilterBar';
 
 const Playground = () => {
   const [cards, setCards] = useState([]);
@@ -13,7 +14,6 @@ const Playground = () => {
 
   return (
     <div>
-
       {cards.map((card) => (
         <ChoiseCard
           title={card.title}
@@ -25,7 +25,8 @@ const Playground = () => {
           isPopularChoise={card.isPopularChoise}
         />
       ))}
-      
+
+      <SearchFilterBar />
       <Footer />
     </div>
   );
