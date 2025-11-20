@@ -1,6 +1,8 @@
 import React from 'react';
+import HeroSection from '../../components/heroSection';
+
 
 export const Home = () => {
   const testPrettier = 'ÇİFT TIRNAK KULLANDIM';
-  return <div>home</div>;
+  return <div><HeroSection /></div>;
 };
