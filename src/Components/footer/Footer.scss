@@ -1,7 +1,7 @@
-@import '../main.scss';
+@use '../../styles/variables.module' as v;
 
 .footer {
-  border-top: 1px solid rgba(229, 229, 229, 1);
+  border-top: 1px solid v.$color-border;
 
   .footer-container {
     justify-content: space-between;
@@ -28,7 +28,7 @@
       }
 
       p {
-        color: rgba(176, 176, 176, 1);
+        color: v.$color-text-muted;
         font-weight: 300;
       }
     }
@@ -47,10 +47,10 @@
       button {
         padding: 5px 24px;
         border-radius: 5px;
-        background-color: rgba(50, 82, 223, 1);
-        color: rgba(255, 255, 255, 1);
+        background-color: v.$color-primary;
+        color: v.$white;
         font-weight: 500;
-        font-size: 14px;
+        font-size: v.$font-size-sm;
         border: none;
         width: fit-content;
         cursor: pointer;
@@ -62,18 +62,18 @@
 
       h4 {
         font-weight: 500;
-        font-size: 18px;
-        color: rgba(21, 44, 91, 1);
+        font-size: v.$font-size-lg;
+        color: v.$color-navy;
       }
     }
   }
 
   .bottom {
-    background-color: rgba(50, 82, 223, 1);
-    color: rgba(255, 255, 255, 1);
+    background-color: v.$color-primary;
+    color: v.$white;
     text-align: center;
     padding: 20px 0px;
     font-weight: 300;
-    font-size: 14px;
+    font-size: v.$font-size-sm;
   }
 }

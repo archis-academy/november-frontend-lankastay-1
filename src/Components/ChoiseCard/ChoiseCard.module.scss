@@ -1,7 +1,9 @@
+@use '../../styles/variables.module' as v;
+
 .choiseCard {
   display: grid;
   position: relative;
-  color: rgba(255, 255, 255, 1);
+  color: v.$white;
   max-width: 361px;
   height: auto;
 
@@ -16,10 +18,10 @@
       top: 0%;
       right: 0%;
       padding: 10px 40px;
-      background-color: rgba(50, 82, 223, 1);
+      background-color: v.$color-primary;
       border-bottom-left-radius: 15px;
       border-top-right-radius: 15px;
-      font-size: 14px;
+      font-size: v.$font-size-sm;
       font-weight: 500;
       .text {
         font-weight: 300;
@@ -32,11 +34,11 @@
     bottom: 20px;
     .title {
       padding-left: 10px;
-      font-size: 20px;
+      font-size: v.$font-size-xl;
       font-weight: 400;
     }
     .location {
-      font-size: 15px;
+      font-size: v.$font-size-md;
       font-weight: 300;
       padding-left: 10px;
     }
@@ -45,7 +47,7 @@
 .popularCard {
   display: grid;
   position: relative;
-  color: rgba(255, 255, 255, 1);
+  color: v.$white;
   max-width: 263px;
   height: auto;
   gap: 16px;
@@ -63,10 +65,10 @@
       top: 0%;
       right: 0%;
       padding: 10px 40px;
-      background-color: rgba(50, 82, 223, 1);
+      background-color: v.$color-primary;
       border-bottom-left-radius: 15px;
       border-top-right-radius: 15px;
-      font-size: 14px;
+      font-size: v.$font-size-sm;
       font-weight: 500;
       .text {
         font-weight: 300;
@@ -77,14 +79,14 @@
   .bottomContent {
     display: grid;
     .title {
-      font-size: 20px;
+      font-size: v.$font-size-xl;
       font-weight: 400;
-      color: rgba(21, 44, 91, 1);
+      color: v.$color-navy;
     }
     .location {
-      font-size: 15px;
+      font-size: v.$font-size-md;
       font-weight: 300;
-      color: rgba(176, 176, 176, 1);
+      color: v.$color-text-muted;
     }
   }
 }
