@@ -1,4 +1,26 @@
 {
+  "quickStats": [
+    {
+      "id": 1,
+      "number": 2500,
+      "content": "Users",
+      "iconUrl": "/icons/quic_stats_icons/ic_traveler.svg"
+    },
+    {
+      "id": 2,
+      "number": 200,
+      "content": "Treasure",
+      "iconUrl": "/icons/quic_stats_icons/camera.svg"
+    },
+    {
+      "id": 3,
+      "number": 100,
+      "content": "Cities",
+      "iconUrl": "/icons/quic_stats_icons/location.svg"
+    }
+  ]
+}
+{
   "choise-cards": [
     {
       "id": 1,

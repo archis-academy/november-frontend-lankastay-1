@@ -1,19 +1,17 @@
 import React from 'react';
-import Footer from '../../footer/Footer';
-import { useEffect, useState } from 'react';
 import fetchData from '@src/lib/fetchData';
-import ChoiseCard from '../../Components/ChoiseCard/ChoiseCard';
 
 const Playground = () => {
+  const [quickIcons, setQuickIcons] = useState([]);
   const [cards, setCards] = useState([]);
 
   useEffect(() => {
+    fetchData('quickStats').then((data) => setQuickIcons(data));
     fetchData('choise-cards').then((data) => setCards(data));
   }, []);
 
   return (
     <div>
-
       {cards.map((card) => (
         <ChoiseCard
           title={card.title}
@@ -25,7 +23,16 @@ const Playground = () => {
           isPopularChoise={card.isPopularChoise}
         />
       ))}
-      
+
+      <div style={{ display: 'flex' }}>
+        {quickIcons.map((item) => {
+          return (
+            <div key={item.id}>
+              <QuickStats number={item.number} content={item.content} iconUrl={item.iconUrl} />
+            </div>
+          );
+        })}
+      </div>
       <Footer />
     </div>
   );
