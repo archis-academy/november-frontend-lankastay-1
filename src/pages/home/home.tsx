@@ -1,12 +1,5 @@
 import Welcome from "@components/welcome/welcome";
-import LoginButton from "@components/welcome/LoginButton/LoginButton";
-
-function Home() {
-  return <Welcome />;
-}
-
-export default Home;
-
+import Button from "@components/welcome/Button/Button";
 
 
 const Home = () => {
@@ -16,7 +9,8 @@ const Home = () => {
 
   return (
     <div>
-      <LoginButton onClick={handleLogin} />
+      <Welcome/>
+      <Button onClick={handleLogin} />
     </div>
   );
 };
