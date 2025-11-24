@@ -1,4 +1,4 @@
-@use '../../styles/variables.module' as v;
+
 
 section {
   padding: 20px 8vw;
@@ -8,17 +8,17 @@ section {
     padding: 20px 30px;
     align-items: center;
     border-radius: 42px;
-    background-color: v.$color-surface;
+    background-color: $color-surface;
     .searchFilterBarIcons {
       display: flex;
       gap: 20px;
       .IconDiv {
-        background-color: v.$white;
+        background-color: $white;
         padding: 16px 20px;
         border-radius: 12px;
         display: flex;
         gap: 10px;
-        color: v.$color-text-strong;
+        color: $color-text-strong;
         font-weight: 600;
         .selectContent {
           display: flex;

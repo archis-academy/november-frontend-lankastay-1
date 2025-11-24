@@ -1,7 +1,5 @@
-@use '../../styles/variables.module' as v;
-
 .footer {
-  border-top: 1px solid v.$color-border;
+  border-top: 1px solid $color-border;
 
   .footer-container {
     justify-content: space-between;
@@ -28,7 +26,7 @@
       }
 
       p {
-        color: v.$color-text-muted;
+        color: $color-text-muted;
         font-weight: 300;
       }
     }
@@ -47,10 +45,10 @@
       button {
         padding: 5px 24px;
         border-radius: 5px;
-        background-color: v.$color-primary;
-        color: v.$white;
+        background-color: $color-primary;
+        color: $white;
         font-weight: 500;
-        font-size: v.$font-size-sm;
+        font-size: $font-size-sm;
         border: none;
         width: fit-content;
         cursor: pointer;
@@ -62,18 +60,18 @@
 
       h4 {
         font-weight: 500;
-        font-size: v.$font-size-lg;
-        color: v.$color-navy;
+        font-size: $font-size-lg;
+        color: $color-navy;
       }
     }
   }
 
   .bottom {
-    background-color: v.$color-primary;
-    color: v.$white;
+    background-color: $color-primary;
+    color: $white;
     text-align: center;
     padding: 20px 0px;
     font-weight: 300;
-    font-size: v.$font-size-sm;
+    font-size: $font-size-sm;
   }
 }
