@@ -6,9 +6,11 @@ import ChoiseCard from '../../Components/ChoiseCard/ChoiseCard';
 import SearchFilterBar from '../../Components/SearchFilterBar/SearchFilterBar';
 
 const Playground = () => {
+  const [quickIcons, setQuickIcons] = useState([]);
   const [cards, setCards] = useState([]);
 
   useEffect(() => {
+    fetchData('quickStats').then((data) => setQuickIcons(data));
     fetchData('choise-cards').then((data) => setCards(data));
   }, []);
 
@@ -27,6 +29,15 @@ const Playground = () => {
       ))}
 
       <SearchFilterBar />
+      <div style={{ display: 'flex' }}>
+        {quickIcons.map((item) => {
+          return (
+            <div key={item.id}>
+              <QuickStats number={item.number} content={item.content} iconUrl={item.iconUrl} />
+            </div>
+          );
+        })}
+      </div>
       <Footer />
     </div>
   );
