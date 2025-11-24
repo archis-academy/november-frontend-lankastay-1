@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import fetchData from '../../lib/fetchData.js';
 import ChoiseCard from '../../Components/ChoiseCard/ChoiseCard';
 import SearchFilterBar from '../../Components/SearchFilterBar/SearchFilterBar';
+import QuickStats from "../../Components/quick-stats-component/quick_stats"
 
 const Playground = () => {
   const [quickIcons, setQuickIcons] = useState([]);
