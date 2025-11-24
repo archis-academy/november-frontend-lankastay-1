@@ -25,4 +25,13 @@ export default defineConfig({
       '@assets': path.resolve(__dirname, './src/assets'),
     },
   },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        // Dikkat: Dosya yolunu kendi projene göre ayarla.
+        // Eğer styles klasörün src/styles ise:
+        additionalData: `@use "/src/styles/variables" as *; @use "/src/styles/mixins" as *;`
+      }
+    }
+  }
 });

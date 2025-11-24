@@ -1,5 +1,9 @@
 import React from 'react';
-import fetchData from '@src/lib/fetchData';
+import Footer from '../../Components/footer/Footer';
+import { useEffect, useState } from 'react';
+import fetchData from '../../lib/fetchData.js';
+import ChoiseCard from '../../Components/ChoiseCard/ChoiseCard';
+import SearchFilterBar from '../../Components/SearchFilterBar/SearchFilterBar';
 
 const Playground = () => {
   const [quickIcons, setQuickIcons] = useState([]);
@@ -24,6 +28,7 @@ const Playground = () => {
         />
       ))}
 
+      <SearchFilterBar />
       <div style={{ display: 'flex' }}>
         {quickIcons.map((item) => {
           return (

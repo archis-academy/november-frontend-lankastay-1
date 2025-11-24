@@ -1,4 +1,4 @@
-@use "@styles/_functions.scss" as *;
+@use './functions' as *;
 
 /*
  * Colors
@@ -7,6 +7,12 @@
  * */
 $white: #ffffff;
 $black: #000000;
+$color-primary: #3252df;
+$color-navy: #152c5b;
+$color-text-strong: #1e1e1e;
+$color-text-muted: #b0b0b0;
+$color-border: #e5e5e5;
+$color-surface: #eaf1ff;
 
 /*
  * Typography and font sizes
@@ -15,10 +21,14 @@ $black: #000000;
  * */
 
 // font familly
-$primary-font: "Inter", sans-serif;
+$primary-font: 'Poppins', sans-serif;
 
 //font-sizes
 $font-base: pxToRem(16);
+$font-size-sm: pxToRem(14);
+$font-size-md: pxToRem(15);
+$font-size-lg: pxToRem(18);
+$font-size-xl: pxToRem(20);
 
 //font-weight
 $font-regular: 400;
@@ -36,5 +46,5 @@ $tablet-l: pxToRem(992);
 $tablet-m: pxToRem(768);
 $tablet-s: pxToRem(640);
 $mobile-l: pxToRem(576);
-$mobile-m: pxTotRem(480);
+$mobile-m: pxToRem(480);
 $mobile-s: pxToRem(320);
