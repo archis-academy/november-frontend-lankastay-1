@@ -1,9 +1,7 @@
 import React from 'react';
-import Footer from '../../Components/footer/Footer';
 import { useEffect, useState } from 'react';
 import fetchData from '../../lib/fetchData.js';
 import ChoiseCard from '../../Components/ChoiseCard/ChoiseCard';
-import SearchFilterBar from '../../Components/SearchFilterBar/SearchFilterBar';
 import QuickStats from "../../Components/quick-stats-component/quick_stats"
 
 const Playground = () => {
@@ -29,7 +27,7 @@ const Playground = () => {
         />
       ))}
 
-      <SearchFilterBar />
+     
       <div style={{ display: 'flex' }}>
         {quickIcons.map((item) => {
           return (

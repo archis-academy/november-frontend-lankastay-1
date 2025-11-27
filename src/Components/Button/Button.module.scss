@@ -1,28 +1,23 @@
 @use '../../styles/variables' as *;
 
-.card {
-  background:$color-primary;
-  border-radius: 12px;
-  padding: 22px 40px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-width: 220px;
-}
-
 .btn {
   background: $color-primary;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 18px;
   padding: 10px 28px;
   border-radius: 8px;
   border: none;
   cursor: pointer;
-  box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.12),
-              0 6px 18px rgba(43, 110, 246, 0.18);
-  transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.12s ease;
+  box-shadow:
+    inset 0 -3px 0 rgba(0, 0, 0, 0.12),
+    0 6px 18px rgba(43, 110, 246, 0.18);
+  transition:
+    transform 0.12s ease,
+    box-shadow 0.12s ease,
+    filter 0.12s ease;
   outline: none;
+  color: $white;
+  font-family: $primary-font;
 
   &:hover,
   &:focus {
