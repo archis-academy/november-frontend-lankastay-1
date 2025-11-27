@@ -1,6 +1,7 @@
 import React from 'react';
 import { SearchFilterBarIcons } from '../../../public/icons/search-filter-bar/Filter-Bar-Icons/SearchFilterBarIconsData';
 import styles from './SearchFilterBar.module.scss';
+import Button from '../Button/Button';
 
 const SearchFilterBar = () => {
   return (
@@ -20,7 +21,7 @@ const SearchFilterBar = () => {
           ))}
         </div>
         <div>
-          <button>Search</button>
+          <Button text="Search"  />
         </div>
       </div>
     </section>
