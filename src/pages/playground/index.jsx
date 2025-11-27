@@ -39,7 +39,7 @@ const Playground = () => {
           );
         })}
       </div>
-      <Footer />
+   
     </div>
   );
 };
