@@ -1,7 +1,11 @@
 import React from 'react';
-import HeroSection from '../../components/heroSection';
 
+import Footer from '../../Components/footer/Footer';
 
 export const Home = () => {
-  return <div><HeroSection /></div>;
+  return (
+    <div>
+      <Footer />
+    </div>
+  );
 };
