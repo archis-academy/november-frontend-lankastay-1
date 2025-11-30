@@ -22,11 +22,10 @@
 } 
 @media screen and (max-width:768px) {
   .mostPickedGrid{
-    grid-template-columns: 1fr !important;
-    gap: 20px;
+    grid-template-columns: 1fr;
   }
->div :first-child{
-  grid-row: span 1 !important;
+.mostPickedGrid :first-child{
+  grid-row: span 1;
 }
 }
 
