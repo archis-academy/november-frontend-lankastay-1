@@ -9,14 +9,14 @@ const ImageGrid = () => {
       <div className="image-grid__main">
         <img
           src={require('./images/ProductPhotoGrid/Product1.png')}  
-          alt="Exterior house"
+          alt="House"
           className="image-grid__main-image"
         />
       </div>
       <div className="image-grid__side">
         <img
           src={require('./images/ProductPhotoGrid/Product2.png')}  
-          alt="Interior bedroom"
+          alt="Bedroom"
           className="image-grid__side-image"
         />
         <img
