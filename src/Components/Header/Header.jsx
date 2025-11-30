@@ -11,16 +11,18 @@ const Header = () => {
             <img src='/logo.svg' alt='LankaStay Logo' />
         </div>
 
-        <nav className={styles.nav}>
-          <b href="#">Home</b>
-          <a href="#">Hotels</a>
-          <a href="#">Rooms</a>
-          <a href="#">About</a>
-          <a href="#">Contact</a>
-        </nav>
+   <div className={styles.navWrapper}>
+          <nav className={styles.nav}>
+            <a href="#">Home</a>
+            <a href="#">Hotels</a>
+            <a href="#">Rooms</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+          </nav>
 
-        <div className={styles.headerButton}>
-          <Button text="Login" />
+          <div className={styles.headerButton}>
+            <Button text="Login" />
+          </div>
         </div>
       </div>
     </header>

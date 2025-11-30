@@ -20,11 +20,18 @@
   color: #1a73e8;
 }
 
+.navWrapper {
+    display: flex;
+    align-items: center;
+    gap: 71px;
+}
 .nav {
   font-family: $primary-font ;
+  font-weight: 400;
   display: flex;
-  align-items: center;
-  gap: 32px;
+  gap: 40px;
+
+
 
   a {
     text-decoration: none;
@@ -45,6 +52,9 @@
     display: none; 
   }
 }
+  .nav a:first-child {
+    color: $color-primary;
+  }
 
 .loginBtn {
   padding: 10px 24px;
