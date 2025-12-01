@@ -1,0 +1,21 @@
+@import "../../styles/reset.scss";
+.inputDiv {
+  display: flex;
+  flex-direction: column;
+  p {
+    color: $black;
+    font-size: 24px;
+  }
+  input {
+    padding: 14px;
+    border: 2.5px solid rgba(210, 210, 210, 1);
+    border-radius: 10px;
+    max-width: 500px;
+    &::placeholder{
+        color:$color-border ;
+        font-size: 22px;
+        font-weight: 400;
+        font-family: Poppins;
+    }
+  }
+}
