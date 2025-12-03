@@ -1057,6 +1057,14 @@
     }
   ],
 
+  "loginAccountDetail": [
+    {
+      "id":11,
+      "inputType":"checkbox",
+      "buttonText":"Login",
+      "bottomButtonText":"Create an Account"
+    }
+  ],
   "createAccountAdmin": [
     {
       "id": 1,

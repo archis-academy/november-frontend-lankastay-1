@@ -3,21 +3,16 @@ import { useEffect, useState } from 'react';
 import fetchData from '../../lib/fetchData.js';
 import ChoiseCard from '../../Components/ChoiseCard/ChoiseCard';
 import QuickStats from '../../Components/quick-stats-component/quick_stats';
-import Input from '../../Components/inputComponent/input.jsx';
-import { data } from 'react-router-dom';
+import Login from '../../Components/Login/Login.jsx';
 
 const Playground = () => {
   const [quickIcons, setQuickIcons] = useState([]);
   const [cards, setCards] = useState([]);
-  const [inputs, setInputs] = useState([]);
 
   useEffect(() => {
     fetchData('quickStats').then((data) => setQuickIcons(data));
     fetchData('choise-cards').then((data) => setCards(data));
-    fetchData('createAccountUser').then((data) => setInputs(data));
   }, []);
-
-  useEffect(() => {}, []);
 
   return (
     <div>
@@ -43,20 +38,7 @@ const Playground = () => {
         })}
       </div>
 
-      <form>
-        {inputs.map((item) => {
-          return (
-            <div>
-              <Input
-                label={item.label}
-                placeholder={item.placeholder}
-                type={item.type}
-                key={item.id}
-              />
-            </div>
-          );
-        })}
-      </form>
+        <Login/>
 
       <div></div>
     </div>
