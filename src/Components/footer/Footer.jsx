@@ -1,5 +1,6 @@
 import React from 'react';
 import './Footer.scss';
+import Button from '../Button/Button.jsx';
 
 function Footer() {
   return (
@@ -11,7 +12,7 @@ function Footer() {
         </div>
         <div className='footerButton'>
           <h4>Become hotel Owner</h4>
-          <button>Register Now</button>
+          <Button text='Register Now'  />
         </div>
       </div>
       <div className='bottom'>Copyright 2024 • All rights reserved • Salman Faris</div>
