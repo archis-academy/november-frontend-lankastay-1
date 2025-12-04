@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './heroSection.module.scss'; 
-import QuickStats from '../quick-stats-component/quick_stats';
+import QuickStats from '../../Components/quick-stats-component/quick_stats';
 
 const HeroSection = () => {
   return (
@@ -21,6 +21,8 @@ const HeroSection = () => {
           <button className={styles['btn-primary']}>
             Show More
           </button>
+
+          <Button  />
 
           <div className={styles['hero-stats-wrapper']}>
             <QuickStats iconUrl="/icons/icon1.svg" number="2500" content="Users" />
