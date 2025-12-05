@@ -1,0 +1,46 @@
+.breadcrumbNav {
+  width: 100%;
+  padding: 1.5rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 1300px; 
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumbList {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 0.6rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.breadcrumbItem {
+  display: flex;
+  align-items: center;
+}
+
+.link {
+  text-decoration: none;
+  color: #b0b0b0; 
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.separator {
+  color: #b0b0b0;
+  margin: 0 2px;
+}
+
+.active {
+  color: #152c5b; 
+  font-weight: 500;
+  font-size: 18px;
+  }
