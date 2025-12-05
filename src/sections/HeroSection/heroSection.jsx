@@ -3,6 +3,7 @@ import styles from './heroSection.module.scss';
 import QuickStats from '../../Components/quick-stats-component/quick_stats';
 import Button from '../../Components/Button/Button';
 import fetchData from '../../lib/fetchData';
+import Breadcrumb from '../../Components/Breadcrumb/breadcrumb';
 
 const HeroSection = () => {
   const [quickStatsData, setQuickStatsData] = useState([]);
