@@ -2,7 +2,8 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import fetchData from '../../lib/fetchData.js';
 import ChoiseCard from '../../Components/ChoiseCard/ChoiseCard';
-import QuickStats from "../../Components/quick-stats-component/quick_stats"
+import QuickStats from '../../Components/quick-stats-component/quick_stats';
+import Login from '../../Components/Login/Login.jsx';
 
 const Playground = () => {
   const [quickIcons, setQuickIcons] = useState([]);
@@ -27,7 +28,6 @@ const Playground = () => {
         />
       ))}
 
-     
       <div style={{ display: 'flex' }}>
         {quickIcons.map((item) => {
           return (
@@ -37,7 +37,10 @@ const Playground = () => {
           );
         })}
       </div>
-   
+
+        <Login/>
+
+      <div></div>
     </div>
   );
 };

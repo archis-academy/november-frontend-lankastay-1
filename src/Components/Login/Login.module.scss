@@ -1,0 +1,40 @@
+@import '../../styles/reset.scss';
+
+.loginForm {
+  display: grid;
+  max-width: 500px;
+  gap: 20px;
+  .title {
+    color: $black;
+    font-weight: 500;
+    font-size: 40px;
+    text-align: center;
+  }
+  .bottomForm {
+    display: grid;
+    gap: 20px;
+    .button {
+      padding: 15px;
+    }
+    .inputText {
+      text-align: center;
+      color: $black;
+      font-size: 24px;
+    }
+    .checkboxDiv {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      align-items: center;
+      input {
+        width: 36px;
+        height: 36px;
+      }
+      a {
+        font-size: 14px;
+        text-decoration: none;
+        color: #003dfc;
+      }
+    }
+  }
+}
