@@ -6,7 +6,7 @@ import Footer from '../../Components/footer/Footer';
 export const Home = () => {
   return (
     <div>
-      <Header />
+      <Header isShort={true} />
       <SearchFilterBar />
       <Footer />
     </div>
