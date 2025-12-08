@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 async function fetchData(key) {
-  const { data } = await axios.get('src/mock/db.json');
+  const { data } = await axios.get('/db.json');
   return data[key];
 }
 
