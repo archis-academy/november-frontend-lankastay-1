@@ -8,19 +8,19 @@ const ImageGrid = () => {
     <div className="image-grid">
       <div className="image-grid__main">
         <img
-          src={require('./images/ProductPhotoGrid/Product1.png')}  
+          src={('/images/ProductPhotoGrid/Product1.png')}  
           alt="House"
           className="image-grid__main-image"
         />
       </div>
       <div className="image-grid__side">
         <img
-          src={require('./images/ProductPhotoGrid/Product2.png')}  
+          src={('/images/ProductPhotoGrid/Product2.png')}  
           alt="Bedroom"
           className="image-grid__side-image"
         />
         <img
-          src={require('./images/ProductPhotoGrid/Product3.png')} 
+          src={('/images/ProductPhotoGrid/Product3.png')} 
           alt="Bathroom"
           className="image-grid__side-image"
         />
