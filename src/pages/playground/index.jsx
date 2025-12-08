@@ -15,6 +15,7 @@ const Playground = () => {
 
   return (
     <div>
+      <Header />
       {cards.map((card) => (
         <ChoiseCard
           title={card.title}
@@ -27,7 +28,6 @@ const Playground = () => {
         />
       ))}
 
-     
       <div style={{ display: 'flex' }}>
         {quickIcons.map((item) => {
           return (

@@ -1,12 +1,12 @@
 import React from 'react';
-import HeroSection from '../../sections/HeroSection/heroSection';
+import Header from '../../Components/Header/Header';
 import SearchFilterBar from '../../Components/SearchFilterBar/SearchFilterBar';
 import Footer from '../../Components/footer/Footer';
 
 export const Home = () => {
   return (
     <div>
-      <HeroSection />
+      <Header isShort={true} />
       <SearchFilterBar />
       <Footer />
     </div>
