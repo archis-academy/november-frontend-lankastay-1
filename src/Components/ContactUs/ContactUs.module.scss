@@ -1,0 +1,102 @@
+.contactUs {
+  display: flex;
+  width: 100%;
+  max-width: 1300px;
+  margin: 40px auto;
+  gap: 40px;
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+  }
+}
+
+.title {  
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 6px;
+
+}
+
+.form {
+  flex: 1;
+  height: 700px;;
+}
+
+
+.subtitle {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.formFields {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  input,
+  select,
+  textarea {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #cccccc;
+    font-size: 15px;
+
+    &:focus {
+      border-color: #1c4ed8;
+    }
+  }
+
+  textarea {
+    min-height: 120px;
+  }
+}
+
+.sendbtn {
+  width: 100%;
+}
+
+.info {
+  margin-top: 25px;
+  display: flex;
+  gap: 50px;
+
+  @media (max-width: 700px) {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+.infoItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  img {
+    width: 28px;
+    height: 28px;
+  }
+
+  strong {
+    display: block;
+    font-size: 14px;
+    color: #111;
+  }
+
+  p {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+  }
+}
+
+
+.map {
+  flex: 1;
+  height: 700px;
+  border-radius: 12px;
+  overflow: hidden;
+
+  @media (max-width: 768px) {
+    height: 350px;
+  }
+}
