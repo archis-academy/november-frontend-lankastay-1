@@ -1059,12 +1059,14 @@
 
   "loginAccountDetail": [
     {
-      "id":11,
-      "inputType":"checkbox",
-      "buttonText":"Login",
-      "bottomButtonText":"Create an Account"
+      "id": 11,
+      "inputType": "checkbox",
+      "buttonText": "Login",
+      "bottomButtonText": "Create an Account"
     }
   ],
+
+  
   "createAccountAdmin": [
     {
       "id": 1,
@@ -1121,8 +1123,9 @@
       "placeholder": "6+ characters",
       "type": "password",
       "column": "left"
-    },
-
+    }
+  ],
+  "registerHotel": [
     {
       "id": 8,
       "name": "hotelName",
