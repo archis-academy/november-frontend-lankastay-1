@@ -1,17 +1,21 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import { BrowserRouter, Route, Routes } from "react-router";
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Home } from './pages/home/home';
-import "@/main.scss";
+import '@/main.scss';
 import Playground from './pages/playground';
+import Login from './Components/Login/Login';
+import RegisterAdmin from './pages/RegisterAdmin/RegisterAdmin';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/playground" element={<Playground/>} />
+        <Route path='/' element={<Home />} />
+        <Route path='/playground' element={<Playground />} />
+        <Route path='/login' element={<Login />}></Route>
+        <Route path='/adminRegister' element={<RegisterAdmin />}></Route>
       </Routes>
     </BrowserRouter>
-  </StrictMode>,
-)
+  </StrictMode>
+);

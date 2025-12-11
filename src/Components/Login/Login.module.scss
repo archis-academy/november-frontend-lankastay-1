@@ -1,0 +1,94 @@
+@import '../../styles/reset.scss';
+
+.container {
+  display: flex;
+  height: 100vh;
+  .left,
+  .right {
+    width: 50%;
+    height: 100%;
+  }
+  .left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('../../../public/images/login-signup/Group\ 1.png') no-repeat center;
+    background-size: 180%;
+    .imageContainer {
+      width: 80%;
+      height: 80%;
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #ffffffb2;
+
+      img {
+        width: 400px;
+      }
+    }
+  }
+  .right {
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .loginForm {
+      display: grid;
+      gap: 20px;
+      justify-content: center;
+      .formLogo {
+        width: 250px;
+        display: none;
+
+        @media (max-width: 1024px) {
+          display: block;
+          margin: 0 auto;
+        }
+      }
+      .title {
+        color: $black;
+        font-weight: 500;
+        font-size: 40px;
+        text-align: center;
+      }
+      .bottomForm {
+        display: grid;
+        gap: 20px;
+        .button {
+          padding: 15px;
+        }
+        .inputText {
+          text-align: center;
+          color: $black;
+          font-size: 24px;
+        }
+        .checkboxDiv {
+          display: flex;
+          justify-content: center;
+          gap: 20px;
+          align-items: center;
+          input {
+            width: 36px;
+            height: 36px;
+          }
+          a {
+            font-size: 14px;
+            text-decoration: none;
+            color: #003dfc;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 1024px) {
+  .container {
+    .left {
+      display: none;
+    }
+    .right {
+      width: 100%;
+    }
+  }
+}
