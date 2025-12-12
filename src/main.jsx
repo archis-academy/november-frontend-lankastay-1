@@ -13,8 +13,15 @@ createRoot(document.getElementById('root')).render(
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/playground' element={<Playground />} />
-        <Route path='/login' element={<Login />}></Route>
-        <Route path='/adminRegister' element={<RegisterAdmin />}></Route>
+        <Route
+          path='/login'
+          element={<Login dataType={'loginAccount'} dataTypeDetail={'loginAccountDetail'} />}
+        ></Route>
+        <Route
+          path='/register'
+          element={<Login dataType={'createAccountUser'} dataTypeDetail={'registerAccountDetail'} />}
+        ></Route>
+        <Route path='/admin-register' element={<RegisterAdmin />}></Route>
       </Routes>
     </BrowserRouter>
   </StrictMode>

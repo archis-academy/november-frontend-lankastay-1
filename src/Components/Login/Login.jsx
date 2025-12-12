@@ -3,19 +3,21 @@ import Input from '../inputComponent/input';
 import fetchData from '../../lib/fetchData';
 import Button from '../Button/Button';
 import style from './Login.module.scss';
+import { Link } from 'react-router-dom';
 
-const Login = (/*{ dataType }*/) => {
+const Login = ({ dataType, dataTypeDetail }) => {
   const [inputs, setInputs] = useState([]);
   const [inputsDetails, setInputsDetails] = useState([]);
 
   useEffect(() => {
-    fetchData("loginAccount").then((data) => {
+    fetchData(dataType).then((data) => {
       setInputs(data);
     });
-    fetchData('loginAccountDetail').then((logindata) => {
+    fetchData(dataTypeDetail).then((logindata) => {
       setInputsDetails(logindata);
     });
-  }, []);
+  }, [dataType, dataTypeDetail]);
+  const title = inputsDetails[0]?.buttonText || 'Login';
 
   return (
     <div className={style.container}>
@@ -27,7 +29,7 @@ const Login = (/*{ dataType }*/) => {
       <div className={style.right}>
         <form className={style.loginForm}>
           <img className={style.formLogo} src='/logo.svg' alt='' />
-          <h1 className={style.title}>Login Account</h1>
+          <h1 className={style.title}>{title} Account</h1>
           {inputs.map((item) => (
             <div key={item.id}>
               <Input
@@ -35,6 +37,7 @@ const Login = (/*{ dataType }*/) => {
                 label={item.label}
                 placeholder={item.placeholder}
                 type={item.type}
+                name={item.name}
               />
             </div>
           ))}
@@ -50,9 +53,9 @@ const Login = (/*{ dataType }*/) => {
                 </div>
 
                 {<Button className={style.button} text={detail.buttonText} />}
-                <a className={style.inputText} href=''>
+                <Link className={style.inputText} to={detail.hrefTo}>
                   {detail.bottomButtonText}
-                </a>
+                </Link>
               </div>
             );
           })}
