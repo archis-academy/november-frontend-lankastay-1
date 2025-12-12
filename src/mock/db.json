@@ -1062,11 +1062,20 @@
       "id": 11,
       "inputType": "checkbox",
       "buttonText": "Login",
-      "bottomButtonText": "Create an Account"
+      "bottomButtonText": "Create an Account",
+      "hrefTo": "/register"
+    }
+  ],
+  "registerAccountDetail": [
+    {
+      "id": 11,
+      "inputType": "checkbox",
+      "buttonText": "Register",
+      "bottomButtonText": "Login",
+      "hrefTo": "/login"
     }
   ],
 
-  
   "createAccountAdmin": [
     {
       "id": 1,
