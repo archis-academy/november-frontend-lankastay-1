@@ -3,7 +3,17 @@ import React, { useState } from 'react';
 import classNames from 'classnames';
 import style from './input.module.scss';
 
-const Input = ({ label, placeholder, type, id, className, inputClassName, name }) => {
+const Input = ({
+  label,
+  placeholder,
+  type,
+  id,
+  className,
+  inputClassName,
+  name,
+  value,
+  onChange,
+}) => {
   const [showPassword, setShowPassword] = useState(false);
   const isPassword = type === 'password';
 
@@ -16,10 +26,13 @@ const Input = ({ label, placeholder, type, id, className, inputClassName, name }
 
       <div className={style.inputWrapper}>
         <input
-          id={name}
+          id={id || name}
+          name={name}
           className={classNames(style.input, inputClassName)}
           type={isPassword && showPassword ? 'text' : type}
           placeholder={placeholder}
+          value={value ?? ''}
+          onChange={onChange}
         />
 
         {isPassword && (

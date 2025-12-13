@@ -6,6 +6,7 @@ import '@/main.scss';
 import Playground from './pages/playground';
 import Login from './Components/Login/Login';
 import RegisterAdmin from './pages/RegisterAdmin/RegisterAdmin';
+import SuccesPage from './pages/SuccesRegister/SuccesPage';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -19,9 +20,12 @@ createRoot(document.getElementById('root')).render(
         ></Route>
         <Route
           path='/register'
-          element={<Login dataType={'createAccountUser'} dataTypeDetail={'registerAccountDetail'} />}
+          element={
+            <Login dataType={'createAccountUser'} dataTypeDetail={'registerAccountDetail'} />
+          }
         ></Route>
         <Route path='/admin-register' element={<RegisterAdmin />}></Route>
+        <Route path='/success-register' element={<SuccesPage />}></Route>
       </Routes>
     </BrowserRouter>
   </StrictMode>
