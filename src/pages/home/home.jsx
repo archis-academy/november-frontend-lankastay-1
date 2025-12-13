@@ -10,7 +10,6 @@ export const Home = () => {
       <Header isShort={true} />
       <SearchFilterBar />
       <Footer />
-      <Success/>
     </div>
   );
 };
