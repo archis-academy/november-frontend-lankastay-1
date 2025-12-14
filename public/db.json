@@ -986,5 +986,202 @@
         }
       ]
     }
+  ],
+
+  "createAccountUser": [
+    {
+      "id": 1,
+      "name": "name",
+      "label": "Name",
+      "placeholder": "Enter your name",
+      "type": "text"
+    },
+    {
+      "id": 2,
+      "name": "email",
+      "label": "E mail",
+      "placeholder": "name@gmail.com",
+      "type": "email"
+    },
+    {
+      "id": 3,
+      "name": "phoneNo",
+      "label": "Phone No",
+      "placeholder": "With Country Code",
+      "type": "text"
+    },
+    {
+      "id": 4,
+      "name": "country",
+      "label": "Country",
+      "placeholder": "Country Name",
+      "type": "text"
+    },
+    {
+      "id": 5,
+      "name": "nic",
+      "label": "Nic",
+      "placeholder": "National Identity Card",
+      "type": "text"
+    },
+    {
+      "id": 6,
+      "name": "username",
+      "label": "Username",
+      "placeholder": "Username",
+      "type": "text"
+    },
+    {
+      "id": 7,
+      "name": "password",
+      "label": "Password",
+      "placeholder": "6+ characters",
+      "type": "password"
+    }
+  ],
+
+  "loginAccount": [
+    {
+      "id": 1,
+      "name": "username",
+      "label": "Username",
+      "placeholder": "Username",
+      "type": "text"
+    },
+    {
+      "id": 2,
+      "name": "password",
+      "label": "Password",
+      "placeholder": "6+ characters",
+      "type": "password"
+    }
+  ],
+
+  "loginAccountDetail": [
+    {
+      "id": 11,
+      "inputType": "checkbox",
+      "buttonText": "Login",
+      "bottomButtonText": "Create an Account",
+      "hrefTo": "/register"
+    }
+  ],
+  "registerAccountDetail": [
+    {
+      "id": 11,
+      "inputType": "checkbox",
+      "buttonText": "Register",
+      "bottomButtonText": "Login",
+      "hrefTo": "/login"
+    }
+  ],
+
+  "createAccountAdmin": [
+    {
+      "id": 1,
+      "name": "name",
+      "label": "Name",
+      "placeholder": "Enter your name",
+      "type": "text",
+      "column": "left"
+    },
+    {
+      "id": 2,
+      "name": "email",
+      "label": "E mail",
+      "placeholder": "name@gmail.com",
+      "type": "email",
+      "column": "left"
+    },
+    {
+      "id": 3,
+      "name": "phoneNo",
+      "label": "Phone No",
+      "placeholder": "With Country Code",
+      "type": "text",
+      "column": "left"
+    },
+    {
+      "id": 4,
+      "name": "country",
+      "label": "Country",
+      "placeholder": "Country Name",
+      "type": "text",
+      "column": "left"
+    },
+    {
+      "id": 5,
+      "name": "nic",
+      "label": "Nic",
+      "placeholder": "National Identity Card",
+      "type": "text",
+      "column": "left"
+    },
+    {
+      "id": 6,
+      "name": "username",
+      "label": "Username",
+      "placeholder": "Username",
+      "type": "text",
+      "column": "left"
+    },
+    {
+      "id": 7,
+      "name": "password",
+      "label": "Password",
+      "placeholder": "6+ characters",
+      "type": "password",
+      "column": "left"
+    }
+  ],
+  "registerHotel": [
+    {
+      "id": 8,
+      "name": "hotelName",
+      "label": "Hotel Name",
+      "placeholder": "Full Name",
+      "type": "text",
+      "column": "right"
+    },
+    {
+      "id": 9,
+      "name": "registrationNo",
+      "label": "Registration No",
+      "placeholder": "PVT(Ltd)",
+      "type": "text",
+      "column": "right"
+    },
+    {
+      "id": 10,
+      "name": "address",
+      "label": "Address",
+      "placeholder": "Location",
+      "type": "text",
+      "column": "right"
+    },
+    {
+      "id": 11,
+      "name": "uploadImages",
+      "label": "Upload Images",
+      "placeholder": "Upload",
+      "type": "text",
+      "column": "right"
+    },
+    {
+      "id": 12,
+      "name": "uploadDocuments",
+      "label": "Upload Documents",
+      "placeholder": "Upload",
+      "type": "text",
+      "column": "right"
+    },
+    {
+      "id": 13,
+      "name": "facilities",
+      "label": "Facilities",
+      "placeholder": "Describe",
+      "type": "text",
+      "column": "right"
+    }
   ]
 }
