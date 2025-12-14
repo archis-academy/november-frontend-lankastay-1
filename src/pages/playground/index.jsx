@@ -5,6 +5,7 @@ import ChoiseCard from '../../Components/ChoiseCard/ChoiseCard';
 import QuickStats from '../../Components/quick-stats-component/quick_stats';
 import Login from '../../Components/Login/Login.jsx';
 import Breadcrumb from '../../Components/Breadcrumb/breadcrumb.jsx';
+import Header from './components/Header/Header';
 
 const Playground = () => {
   const [quickIcons, setQuickIcons] = useState([]);
