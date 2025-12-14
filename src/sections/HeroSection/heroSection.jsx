@@ -12,6 +12,7 @@ const HeroSection = () => {
     fetchData('quickStats').then((data) => setQuickStatsData(data));
   }, []);
   return (
+    
     <section className={styles['hero-section']}>
       <div className={styles['hero-container']}>
         <div className={styles['hero-content']}>
@@ -44,6 +45,7 @@ const HeroSection = () => {
         </div>
       </div>
     </section>
+    
   );
 };
 

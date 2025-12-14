@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import fetchData from '../../lib/fetchData.js';
 import ChoiseCard from '../../Components/ChoiseCard/ChoiseCard';
 import QuickStats from "../../Components/quick-stats-component/quick_stats"
+import Breadcrumb from '../../Components/Breadcrumb/breadcrumb.jsx';
 
 const Playground = () => {
   const [quickIcons, setQuickIcons] = useState([]);
@@ -15,6 +16,9 @@ const Playground = () => {
 
   return (
     <div>
+      
+      <Breadcrumb />
+      
       {cards.map((card) => (
         <ChoiseCard
           title={card.title}
@@ -25,6 +29,7 @@ const Playground = () => {
           priceText={card.priceText}
           isPopularChoise={card.isPopularChoise}
         />
+        
       ))}
 
      

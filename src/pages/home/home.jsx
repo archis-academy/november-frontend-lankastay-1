@@ -8,7 +8,7 @@ import ProductDescription from '../../Components/ProductDescription/ProductDescr
 export const Home = () => {
   return (
     <div>
-      <Breadcrumb />
+      <Breadcrumb currentPage="Hotel Details"/>
       <ProductDescription />
       <HeroSection />
       <SearchFilterBar />
