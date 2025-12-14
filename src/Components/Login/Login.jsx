@@ -17,7 +17,7 @@ const Login = ({ dataType, dataTypeDetail }) => {
       setInputsDetails(logindata);
     });
   }, [dataType, dataTypeDetail]);
-  const title = inputsDetails[0]?.buttonText || 'Login';
+  const title = inputsDetails?.[0]?.buttonText || 'Login';
 
   return (
     <div className={style.container}>
@@ -30,7 +30,7 @@ const Login = ({ dataType, dataTypeDetail }) => {
         <form className={style.loginForm}>
           <img className={style.formLogo} src='/logo.svg' alt='' />
           <h1 className={style.title}>{title} Account</h1>
-          {inputs.map((item) => (
+          {inputs?.map((item) => (
             <div key={item.id}>
               <Input
                 id={item.id}
@@ -42,7 +42,7 @@ const Login = ({ dataType, dataTypeDetail }) => {
             </div>
           ))}
 
-          {inputsDetails.map((detail) => {
+          {inputsDetails?.map((detail) => {
             return (
               <div className={style.bottomForm}>
                 <div className={style.checkboxDiv}>
