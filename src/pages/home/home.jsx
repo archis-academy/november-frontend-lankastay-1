@@ -9,9 +9,10 @@ import ProductDescription from '../../Components/ProductDescription/ProductDescr
 export const Home = () => {
   return (
     <div>
+      
+      <Header isShort={true} />
       <Breadcrumb currentPage="Hotel Details"/>
       <ProductDescription />
-      <Header isShort={true} />
       <HeroSection />
       <SearchFilterBar />
       <Footer />
