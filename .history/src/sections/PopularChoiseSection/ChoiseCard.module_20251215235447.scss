@@ -91,37 +91,3 @@
   }
 }
 
-
-$gap-desktop: 30px;
-$gap-mobile: 20px;
-
-
-@mixin tablet {
-  @media (max-width: 1024px) { @content; }
-}
-
-@mixin mobile {
-  @media (max-width: 600px) { @content; }
-}
-
-
-.choiseGrid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); 
-  gap: $gap-desktop;
-  width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 20px;
-
-  
-  @include tablet {
-    grid-template-columns: repeat(2, 1fr);
-    gap: $gap-mobile;
-  }
-
- 
-  @include mobile {
-    grid-template-columns: 1fr;
-  }
-}

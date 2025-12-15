@@ -91,11 +91,11 @@
   }
 }
 
-
+/* --- Değişkenler --- */
 $gap-desktop: 30px;
 $gap-mobile: 20px;
 
-
+/* --- Mixinler --- */
 @mixin tablet {
   @media (max-width: 1024px) { @content; }
 }
@@ -104,23 +104,26 @@ $gap-mobile: 20px;
   @media (max-width: 600px) { @content; }
 }
 
-
+/* DİKKAT: Buradaki isim JSX dosyanla eşleşmeli.
+   Sen JSX'te 'styles.choiseGrid' dediğin için
+   burada sınıf ismi .choiseGrid olmak ZORUNDA.
+*/
 .choiseGrid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); 
+  grid-template-columns: repeat(4, 1fr); /* 4 Sütun */
   gap: $gap-desktop;
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
   padding: 20px;
 
-  
+  // Tablet Ayarı
   @include tablet {
     grid-template-columns: repeat(2, 1fr);
     gap: $gap-mobile;
   }
 
- 
+  // Mobil Ayarı
   @include mobile {
     grid-template-columns: 1fr;
   }
