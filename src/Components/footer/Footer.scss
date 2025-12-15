@@ -4,7 +4,9 @@
   .footer-container {
     justify-content: space-between;
     display: flex;
-    padding: 50px 100px;
+    max-width: 1043px;
+    margin: 0% auto;
+    padding: 50px 10px;
 
     @media (max-width: 768px) {
       flex-direction: column;
@@ -42,21 +44,7 @@
         width: 100%;
       }
 
-      button {
-        padding: 5px 24px;
-        border-radius: 5px;
-        background-color: $color-primary;
-        color: $white;
-        font-weight: 500;
-        font-size: $font-size-sm;
-        border: none;
-        width: fit-content;
-        cursor: pointer;
-
-        &:hover {
-          opacity: 0.9;
-        }
-      }
+     
 
       h4 {
         font-weight: 500;
