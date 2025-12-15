@@ -8,6 +8,7 @@ import HotelDetail from './pages/HotelDetail';
 import Breadcrumb from './Components/Breadcrumb/breadcrumb';
 import Login from './Components/Login/Login';
 import RegisterAdmin from './pages/RegisterAdmin/RegisterAdmin';
+import SuccesPage from './pages/SuccesRegister/SuccesPage';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -21,11 +22,14 @@ createRoot(document.getElementById('root')).render(
         ></Route>
         <Route
           path='/register'
-          element={<Login dataType={'createAccountUser'} dataTypeDetail={'registerAccountDetail'} />}
+          element={
+            <Login dataType={'createAccountUser'} dataTypeDetail={'registerAccountDetail'} />
+          }
         ></Route>
         <Route path='/admin-register' element={<RegisterAdmin />}></Route>
-        <Route path="/hotel-detail/:id" element={<HotelDetail/>} />
-        <Route path="/breadcrumb/:id" element={<Breadcrumb/>} />
+        <Route path='/hotel-detail/:id' element={<HotelDetail />} />
+        <Route path='/breadcrumb/:id' element={<Breadcrumb />} />
+        <Route path='/success-register' element={<SuccesPage />}></Route>
       </Routes>
     </BrowserRouter>
   </StrictMode>

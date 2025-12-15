@@ -1043,10 +1043,10 @@
   "loginAccount": [
     {
       "id": 1,
-      "name": "username",
-      "label": "Username",
-      "placeholder": "Username",
-      "type": "text"
+      "name": "email",
+      "label": "E mail",
+      "placeholder": "Email",
+      "type": "email"
     },
     {
       "id": 2,
