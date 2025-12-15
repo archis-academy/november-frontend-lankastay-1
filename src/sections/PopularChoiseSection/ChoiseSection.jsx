@@ -1,11 +1,16 @@
-import React from "react";
-import ChoiseCard from "./ChoiseCard";
-import choiseData from "./choise-data.json";
+import React, { useEffect, useState } from 'react';
+import ChoiseCard from '../../Components/ChoiseCard/ChoiseCard';
+import fetchData from '../../lib/fetchData';
 
 function ChoiseSection() {
+  const [choiseData, setChoiseData] = useState([]);
+
+  useEffect(() => {
+    fetchData('choise-cards').then((data) => setChoiseData(data));
+  }, []);
   return (
-    <div className="choiseGrid">
-      {choiseData["choise-cards"]
+    <div className='choiseGrid'>
+      {choiseData
         .filter((item) => item.id >= 6)
         .map((item) => (
           <ChoiseCard

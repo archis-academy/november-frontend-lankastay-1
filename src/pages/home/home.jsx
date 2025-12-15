@@ -4,6 +4,7 @@ import SearchFilterBar from '../../Components/SearchFilterBar/SearchFilterBar';
 import Footer from '../../Components/footer/Footer';
 import HeroSection from '../../sections/HeroSection/heroSection';
 import MostPickedSection from '../../sections/mostPickedSection';
+import ChoiseSection from '../../sections/PopularChoiseSection/ChoiseSection';
 
 export const Home = () => {
   return (
@@ -12,6 +13,7 @@ export const Home = () => {
       <HeroSection />
       <SearchFilterBar />
       <MostPickedSection />
+      <ChoiseSection />
       <Footer />
     </div>
   );

@@ -3,7 +3,7 @@ import fetchData from '../../lib/fetchData';
 import { useParams } from 'react-router-dom';
 import ProductDescription from '../../Components/ProductDescription/ProductDescription';
 import Breadcrumb from '../../Components/Breadcrumb/breadcrumb';
-import Amentiti from '../../sections/mock/amentiti';
+import Amentiti from '../../sections/AmentitiSection/amentiti';
 const HotelDetail = () => {
   const [hotelDetails, setHotelDetails] = useState([]);
   const [amenities, setAmenities] = useState([]);
