@@ -145,8 +145,7 @@ const Login = ({ dataType, dataTypeDetail }) => {
       <div className={style.right}>
         <form className={style.loginForm} onSubmit={handleSubmit}>
           <img className={style.formLogo} src='/logo.svg' alt='' />
-          <h1 className={style.title}>{title}</h1>
-
+          <h1 className={style.title}>{title} Account</h1>
           {inputs.map((item) => (
             <div key={item.id}>
               <Input
