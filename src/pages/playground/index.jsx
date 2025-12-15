@@ -4,6 +4,8 @@ import fetchData from '../../lib/fetchData.js';
 import ChoiseCard from '../../Components/ChoiseCard/ChoiseCard';
 import QuickStats from '../../Components/quick-stats-component/quick_stats';
 import Login from '../../Components/Login/Login.jsx';
+import Breadcrumb from '../../Components/Breadcrumb/breadcrumb.jsx';
+import Header from '../../Components/Header/Header.jsx';
 
 const Playground = () => {
   const [quickIcons, setQuickIcons] = useState([]);
@@ -17,6 +19,7 @@ const Playground = () => {
   return (
     <div>
       <Header />
+       <Breadcrumb />
       {cards.map((card) => (
         <ChoiseCard
           title={card.title}
@@ -27,6 +30,7 @@ const Playground = () => {
           priceText={card.priceText}
           isPopularChoise={card.isPopularChoise}
         />
+        
       ))}
 
       <div style={{ display: 'flex' }}>

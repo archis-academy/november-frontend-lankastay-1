@@ -39,7 +39,7 @@
       font-size: 42px;
       font-weight: 700;
       color: #152c5b;  
-      line-height: 1.2;
+      line-height: 100%;
       margin-bottom: 1.5rem;
     }
 
@@ -77,8 +77,9 @@
     justify-content: center;
     position: relative; 
     z-index: 1;
-    margin-right: 40px; 
-    margin-bottom: 40px;
+    margin-right: 25px; 
+    margin-bottom: 25px;
+    
 
     &::after {
       content: '';
@@ -92,7 +93,6 @@
     }
 
     .hero-image {
-      width: 100%;
       max-width: 520px;
       height: auto;
       object-fit: cover;
