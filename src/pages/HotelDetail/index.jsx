@@ -19,10 +19,9 @@ const HotelDetail = () => {
     return (
         <div>
 
-           <p>otel id : {selectedHotel?.id} </p>
+
            <Breadcrumb currentPage={selectedHotel?.title}  />
 
-            <p>otel id : {selectedHotel?.id} </p>
             <ProductDescription title={selectedHotel?.aboutTitle} desc={selectedHotel?.description} />
 
         </div>
