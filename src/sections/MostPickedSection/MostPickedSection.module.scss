@@ -27,20 +27,26 @@
 
 @media screen and (max-width: 768px) {
   .mostPickedContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
     .mostPickedGrid {
      
       grid-template-columns: 1fr;
       gap: 20px;
  
       > div {
-        width: 100%;
+        min-width: 90vw;
       
         height: 280px; 
+        overflow: hidden;
       }
 
       
       > div:first-child {
-        grid-row: auto; 
+        grid-row: span 1; 
       }
     }
   }
