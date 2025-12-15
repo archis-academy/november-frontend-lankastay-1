@@ -16,6 +16,7 @@ const HotelDetail = () => {
   }, []);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setAmenities(selectedHotel?.amenities);
   }, [selectedHotel]);
 
