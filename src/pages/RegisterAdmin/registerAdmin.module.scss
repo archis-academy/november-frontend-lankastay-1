@@ -60,7 +60,7 @@
        @media (max-width:1000px){
         border: none;
        }
-      img {
+      .leftLogo {
         width: 360px;
         padding-bottom: 30px;
 
@@ -70,6 +70,12 @@
         }
       }
     }
+  }
+
+  .errorText {
+    color: #d14343;
+    font-size: 14px;
+    text-align: center;
   }
 
   .adminInputWrapper {

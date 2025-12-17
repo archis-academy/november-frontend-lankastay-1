@@ -13,9 +13,32 @@ const Input = ({
   name,
   value,
   onChange,
+  onBlur,
+  error,
+  showError,
 }) => {
   const [showPassword, setShowPassword] = useState(false);
-  const isPassword = type === 'password';
+  const normalizedType = (type || '').toLowerCase();
+  const isPassword = normalizedType === 'password';
+  const resolvedType = isPassword && showPassword ? 'text' : type || 'text';
+
+  const inputClasses = classNames(style.input, inputClassName, {
+    [style.hasError]: showError && error,
+  });
+
+  const inputProps = {
+    id: id || name,
+    name,
+    className: inputClasses,
+    type: resolvedType,
+    placeholder,
+    onChange,
+    onBlur,
+  };
+
+  if (onChange && value !== undefined) {
+    inputProps.value = value ?? '';
+  }
 
   return (
     <div
@@ -25,15 +48,7 @@ const Input = ({
       <label htmlFor={name}>{label}</label>
 
       <div className={style.inputWrapper}>
-        <input
-          id={id || name}
-          name={name}
-          className={classNames(style.input, inputClassName)}
-          type={isPassword && showPassword ? 'text' : type}
-          placeholder={placeholder}
-          value={value ?? ''}
-          onChange={onChange}
-        />
+        <input {...inputProps} />
 
         {isPassword && (
           <button
@@ -45,6 +60,8 @@ const Input = ({
           </button>
         )}
       </div>
+
+      {showError && error && <p className={style.errorText}>{error}</p>}
     </div>
   );
 };
