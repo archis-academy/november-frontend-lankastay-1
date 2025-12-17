@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import Input from '../inputComponent/input';
+import { Link, useNavigate } from 'react-router-dom';
+import Input from '../inputComponent/Input';
 import fetchData from '../../lib/fetchData';
 import Button from '../Button/Button';
 import style from './Login.module.scss';
-import { Link, useNavigate } from 'react-router-dom';
 import { supabase } from '../../lib/supabaseClient';
 
-// Hata mesajları eklendi başarısız register işleminden sonra farklı sayfaya atmayacak artık.
-
+const requiredMessage = 'Bu alan zorunludur.';
 
 const Login = ({ dataType, dataTypeDetail }) => {
   const [inputs, setInputs] = useState([]);
@@ -28,8 +27,7 @@ const Login = ({ dataType, dataTypeDetail }) => {
   };
 
   const activeDataType = dataType || 'loginAccount';
-  const authMode = resolveAuthMode(activeDataType);
-  const isRegister = authMode === 'register';
+  const isRegister = resolveAuthMode(activeDataType) === 'register';
   const detailKey = dataTypeDetail || (isRegister ? 'registerAccountDetail' : 'loginAccountDetail');
 
   const resetFormState = (inputList = []) =>
@@ -78,9 +76,7 @@ const Login = ({ dataType, dataTypeDetail }) => {
           },
         ];
 
-  const title = `${detailConfig[0]?.buttonText || (isRegister ? 'Register' : 'Login')} Account`;
-
-  const requiredMessage = 'Bu alan zorunludur.';
+  const title = detailConfig[0]?.buttonText || (isRegister ? 'Register' : 'Login');
 
   const validateField = (name, value) => {
     if (value === undefined || value === null || String(value).trim() === '') {

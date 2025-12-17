@@ -1,7 +1,7 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import fetchData from '../../lib/fetchData';
-import Input from '../../Components/inputComponent/input';
+import Input from '../../Components/inputComponent/Input';
 import style from './registerAdmin.module.scss';
 import Button from '../../Components/Button/Button';
 import Footer from '../../Components/footer/Footer';
@@ -52,7 +52,7 @@ const RegisterAdmin = () => {
     load();
   }, []);
 
-  const allFields = useMemo(() => [...adminFields, ...hotelFields], [adminFields, hotelFields]);
+  const allFields = [...adminFields, ...hotelFields];
 
   const validateField = (field, value) => {
     if (!value || String(value).trim() === '') return requiredMessage;
@@ -122,13 +122,14 @@ const RegisterAdmin = () => {
 
     try {
       setLoading(true);
+      const { password: _password, email: _email, ...metadata } = form;
       const { error } = await supabase.auth.signUp({
         email,
         password,
         options: {
           data: {
             role: 'admin',
-            ...form,
+            ...metadata,
           },
         },
       });
@@ -138,7 +139,7 @@ const RegisterAdmin = () => {
         return;
       }
 
-      navigate('/login', { replace: true, state: { registeredAs: 'admin' } });
+      navigate('/success-register', { state: { status: 'success' } });
     } catch (err) {
       setErrorMsg(err.message || 'Bir hata olustu.');
     } finally {

@@ -8,8 +8,8 @@ import HotelDetail from './pages/HotelDetail';
 import Breadcrumb from './Components/Breadcrumb/breadcrumb';
 import Login from './Components/Login/Login';
 import RegisterAdmin from './pages/RegisterAdmin/RegisterAdmin';
-import SuccesPage from './pages/SuccesRegister/SuccesPage';
 import Dashboard from './pages/Dashboard';
+import SuccesPage from './pages/SuccesRegister/SuccesPage';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
