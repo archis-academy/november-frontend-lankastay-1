@@ -9,7 +9,7 @@ export const Details = () => {
   const [hotelDetail, setHotelDetail] = useState([]);
 
   useEffect(() => {
-    fetchData('hotelDetail').then((data) => setHotelDetail(data));
+    fetchData('hotelDetails').then((data) => setHotelDetail(data));
   }, []);
   console.log("hotel",hotelDetail);
   const selectedHotel = hotelDetail.find((hotel) => hotel.id === parseInt(id));
@@ -18,7 +18,7 @@ export const Details = () => {
 
   return (
     <div>
-      <ProductPhotoGrid/>
+      <ProductPhotoGrid images={selectedHotel?.images} />
     </div>
   );
 };
