@@ -9,9 +9,9 @@ export const Details = () => {
   const [hotelDetail, setHotelDetail] = useState([]);
 
   useEffect(() => {
-    fetchData('hotelDetails').then((data) => setHotelDetail(data));
+    fetchData('hotelDetail').then((data) => setHotelDetail(data));
   }, []);
-  console.log("hotel",hotelDetail);
+  console.log("hotel",hotelDetail , id);
   const selectedHotel = hotelDetail.find((hotel) => hotel.id === parseInt(id));
 
   console.log("selectedHotel", selectedHotel);

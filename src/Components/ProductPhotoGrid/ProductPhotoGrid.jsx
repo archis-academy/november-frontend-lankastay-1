@@ -1,8 +1,6 @@
 import React from 'react';
 import './ProductPhotoGrid.scss';
 
-
-
 const ImageGrid = ({images}) => {
   return (
     <div className="image-grid">
