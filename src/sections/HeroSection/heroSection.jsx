@@ -3,6 +3,7 @@ import styles from './heroSection.module.scss';
 import QuickStats from '../../Components/quick-stats-component/quick_stats';
 import Button from '../../Components/Button/Button';
 import fetchData from '../../lib/fetchData';
+import Breadcrumb from '../../Components/Breadcrumb/breadcrumb';
 
 const HeroSection = () => {
   const [quickStatsData, setQuickStatsData] = useState([]);
@@ -11,6 +12,7 @@ const HeroSection = () => {
     fetchData('quickStats').then((data) => setQuickStatsData(data));
   }, []);
   return (
+    
     <section className={styles['hero-section']}>
       <div className={styles['hero-container']}>
         <div className={styles['hero-content']}>
@@ -43,6 +45,7 @@ const HeroSection = () => {
         </div>
       </div>
     </section>
+    
   );
 };
 

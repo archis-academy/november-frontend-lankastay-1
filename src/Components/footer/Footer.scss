@@ -4,7 +4,9 @@
   .footer-container {
     justify-content: space-between;
     display: flex;
-    padding: 50px 100px;
+    max-width: 1043px;
+    margin: 0% auto;
+    padding: 50px 10px;
 
     @media (max-width: 768px) {
       flex-direction: column;

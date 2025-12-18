@@ -1,9 +1,9 @@
-
-
 section {
   padding: 20px 8vw;
   .searchFilterBar {
+    margin: 0 auto;
     display: flex;
+    max-width: 1200px;
     justify-content: space-between;
     padding: 20px 30px;
     align-items: center;
@@ -17,6 +17,7 @@ section {
         padding: 16px 20px;
         border-radius: 12px;
         display: flex;
+        align-items: center;
         gap: 10px;
         color: $color-text-strong;
         font-weight: 600;
