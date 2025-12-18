@@ -1,9 +1,11 @@
 import React from 'react';
 import Header from '../../Components/Header/Header';
 import SearchFilterBar from '../../Components/SearchFilterBar/SearchFilterBar';
+import ContactUs from '../../Components/ContactUs/ContactUs';
 import Footer from '../../Components/footer/Footer';
 import HeroSection from '../../sections/HeroSection/heroSection';
 import MostPickedSection from '../../sections/mostPickedSection';
+
 
 export const Home = () => {
   return (
@@ -12,6 +14,7 @@ export const Home = () => {
       <HeroSection />
       <SearchFilterBar />
       <MostPickedSection />
+      <ContactUs />
       <Footer />
     </div>
   );
