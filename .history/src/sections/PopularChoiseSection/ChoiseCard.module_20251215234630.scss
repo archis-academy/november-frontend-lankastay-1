@@ -91,118 +91,133 @@
   }
 }
 
-/* --- Kapsayıcı ve Düzen --- */
+/* --- Genel Ayarlar & Reset --- */
+* {
+  box-sizing: border-box; /* Padding ve border'ın genişliği etkilememesi için */
+}
+
+body {
+  font-family: 'Poppins', sans-serif; /* Görseldeki modern font havası */
+  margin: 0;
+  padding: 0;
+  background-color: #fcfcfc;
+}
+
+/* --- Dış Taşıyıcı --- */
 .sectionContainer {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1400px; /* Geniş ekranlarda daha ferah durması için artırıldı */
   margin: 0 auto;
-  padding: 20px;
+  padding: 40px 20px;
 }
 
+/* --- Grid Yapısı (Masaüstü: 4 Sütun) --- */
 .gridContainer {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Masaüstü: 4 sütun */
-  gap: 30px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px; /* Kartlar arası ideal boşluk */
 }
 
-/* --- Kart Yapısı --- */
+/* --- Kart Bileşeni --- */
 .choiseCard, .popularCard {
   display: flex;
   flex-direction: column;
   width: 100%;
+  background: transparent;
+  cursor: pointer; /* Tıklanabilir hissi verir */
 }
 
-/* Resim Alanı */
+/* --- Resim Alanı --- */
 .choiseTop {
-  position: relative;
+  position: relative; /* Badge'i (etiketi) konumlandırmak için referans */
   width: 100%;
-  height: 220px; /* Tüm resimler eşit boyda */
-  border-radius: 15px; /* Köşeleri yuvarla */
-  overflow: hidden;
-  margin-bottom: 15px;
+  aspect-ratio: 4 / 3; /* Sabit yükseklik yerine oran kullanımı (Daha modern) */
+  border-radius: 16px;
+  overflow: hidden; /* Resmin taşmasını engeller */
+  margin-bottom: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Hafif gölge */
 }
 
 .image {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Resmi kutuya sığdır */
-  transition: transform 0.3s ease;
+  object-fit: cover;
   display: block;
-
-  &:hover {
-    transform: scale(1.05); /* Hover efekti */
-  }
+  transition: transform 0.4s ease; /* Daha yumuşak geçiş */
 }
 
-/* Mavi Etiket (Popular Choice) */
+/* Hover Efekti */
+.choiseCard:hover .image,
+.popularCard:hover .image {
+  transform: scale(1.08); /* Resim hafifçe büyür */
+}
+
+/* --- Mavi Etiket (Popular Choice) --- */
 .price {
   position: absolute;
   top: 0;
   right: 0;
-  background-color: #3252DF; /* Mavi renk */
+  background-color: #3252DF;
   color: #fff;
   font-size: 13px;
   font-weight: 500;
-  padding: 8px 25px;
-  border-bottom-left-radius: 20px; /* Sadece sol alt köşe yuvarlak */
+  padding: 8px 24px;
+  /* Görseldeki gibi sağ üst köşe keskin, sol alt köşe yuvarlak */
+  border-bottom-left-radius: 20px; 
   z-index: 2;
   margin: 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
-.text {
-  font-weight: 300;
-}
-
-/* --- Alt Yazılar --- */
+/* --- Alt Metinler --- */
 .bottomContent {
   display: flex;
   flex-direction: column;
+  padding: 0 4px; /* Metinlerin kenara çok yapışmaması için */
 }
 
 .title {
-  font-size: 19px;
-  font-weight: 500;
-  color: #152C5B;
-  margin: 0 0 5px 0;
-  font-family: sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #152C5B; /* Görseldeki koyu lacivert ton */
+  margin: 0 0 6px 0;
+  line-height: 1.2;
 }
 
 .location {
   font-size: 14px;
-  color: #B0B0B0;
+  color: #B0B0B0; /* Gri ton */
   font-weight: 400;
-  font-family: sans-serif;
+  margin: 0;
 }
 
-/* --- RESPONSIVE (Mobil Uyum) --- */
+/* --- RESPONSIVE (Mobil Uyumluluk) --- */
 
-/* Tablet (1024px altı) -> 3 Sütun */
+/* Tablet (1024px ve altı) -> 2 Sütun */
+/* Not: Görseldeki kartlar geniş olduğu için 3 yerine 2 sütun daha ferah durur */
 @media screen and (max-width: 1024px) {
   .gridContainer {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
-}
-
-/* Küçük Tablet (768px altı) -> 2 Sütun */
-@media screen and (max-width: 768px) {
-  .gridContainer {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-  }
   
-  .choiseTop {
-    height: 180px; /* Mobilde resim yüksekliği */
+  .sectionContainer {
+    padding: 30px 20px;
   }
 }
 
-/* Mobil (480px altı) -> 1 Sütun */
-@media screen and (max-width: 480px) {
+/* Mobil (600px ve altı) -> 1 Sütun */
+@media screen and (max-width: 600px) {
   .gridContainer {
     grid-template-columns: 1fr;
+    gap: 30px; /* Mobilde kartlar arası biraz daha mesafe */
+  }
+
+  .title {
+    font-size: 20px; /* Mobilde başlıklar biraz daha okunaklı olsun */
   }
   
-  .choiseTop {
-    height: 220px;
+  .location {
+    font-size: 15px;
   }
 }
