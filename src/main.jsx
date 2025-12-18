@@ -3,7 +3,6 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Home } from './pages/home/home';
-import "@/main.scss";
 import Playground from './pages/playground';
 import HotelDetail from './pages/HotelDetail';
 import Breadcrumb from './Components/Breadcrumb/breadcrumb';
