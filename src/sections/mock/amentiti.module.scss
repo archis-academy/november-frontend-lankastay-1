@@ -1,0 +1,37 @@
+.amentitiContainer {
+  display: flex;         
+  flex-wrap: wrap;       
+  gap: 50px;             
+  justify-content:center; 
+  margin-top: 20px;     
+  padding: 0;
+  width: 100%;         
+}
+
+.card {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;    
+  justify-content: flex-start;
+  min-width: 60px;     
+}
+
+.icon {
+  width: 32px;           
+  height: 32px;
+  margin-bottom: 10px;
+  object-fit: contain;
+}
+
+.text {
+  font-family: sans-serif;
+  font-size: 14px;
+  color: #888;        
+  display: flex;
+  gap: 4px;
+}
+
+.value {
+  color: #333;          
+  font-weight: 600;
+}

@@ -1,9 +1,11 @@
 import React from 'react';
 import styles from './ChoiseCard.module.scss';
 
-function ChoiseCard({ image, title, location, price, priceText, isPopularChoise }) {
+function ChoiseCard({ image, title, location, price, priceText, isPopularChoise, isSummary }) {
+
   return (
-    <div className={isPopularChoise ? styles.popularCard : styles.choiseCard}>
+
+    <div className={isSummary ? styles.summaryCard : (isPopularChoise ? styles.popularCard : styles.choiseCard)}>
       <div className={styles.choiseTop}>
         <img className={styles.image} src={image} alt={title} />
         {price && (
