@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import Input from '../inputComponent/input';
+import { Link, useNavigate } from 'react-router-dom';
+import Input from '../inputComponent/Input';
 import fetchData from '../../lib/fetchData';
 import Button from '../Button/Button';
 import style from './Login.module.scss';
-import { Link, useNavigate } from 'react-router-dom';
 import { supabase } from '../../lib/supabaseClient';
+
+const requiredMessage = 'Bu alan zorunludur.';
 
 const Login = ({ dataType, dataTypeDetail }) => {
   const [inputs, setInputs] = useState([]);
@@ -12,6 +14,9 @@ const Login = ({ dataType, dataTypeDetail }) => {
   const [form, setForm] = useState({});
   const [loading, setLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
+  const [fieldErrors, setFieldErrors] = useState({});
+  const [touched, setTouched] = useState({});
+  const [submitted, setSubmitted] = useState(false);
 
   const navigate = useNavigate();
 
@@ -22,8 +27,7 @@ const Login = ({ dataType, dataTypeDetail }) => {
   };
 
   const activeDataType = dataType || 'loginAccount';
-  const authMode = resolveAuthMode(activeDataType);
-  const isRegister = authMode === 'register';
+  const isRegister = resolveAuthMode(activeDataType) === 'register';
   const detailKey = dataTypeDetail || (isRegister ? 'registerAccountDetail' : 'loginAccountDetail');
 
   const resetFormState = (inputList = []) =>
@@ -35,10 +39,13 @@ const Login = ({ dataType, dataTypeDetail }) => {
         const fetchedInputs = (await fetchData(activeDataType)) ?? [];
         setInputs(fetchedInputs);
         setForm(resetFormState(fetchedInputs));
+        setFieldErrors({});
+        setTouched({});
+        setSubmitted(false);
       } catch (err) {
         setInputs([]);
         setForm({});
-        setErrorMsg('Form configuration could not be loaded.');
+        setErrorMsg('Form yapilandirmasi yuklenemedi.');
       }
     };
 
@@ -69,26 +76,67 @@ const Login = ({ dataType, dataTypeDetail }) => {
           },
         ];
 
-  const title = `${detailConfig[0]?.buttonText || (isRegister ? 'Register' : 'Login')} Account`;
+  const title = detailConfig[0]?.buttonText || (isRegister ? 'Register' : 'Login');
+
+  const validateField = (name, value) => {
+    if (value === undefined || value === null || String(value).trim() === '') {
+      return requiredMessage;
+    }
+    return '';
+  };
+
+  const validateForm = () => {
+    const errors = {};
+    inputs.forEach(({ name }) => {
+      const error = validateField(name, form[name]);
+      if (error) errors[name] = error;
+    });
+    setFieldErrors(errors);
+    return errors;
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
+
+    setFieldErrors((prev) => {
+      const next = { ...prev };
+      const error = validateField(name, value);
+      if (error) next[name] = error;
+      else delete next[name];
+      return next;
+    });
+  };
+
+  const handleBlur = (e) => {
+    const { name, value } = e.target;
+    setTouched((prev) => ({ ...prev, [name]: true }));
+
+    const error = validateField(name, value);
+    setFieldErrors((prev) => {
+      const next = { ...prev };
+      if (error) next[name] = error;
+      else delete next[name];
+      return next;
+    });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setSubmitted(true);
     setErrorMsg('');
-    setLoading(true);
+
+    const errors = validateForm();
+    if (Object.keys(errors).length > 0) {
+      setErrorMsg('Lutfen zorunlu alanlari doldurun.');
+      return;
+    }
 
     try {
+      setLoading(true);
+
       const email = form.email?.trim();
       const password = form.password;
-
-      if (!email || !password) {
-        setErrorMsg('Email and password are required.');
-        return;
-      }
 
       if (isRegister) {
         const { error } = await supabase.auth.signUp({
@@ -96,6 +144,7 @@ const Login = ({ dataType, dataTypeDetail }) => {
           password,
           options: {
             data: {
+              role: 'user',
               name: form.name,
               phoneNo: form.phoneNo,
               country: form.country,
@@ -106,9 +155,7 @@ const Login = ({ dataType, dataTypeDetail }) => {
         });
 
         if (error) {
-          navigate('/success-register', {
-            state: { status: 'error', message: error.message },
-          });
+          setErrorMsg(error.message || 'Kayit basarisiz. Lutfen tekrar deneyin.');
           return;
         }
 
@@ -116,17 +163,25 @@ const Login = ({ dataType, dataTypeDetail }) => {
         return;
       }
 
-      const { error } = await supabase.auth.signInWithPassword({
+      const { data, error } = await supabase.auth.signInWithPassword({
         email,
         password,
       });
 
       if (error) {
-        setErrorMsg(error.message);
+        const credentialMessage = 'E-posta veya sifre hatali.';
+        setFieldErrors((prev) => ({
+          ...prev,
+          email: credentialMessage,
+          password: credentialMessage,
+        }));
+        setErrorMsg('');
         return;
       }
 
-      navigate('/');
+      const role = data?.user?.user_metadata?.role || 'user';
+      const target = role === 'admin' ? '/dashboard' : '/';
+      navigate(target);
     } catch (err) {
       setErrorMsg(err.message || 'Something went wrong.');
     } finally {
@@ -146,19 +201,27 @@ const Login = ({ dataType, dataTypeDetail }) => {
         <form className={style.loginForm} onSubmit={handleSubmit}>
           <img className={style.formLogo} src='/logo.svg' alt='' />
           <h1 className={style.title}>{title} Account</h1>
-          {inputs.map((item) => (
-            <div key={item.id}>
-              <Input
-                id={item.id}
-                label={item.label}
-                placeholder={item.placeholder}
-                type={item.type}
-                name={item.name}
-                value={form[item.name] ?? ''}
-                onChange={handleChange}
-              />
-            </div>
-          ))}
+          {inputs.map((item) => {
+            const fieldError = fieldErrors[item.name];
+            const showError = fieldError && (submitted || touched[item.name]);
+
+            return (
+              <div key={item.id}>
+                <Input
+                  id={item.id}
+                  label={item.label}
+                  placeholder={item.placeholder}
+                  type={item.type}
+                  name={item.name}
+                  value={form[item.name] ?? ''}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  error={fieldError}
+                  showError={!!showError}
+                />
+              </div>
+            );
+          })}
 
           {errorMsg && <p className={style.errorText}>{errorMsg}</p>}
 

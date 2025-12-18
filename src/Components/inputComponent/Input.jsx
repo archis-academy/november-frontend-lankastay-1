@@ -1,4 +1,3 @@
-// src/Components/inputComponent/Input.jsx
 import React, { useState } from 'react';
 import classNames from 'classnames';
 import style from './input.module.scss';
@@ -13,27 +12,40 @@ const Input = ({
   name,
   value,
   onChange,
+  onBlur,
+  error,
+  showError,
 }) => {
   const [showPassword, setShowPassword] = useState(false);
-  const isPassword = type === 'password';
+  const normalizedType = (type || '').toLowerCase();
+  const isPassword = normalizedType === 'password';
+  const resolvedType = isPassword && showPassword ? 'text' : type || 'text';
+  const inputId = id || name;
+
+  const inputClasses = classNames(style.input, inputClassName, {
+    [style.hasError]: showError && error,
+  });
+
+  const inputProps = {
+    id: inputId,
+    name,
+    className: inputClasses,
+    type: resolvedType,
+    placeholder,
+    onChange,
+    onBlur,
+  };
+
+  if (onChange && value !== undefined) {
+    inputProps.value = value ?? '';
+  }
 
   return (
-    <div
-      key={id}
-      className={classNames(style.inputDiv, className, { [style.passwordField]: isPassword })}
-    >
-      <label htmlFor={name}>{label}</label>
+    <div className={classNames(style.inputDiv, className, { [style.passwordField]: isPassword })}>
+      <label htmlFor={inputId}>{label}</label>
 
       <div className={style.inputWrapper}>
-        <input
-          id={id || name}
-          name={name}
-          className={classNames(style.input, inputClassName)}
-          type={isPassword && showPassword ? 'text' : type}
-          placeholder={placeholder}
-          value={value ?? ''}
-          onChange={onChange}
-        />
+        <input {...inputProps} />
 
         {isPassword && (
           <button
@@ -45,6 +57,8 @@ const Input = ({
           </button>
         )}
       </div>
+
+      {showError && error && <p className={style.errorText}>{error}</p>}
     </div>
   );
 };
