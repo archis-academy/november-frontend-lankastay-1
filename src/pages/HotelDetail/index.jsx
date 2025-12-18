@@ -1,24 +1,31 @@
-import React, { useEffect, useState } from 'react';
-import ProductPhotoGrid from '../../Components/ProductPhotoGrid/ProductPhotoGrid';
-import { useParams } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
 import fetchData from '../../lib/fetchData';
-
-
-export const Details = () => {
+import { useParams } from 'react-router-dom';
+import ProductDescription from '../../Components/ProductDescription/ProductDescription';
+import Breadcrumb from '../../Components/Breadcrumb/breadcrumb';
+import Amentiti from '../../sections/mock/amentiti';
+const HotelDetail = () => {
+  const [hotelDetails, setHotelDetails] = useState([]);
+  const [amenities, setAmenities] = useState([]);
   const { id } = useParams();
-  const [hotelDetail, setHotelDetail] = useState([]);
+
+  const selectedHotel = hotelDetails?.find((hotel) => hotel?.id == id);
 
   useEffect(() => {
-    fetchData('hotelDetail').then((data) => setHotelDetail(data));
+    fetchData('hotelDetails').then((data) => setHotelDetails(data));
   }, []);
-  console.log("hotel",hotelDetail , id);
-  const selectedHotel = hotelDetail.find((hotel) => hotel.id === parseInt(id));
 
-  console.log("selectedHotel", selectedHotel);
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setAmenities(selectedHotel?.amenities);
+  }, [selectedHotel]);
 
   return (
     <div>
-      <ProductPhotoGrid images={selectedHotel?.images} />
+      <Breadcrumb currentPage={selectedHotel?.title} />
+      <ProductDescription title={selectedHotel?.aboutTitle} desc={selectedHotel?.description} />
+      {amenities?.length > 0 && <Amentiti data={amenities} />}
     </div>
   );
 };
+export default HotelDetail;

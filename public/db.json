@@ -986,5 +986,249 @@
         }
       ]
     }
+  ],
+
+  "createAccountUser": [
+    {
+      "id": 1,
+      "name": "name",
+      "label": "Name",
+      "placeholder": "Enter your name",
+      "type": "text"
+    },
+    {
+      "id": 2,
+      "name": "email",
+      "label": "E mail",
+      "placeholder": "name@gmail.com",
+      "type": "email"
+    },
+    {
+      "id": 3,
+      "name": "phoneNo",
+      "label": "Phone No",
+      "placeholder": "With Country Code",
+      "type": "text"
+    },
+    {
+      "id": 4,
+      "name": "country",
+      "label": "Country",
+      "placeholder": "Country Name",
+      "type": "text"
+    },
+    {
+      "id": 5,
+      "name": "nic",
+      "label": "Nic",
+      "placeholder": "National Identity Card",
+      "type": "text"
+    },
+    {
+      "id": 6,
+      "name": "username",
+      "label": "Username",
+      "placeholder": "Username",
+      "type": "text"
+    },
+    {
+      "id": 7,
+      "name": "password",
+      "label": "Password",
+      "placeholder": "6+ characters",
+      "type": "password"
+    }
+  ],
+
+  "loginAccount": [
+    {
+      "id": 1,
+      "name": "email",
+      "label": "E mail",
+      "placeholder": "Email",
+      "type": "email"
+    },
+    {
+      "id": 2,
+      "name": "password",
+      "label": "Password",
+      "placeholder": "6+ characters",
+      "type": "password"
+    }
+  ],
+
+  "loginAccountDetail": [
+    {
+      "id": 11,
+      "inputType": "checkbox",
+      "buttonText": "Login",
+      "bottomButtonText": "Create an Account",
+      "hrefTo": "/register"
+    }
+  ],
+  "registerAccountDetail": [
+    {
+      "id": 11,
+      "inputType": "checkbox",
+      "buttonText": "Register",
+      "bottomButtonText": "Login",
+      "hrefTo": "/login"
+    }
+  ],
+
+  "createAccountAdmin": [
+    {
+      "id": 1,
+      "name": "name",
+      "label": "Name",
+      "placeholder": "Enter your name",
+      "type": "text",
+      "column": "left"
+    },
+    {
+      "id": 2,
+      "name": "email",
+      "label": "E mail",
+      "placeholder": "name@gmail.com",
+      "type": "email",
+      "column": "left"
+    },
+    {
+      "id": 3,
+      "name": "phoneNo",
+      "label": "Phone No",
+      "placeholder": "With Country Code",
+      "type": "text",
+      "column": "left"
+    },
+    {
+      "id": 4,
+      "name": "country",
+      "label": "Country",
+      "placeholder": "Country Name",
+      "type": "text",
+      "column": "left"
+    },
+    {
+      "id": 5,
+      "name": "nic",
+      "label": "Nic",
+      "placeholder": "National Identity Card",
+      "type": "text",
+      "column": "left"
+    },
+    {
+      "id": 6,
+      "name": "username",
+      "label": "Username",
+      "placeholder": "Username",
+      "type": "text",
+      "column": "left"
+    },
+    {
+      "id": 7,
+      "name": "password",
+      "label": "Password",
+      "placeholder": "6+ characters",
+      "type": "password",
+      "column": "left"
+    }
+  ],
+  "registerHotel": [
+    {
+      "id": 8,
+      "name": "hotelName",
+      "label": "Hotel Name",
+      "placeholder": "Full Name",
+      "type": "text",
+      "column": "right"
+    },
+    {
+      "id": 9,
+      "name": "registrationNo",
+      "label": "Registration No",
+      "placeholder": "PVT(Ltd)",
+      "type": "text",
+      "column": "right"
+    },
+    {
+      "id": 10,
+      "name": "address",
+      "label": "Address",
+      "placeholder": "Location",
+      "type": "text",
+      "column": "right"
+    },
+    {
+      "id": 11,
+      "name": "uploadImages",
+      "label": "Upload Images",
+      "placeholder": "Upload",
+      "type": "text",
+      "column": "right"
+    },
+    {
+      "id": 12,
+      "name": "uploadDocuments",
+      "label": "Upload Documents",
+      "placeholder": "Upload",
+      "type": "text",
+      "column": "right"
+    },
+    {
+      "id": 13,
+      "name": "facilities",
+      "label": "Facilities",
+      "placeholder": "Describe",
+      "type": "text",
+      "column": "right"
+    }
+  ],
+  "most-picked": [
+    {
+      "id": 1,
+      "image": "/images/choise-card-images/blue-origin.png",
+      "title": "Blue Origin Fams",
+      "location": "Galle, Sri Lanka",
+      "price": "$200 ",
+      "priceText": "per night",
+      "isPopularChoise": false
+    },
+    {
+      "id": 2,
+      "image": "/images/choise-card-images/ocean-land.png",
+      "title": "Ocean Land",
+      "location": "Trincomalee, Sri Lanka",
+      "price": "$22 ",
+      "priceText": "per night",
+      "isPopularChoise": false
+    },
+    {
+      "id": 3,
+      "image": "/images/choise-card-images/vinna-vill.png",
+      "title": "Vinna Vill",
+      "location": "Beruwala, Sri Lanka",
+      "price": "$62 ",
+      "priceText": "per night",
+      "isPopularChoise": false
+    },
+    {
+      "id": 4,
+      "image": "/images/choise-card-images/stark-house.png",
+      "title": "Stark House",
+      "location": "Dehiwala, Sri Lanka",
+      "price": "$856 ",
+      "priceText": "per night",
+      "isPopularChoise": false
+    },
+    {
+      "id": 5,
+      "image": "/images/choise-card-images/bobox.png",
+      "title": "Bobox",
+      "location": "Kandy, Sri Lanka",
+      "price": "$72",
+      "priceText": "per night",
+      "isPopularChoise": false
+    }
   ]
 }

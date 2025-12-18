@@ -1,0 +1,52 @@
+.inputDiv {
+  display: flex;
+  flex-direction: column;
+
+  .inputWrapper {
+    position: relative;
+    width: 100%;
+  }
+  label {
+    color: $black;
+    font-size: 24px;
+    @media (max-width: 1024px) {
+      font-size: 15px;
+    }
+  }
+  .input {
+    padding: 14px;
+    border: 2.5px solid rgba(210, 210, 210, 1);
+    border-radius: 10px;
+    width: 100%;
+      @media (max-width: 1024px){
+        padding: 10px;
+      }
+
+    &::placeholder {
+      color: $color-border;
+      font-size: 22px;
+      font-weight: 400;
+      font-family: Poppins;
+      @media (max-width: 1024px) {
+        font-size: 15px;
+      }
+    }
+  }
+
+  .toggleButton {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    display: inline-flex;
+    cursor: pointer;
+    img {
+      @media (max-width: 1024px) {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+}
