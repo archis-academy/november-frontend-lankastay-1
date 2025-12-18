@@ -42,7 +42,7 @@ const ContactUs = () => {
 
                 <div className={styles.info}>
                     <div className={styles.infoItem}>
-                        <img src="/icons/Phone.svg" alt="phone" />
+                        <img src="/icons/ContactUs/Phone.svg" alt="phone" />
                         <div>
                             <strong>PHONE</strong>
                             <p>123 456 12</p>
@@ -50,7 +50,7 @@ const ContactUs = () => {
                     </div>
 
                     <div className={styles.infoItem}>
-                        <img src="/icons/Printer.svg" alt="fax" />
+                        <img src="/icons/ContactUs/Printer.svg" alt="fax" />
                         <div>
                             <strong>FAX</strong>
                             <p>123 456 13</p>
@@ -58,7 +58,8 @@ const ContactUs = () => {
                     </div>
 
                     <div className={styles.infoItem}>
-                        <img src="/icons/Contactus/Mail.svg" alt="email" />
+                        <img src="/icons/ContactUs/Mail.svg" alt="email" />
+                    
                         <div>
                             <strong>EMAIL</strong>
                             <p>info@lankastay.com</p>
