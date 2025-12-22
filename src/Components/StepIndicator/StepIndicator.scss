@@ -1,0 +1,46 @@
+.step-indicator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 24px 0;
+}
+
+.step-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.step {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #e5e7eb; // gri
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  transition: all 0.3s ease;
+
+  &.active {
+    background: #22c55e; // yeşil
+    color: #fff;
+  }
+
+  &.completed {
+    background: #22c55e;
+    color: #fff;
+  }
+}
+
+.line {
+  width: 40px;
+  height: 2px;
+  background: #e5e7eb;
+  margin: 0 8px;
+  transition: background 0.3s ease;
+
+  &.completed {
+    background: #22c55e;
+  }
+}
