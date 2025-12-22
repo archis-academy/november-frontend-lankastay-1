@@ -9,7 +9,7 @@ const SummaryPage = () => {
     const { id } = useParams();
 
     useEffect(() => {
-        fetchData('hotelDetails').then((data) => setHotelDetails(data));
+        fetchData('hotelDetail').then((data) => setHotelDetails(data));
     }, []);
 
     const selectedHotel = hotelDetails?.find((hotel) => hotel?.id == id);
