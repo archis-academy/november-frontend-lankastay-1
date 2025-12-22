@@ -1,5 +1,6 @@
 import { useState } from "react";
-import StepIndicator from "../Components/StepIndicator/StepIndicator";
+import StepIndicator from '../../Components/StepIndicator/StepIndicator';
+
 
 const BookingPage = () => {
   const [step, setStep] = useState(1);

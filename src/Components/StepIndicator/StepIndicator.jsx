@@ -1,4 +1,5 @@
-import styles from "./StepIndicator.module.scss";
+import React from 'react';
+import styles from './StepIndicator.module.scss';
 
 const StepIndicator = ({ currentStep, totalSteps = 3 }) => {
   return (
