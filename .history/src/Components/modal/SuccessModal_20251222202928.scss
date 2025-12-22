@@ -1,0 +1,109 @@
+$primary-blue: #4d84f5;
+$text-dark: #3a4b8c;
+
+.app-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f0f2f5;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); // Arka planı karartma
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+  padding: 20px;
+}
+
+.modal-content {
+  background: rgba(255, 255, 255, 0.95);
+  position: relative;
+  width: 100%;
+  max-width: 550px;
+  border-radius: 24px;
+  padding: 40px;
+  animation: modalFadeIn 0.3s ease-out;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+
+  .close-x {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #999;
+    &:hover { color: #333; }
+  }
+}
+
+// İçerik Stilleri
+.lankastay-card {
+  text-align: center;
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    span { color: $text-dark; }
+  }
+
+  .icon-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    .check-icon {
+      width: 55px;
+      height: 55px;
+      border: 3px solid #4caf50;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #4caf50;
+      svg { width: 28px; }
+    }
+  }
+
+  .title {
+    color: $primary-blue;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    @media (max-width: 480px) { font-size: 1.4rem; }
+  }
+
+  .subtitle {
+    color: #666;
+    margin-bottom: 30px;
+  }
+
+  .btn-book {
+    background: $primary-blue;
+    color: white;
+    border: none;
+    padding: 14px 50px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%; // Mobilde ve modalda tam genişlik daha iyi durur
+    max-width: 250px;
+    transition: transform 0.2s;
+    &:hover { transform: translateY(-2px); background: darken($primary-blue, 5%); }
+  }
+}
+
+// Giriş Animasyonu
+@keyframes modalFadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
