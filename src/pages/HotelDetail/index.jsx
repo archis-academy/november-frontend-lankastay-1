@@ -1,31 +1,31 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
 import fetchData from '../../lib/fetchData';
 import { useParams } from 'react-router-dom';
 import ProductDescription from '../../Components/ProductDescription/ProductDescription';
 import Breadcrumb from '../../Components/Breadcrumb/breadcrumb';
-import Amentiti from '../../sections/mock/amentiti';
+import Amentiti from '../../sections/AmentitiSection/amentiti';
 const HotelDetail = () => {
-      const [hotelDetails, setHotelDetails] = useState([]);
-      const { id } = useParams();
+  const [hotelDetails, setHotelDetails] = useState([]);
+  const [amenities, setAmenities] = useState([]);
+  const { id } = useParams();
 
-      const selectedHotel = hotelDetails?.find((hotel) => hotel?.id == id);
+  const selectedHotel = hotelDetails?.find((hotel) => hotel?.id == id);
 
   useEffect(() => {
     fetchData('hotelDetails').then((data) => setHotelDetails(data));
-   
   }, []);
 
-  
-    return (
-        <div>
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setAmenities(selectedHotel?.amenities);
+  }, [selectedHotel]);
 
-           <p>otel id : {selectedHotel?.id} </p>
-           <Breadcrumb currentPage={selectedHotel?.title}  />
-
-            <p>otel id : {selectedHotel?.id} </p>
-            <ProductDescription title={selectedHotel?.aboutTitle} desc={selectedHotel?.description} />
-
-        </div>
-    );
+  return (
+    <div>
+      <Breadcrumb currentPage={selectedHotel?.title} />
+      <ProductDescription title={selectedHotel?.aboutTitle} desc={selectedHotel?.description} />
+      {amenities?.length > 0 && <Amentiti data={amenities} />}
+    </div>
+  );
 };
 export default HotelDetail;

@@ -2,12 +2,14 @@
   width: 100%;
   padding: 16px 0;
   background: #ffffff;
+  @media (max-width: 810px) {
+    padding: 24px 15px;
+  }
 }
 
 .inner {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -33,7 +35,6 @@
   align-items: center;
   gap: 71px;
 
- 
   @media (max-width: 768px) {
     position: fixed;
     top: 0;
@@ -49,7 +50,6 @@
     z-index: 99;
   }
 }
-
 
 .open {
   right: 0 !important;
@@ -133,7 +133,6 @@
     display: flex;
   }
 }
-
 
 .barTopOpen {
   transform: translateY(9px) rotate(45deg);
