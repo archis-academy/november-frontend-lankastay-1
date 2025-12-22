@@ -5,7 +5,7 @@ import { Home } from './pages/home/home';
 import '@/main.scss';
 import Playground from './pages/playground';
 import HotelDetail from './pages/HotelDetail/index';
-import Breadcrumb from './Components/Breadcrumb/Breadcrumb';
+import Breadcrumb from './Components/Breadcrumb/breadcrumb';
 import Login from './Components/Login/Login';
 import RegisterAdmin from './pages/RegisterAdmin/RegisterAdmin';
 import SummaryPage from './pages/SummaryPage/index';
@@ -27,7 +27,7 @@ createRoot(document.getElementById('root')).render(
         <Route path='/admin-register' element={<RegisterAdmin />}></Route>
         <Route path="/hotel-detail/:id" element={<HotelDetail/>} />
         <Route path="/breadcrumb/:id" element={<Breadcrumb/>} />
-        <Route path='/summary' element={<SummaryPage />} />
+        <Route path="/summary/:id" element={<SummaryPage />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>

@@ -3,15 +3,14 @@ import React from 'react';
 import ChoiseCard from '../ChoiseCard/ChoiseCard';
 import styles from './LocationSummary.module.scss';
 
-const LocationSummary = ({ image, locationName }) => {
+const LocationSummary = ({ image, locationName, location }) => {
   return (
     <div className={styles.summaryWrapper}>
       <ChoiseCard
 
         image={image}         
         title={locationName}   
-        
-        location="Galle, Sri Lanka"
+        location={location}
         isSummary={true}
         isPopularChoise={false}
       />
