@@ -14,8 +14,8 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: #e5e7eb; // gri
-  color: #6b7280;
+  background: rgba(229, 229, 229, 1);
+  color:rgba(137, 137, 137, 1);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -23,7 +23,7 @@
   transition: all 0.3s ease;
 
   &.active {
-    background: #22c55e; // yeşil
+    background: rgba(26, 188, 156, 1);
     color: #fff;
   }
 
