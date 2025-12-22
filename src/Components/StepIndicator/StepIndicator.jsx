@@ -1,17 +1,17 @@
-import "./StepIndicator.scss";
+import styles from "./StepIndicator.module.scss";
 
 const StepIndicator = ({ currentStep, totalSteps = 3 }) => {
   return (
-    <div className="step-indicator">
+    <div className={styles.stepIndicator}>
       {Array.from({ length: totalSteps }, (_, i) => {
         const step = i + 1;
 
         return (
-          <div key={step} className="step-wrapper">
+          <div key={step} className={styles.stepWrapper}>
             <div
-              className={`step
-                ${step < currentStep ? "completed" : ""}
-                ${step === currentStep ? "active" : ""}
+              className={`${styles.step}
+                ${step < currentStep ? styles.completed : ""}
+                ${step === currentStep ? styles.active : ""}
               `}
             >
               {step < currentStep ? "✓" : step}
@@ -19,8 +19,8 @@ const StepIndicator = ({ currentStep, totalSteps = 3 }) => {
 
             {step !== totalSteps && (
               <div
-                className={`line ${
-                  step < currentStep ? "completed" : ""
+                className={`${styles.line} ${
+                  step < currentStep ? styles.completed : ""
                 }`}
               />
             )}
