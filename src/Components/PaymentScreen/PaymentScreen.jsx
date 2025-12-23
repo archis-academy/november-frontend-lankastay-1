@@ -1,48 +1,52 @@
 import React from 'react';
-import './PaymentScreen.module.scss';
+import styles from './PaymentScreen.module.scss';
 import Button from '../Button/Button';
+import Input from '../inputComponent/Input';
 
 const PaymentScreen = () => {
   return (
-    <div className="payment-screen">
-      <h1 className="payment-screen__title">Payment</h1>
-      <p className="payment-screen__subtitle">
+    <div className={styles['payment-screen']}>
+      <h1 className={styles['payment-screen__title']}>Payment</h1>
+      <p className={styles['payment-screen__subtitle']}>
         Kindly follow the instructions below
       </p>
 
-      <div className="payment-screen__content">
-    
-        <div className="payment-screen__summary">
+      <div className={styles['payment-screen__content']}>
+        <div className={styles['payment-screen__summary']}>
           <h3>Transfer LankaStay:</h3>
 
-          <p className="payment-screen__description">
+          <p className={styles['payment-screen__description']}>
             2 Nights at Blue Origin Farms,
             <br />
             Galle, Sri Lanka
           </p>
 
-          <p className="payment-screen__price">
+          <p className={styles['payment-screen__price']}>
             <strong>Total:</strong> $400 USD
           </p>
 
-          <p className="payment-screen__price">
+          <p className={styles['payment-screen__price']}>
             <strong>Initial Payment:</strong> $200
           </p>
         </div>
 
-        <form className="payment-screen__form">
-          <input type="text" placeholder="Bank" />
-          <input type="text" placeholder="Exp Date" />
-          <input type="password" placeholder="CVV" />
+        <form className={styles['payment-screen__form']}>
+          <div className={styles['payment-screen__input-group']}>
+            <label>Bank</label>
+            <Input placeholder="Selected Bank" />
+          </div>
 
-         <div className="payment-screen__button-wrapper">
-          <Button text="Pay Now"  />
-        </div>
+          <div className={styles['payment-screen__input-group']}>
+            <label>Exp Date</label>
+            <Input placeholder="Validation Date" />
+          </div>
 
-          <button type="button" className="payment-screen__cancel-btn">
-            Cancel
-          </button>
+          <div className={styles['payment-screen__input-group']}>
+            <label>CVV</label>
+            <Input type="password" placeholder="Beside the card" />
+          </div>
         </form>
+
       </div>
     </div>
   );

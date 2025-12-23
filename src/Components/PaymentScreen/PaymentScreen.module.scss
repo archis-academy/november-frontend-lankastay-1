@@ -1,73 +1,93 @@
 .payment-screen {
-  max-width: 900px;
-  margin: 60px auto;
-  text-align: center;
+  max-width: 880px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 8px;
+  font-family: Arial, sans-serif;
 
   &__title {
     font-family: $primary-font;
     font-size: 36px;
+    margin-bottom: 10px;
+    text-align: center;
     color: $color-navy;
-    margin-bottom: 8px;
+    font-weight: 600;
   }
 
   &__subtitle {
     font-family: $primary-font;
     font-size: 18px;
-    color:rgba(176, 176, 176, 1);
-    margin-bottom: 48px;
+    color: $color-text-muted;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 300;
   }
 
   &__content {
     display: flex;
     justify-content: space-between;
-    gap: 60px;
-    color: rgba(21, 44, 91, 1);
+    margin-top: 20px;
   }
 
-  
   &__summary {
-    width: 40%;
-    text-align: left;
+    flex: 1;
+    margin-right: 20px;
+    padding: 15px;
+    gap: 22px;
+
 
     h3 {
-      margin-bottom: 20px;
+      font-family: $primary-font;
+      font-size: 24px;
+      font-weight: 400;
+      color: $color-navy;
+      margin-bottom: 5px;
+    }
+
+    p {
+      font-family: $primary-font;
+      font-size: 24px;
+      font-weight: 400;
+      color: $color-navy;
+      margin: 10px 0;
+    }
+
+    br {
+      font-family: $primary-font;
+      font-size: 24px;
+      font-weight: 400;
+      color: $color-navy;
+      font-weight: bold;
     }
   }
-
-  &__description {
-    margin-bottom: 24px;
-    line-height: 1.6;
-  }
-
-  &__price {
-    font-size: 16px;
-    margin-bottom: 12px;
-  }
-
 
   &__form {
-    width: 40%;
+    flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 18px;
 
     input {
-      padding: 14px;
-      border: 1px solid #e5e7eb;
-      border-radius: 6px;
-      font-size: 14px;
+      background-color: #F5F6F8;
+      align-items: center;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1em;
     }
-  }
 
- &__button-wrapper {
-    margin-top: 24px;
- }
+    .payment-screen__input-group {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
 
-  &__cancel-btn {
-    background: none;
-    border: none;
-    color:rgba(245, 246, 248, 1);
-    margin-top: 10px;
-    cursor: pointer;
+      label {
+        font-family: $primary-font;
+        margin-bottom: 8px;
+        font-weight: 400;
+        font-size: 16px;
+        color:#152C5B;
+      }
+    }
+
   }
 }
