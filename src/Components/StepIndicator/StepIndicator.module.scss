@@ -1,46 +1,32 @@
-.step-indicator {
+.stepIndicator {
+  margin-top: 40px;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 24px 0;
+  justify-content: center; 
+  align-items: center;     
+  width: 100%;
 }
 
-.step-wrapper {
+.stepItem {
   display: flex;
   align-items: center;
 }
 
-.step {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: rgba(229, 229, 229, 1);
-  color:rgba(137, 137, 137, 1);
+.stepCircle {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
-  transition: all 0.3s ease;
-
-  &.active {
-    background: rgba(26, 188, 156, 1);
-    color: #fff;
-  }
-
-  &.completed {
-    background: #22c55e;
-    color: #fff;
-  }
 }
 
-.line {
-  width: 40px;
+
+.stepLine {
+  width: 60px;
   height: 2px;
-  background: #e5e7eb;
-  margin: 0 8px;
-  transition: background 0.3s ease;
+  background: rgba(229, 229, 229, 1);
 
-  &.completed {
-    background: #22c55e;
-  }
+}
+
+.stepIcon,
+.checkIcon {
+  width: 60px;
+  height: 60px;
 }
