@@ -1,33 +1,40 @@
-import React from "react";
-import { Outlet, useLocation } from "react-router-dom";
-import StepIndicator from "../../Components/StepIndicator/StepIndicator";
-import PaymentScreen from "../../Components/PaymentScreen/PaymentScreen";
-import Footer from "../../Components/Footer/Footer";
-import styles from "./PaymentPage.module.scss";
+import React, { useEffect, useState } from 'react';
+import StepIndicator from '../../Components/StepIndicator/StepIndicator';
+import PaymentScreen from '../../Components/PaymentScreen/PaymentScreen';
+import Footer from '../../Components/Footer/Footer';
+import styles from './PaymentPage.module.scss';
+import Header from '../../Components/Header/Header';
+import fetchData from '../../lib/fetchData';
+import { useParams } from 'react-router-dom';
 
 const PaymentLayout = () => {
-  const location = useLocation();
+  const [step, setStep] = useState(1);
+  const { id } = useParams();
 
-  const getStepFromPath = () => {
-    if (location.pathname === "/booking") return 1;
-    if (location.pathname.includes("/booking/payment")) return 2;
-    if (location.pathname.includes("/booking/success")) return 3;
-    return 1;
-  };
+  const [hotelDetail, setHotelDetail] = useState([]);
+
+  useEffect(() => {
+    console.log("id", id);
+    fetchData('hotelDetail').then((data) =>
+      setHotelDetail(data?.find((hotel) => hotel?.id == id))
+    );
+  }, [id]);
+
+  console.log('otel-detay', hotelDetail);
 
   return (
     <>
-      <header className={styles.PaymentHeader}>
-        <div className={styles.logoWrapper}>
-          <img src="/logo.svg" alt="Logo" className={styles.headerLogo} />
-        </div>
+      <Header isShort={true} />
 
-        <div className={styles.stepWrapper}>
-          <StepIndicator currentStep={getStepFromPath()} />
-        </div>
-      </header>
+      <div className={styles.stepWrapper}>
+        <StepIndicator currentStep={step} />
+      </div>
 
-      <PaymentScreen />
+      {step === 1 && <p>Booking</p>}
+
+      {step === 2 && <PaymentScreen />}
+
+      {step === 3 && <p>Success</p>}
 
       <Footer />
     </>

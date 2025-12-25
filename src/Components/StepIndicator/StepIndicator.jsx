@@ -22,7 +22,7 @@ const StepIndicator = ({ currentStep }) => {
             >
               {isCompleted ? (
                 <img
-                  src="/icons/StepIndicator/check.svg"
+                  src="/icons/StepIndicator/click.svg"
                   alt="completed"
                   className={styles.checkIcon}
                 />

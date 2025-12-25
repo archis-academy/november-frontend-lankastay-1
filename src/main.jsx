@@ -33,7 +33,7 @@ createRoot(document.getElementById('root')).render(
         <Route path='/hotel-detail/:id' element={<HotelDetail />} />
         <Route path='/breadcrumb/:id' element={<Breadcrumb />} />
         <Route path='/success-register' element={<SuccesPage />}></Route>
-        <Route path='/payment' element={<PaymentPage />} />
+        <Route path='/payment/:id' element={<PaymentPage />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>

@@ -8,10 +8,11 @@ import MostPickedSection from '../../sections/mostPickedSection';
 import ChoiseSection from '../../sections/PopularChoiseSection/ChoiseSection';
 
 
+
 export const Home = () => {
   return (
     <div>
-      <Header isShort={true} />
+      <Header isShort={false} />
       <HeroSection />
       <SearchFilterBar />
       <MostPickedSection />
