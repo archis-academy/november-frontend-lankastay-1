@@ -7,17 +7,18 @@ import HeroSection from '../../sections/HeroSection/heroSection';
 import MostPickedSection from '../../sections/mostPickedSection';
 import ChoiseSection from '../../sections/PopularChoiseSection/ChoiseSection';
 
-
 export const Home = () => {
   return (
     <div>
-      <Header isShort={true} />
-      <HeroSection />
-      <SearchFilterBar />
-      <MostPickedSection />
-      <ChoiseSection />
-      <ContactUs />
-      <Footer />
+      <div className='container'>
+        <Header isShort={true} />
+        <HeroSection />
+        <SearchFilterBar />
+        <MostPickedSection />
+        <ChoiseSection />
+        <ContactUs />
+        <Footer />
+      </div>
     </div>
   );
 };
