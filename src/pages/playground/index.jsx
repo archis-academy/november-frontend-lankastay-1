@@ -7,6 +7,7 @@ import Login from '../../Components/Login/Login.jsx';
 import Breadcrumb from '../../Components/Breadcrumb/breadcrumb.jsx';
 import Header from '../../Components/Header/Header.jsx';
 import Amentiti from '../../sections/AmentitiSection/amentiti.jsx';
+import FAQ from "../../sections/FAQSection/FAQ.jsx";
 
 const Playground = () => {
   const [quickIcons, setQuickIcons] = useState([]);
@@ -24,7 +25,7 @@ const Playground = () => {
     <div>
       <Header />
       <Breadcrumb />
-
+<FAQ />
       <div style={{ display: 'flex' }}>
         {quickIcons.map((item) => {
           return (
@@ -42,6 +43,13 @@ const Playground = () => {
       <div></div>
     </div>
   );
+  
 };
-
+const App = () => {
+  return (
+    <div className="App">
+      <FAQ />
+    </div>
+  );
+};
 export default Playground;
