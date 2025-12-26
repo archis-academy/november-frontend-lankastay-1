@@ -1,11 +1,12 @@
+import { Link } from 'react-router-dom';
 import style from './SideBarItem.module.scss';
 
-const SideBarItem = ({ icon, label }) => {
+const SideBarItem = ({ icon, label, href }) => {
   return (
-    <div className={style.box}>
+    <Link className={style.box} to={href} >
       <img src={icon} alt={label} />
       <span>{label}</span>
-    </div>
+    </Link>
   );
 };
 

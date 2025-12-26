@@ -1,6 +1,6 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, Outlet } from 'react-router-dom';
 import { Home } from './pages/home/home';
 import '@/main.scss';
 import Playground from './pages/playground';
@@ -9,6 +9,24 @@ import Breadcrumb from './Components/Breadcrumb/breadcrumb';
 import Login from './Components/Login/Login';
 import RegisterAdmin from './pages/RegisterAdmin/RegisterAdmin';
 import SuccesPage from './pages/SuccesRegister/SuccesPage';
+
+import Dashboard from './pages/Dashboard/Dashboard';
+import Setting from './pages/Settings/Setting';
+import Messages from './pages/Message/Message';
+import Booking from './pages/Bookings/Booking';
+import Help from './pages/Help/Help';
+import Refund from './pages/Refunds/Refund';
+import Objectives from './pages/Objectives/Objectives';
+import DashboardSidebar from './Components/dashboardSidebar/DashboardSidebar';
+
+const DashboardLayout = () => (
+  <div style={{ display: 'flex', minHeight: '100vh' }}>
+    <DashboardSidebar />
+    <div style={{ flex: 1 }}>
+      <Outlet />
+    </div>
+  </div>
+);
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -30,6 +48,17 @@ createRoot(document.getElementById('root')).render(
         <Route path='/hotel-detail/:id' element={<HotelDetail />} />
         <Route path='/breadcrumb/:id' element={<Breadcrumb />} />
         <Route path='/success-register' element={<SuccesPage />}></Route>
+
+        <Route element={<DashboardLayout />}>
+          <Route path='/Dashboard' element={<Dashboard />}></Route>
+          <Route path='/Setting' element={<Setting />}></Route>
+          <Route path='/Messages' element={<Messages />}></Route>
+          <Route path='/Bookings' element={<Booking/>} ></Route>
+          <Route path='/Help' element={<Help/>}></Route>
+          <Route path='/Refunds' element={<Refund/>}></Route>
+          <Route path='/Objectives' element={<Objectives/>}></Route>
+        </Route>
+      
       </Routes>
     </BrowserRouter>
   </StrictMode>

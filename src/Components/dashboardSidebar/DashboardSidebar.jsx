@@ -16,7 +16,7 @@ const DashboardSidebar = () => {
       <img className={style.logo} src={logo} alt='logo' />
       <div className={style.box} >
         {sideBar.map((data) => (
-          <SideBarItem key={data.id} icon={data.icon} label={data.label} id={data.id} />
+          <SideBarItem key={data.id} icon={data.icon} label={data.label} id={data.id} href={data.href} />
         ))}
       </div>
     </div>
