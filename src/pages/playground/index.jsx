@@ -16,7 +16,7 @@ const Playground = () => {
   useEffect(() => {
     fetchData('quickStats').then((data) => setQuickIcons(data));
     fetchData('choise-cards').then((data) => setCards(data));
-    fetchData('hotelDetails').then((data) =>{
+    fetchData('hotelDetails').then((data) => {
       setAmenities(data[0]?.amenities);
     });
   }, []);
@@ -24,7 +24,7 @@ const Playground = () => {
   return (
     <div>
       <Header />
-       <Breadcrumb />
+      <Breadcrumb />
       {cards.map((card) => (
         <ChoiseCard
           title={card.title}
@@ -35,7 +35,6 @@ const Playground = () => {
           priceText={card.priceText}
           isPopularChoise={card.isPopularChoise}
         />
-        
       ))}
 
       <div style={{ display: 'flex' }}>
@@ -47,10 +46,10 @@ const Playground = () => {
           );
         })}
       </div>
-        
-        {amenities?.length > 0 && <Amentiti data={amenities} />}
 
-        <Login/>
+      {amenities?.length > 0 && <Amentiti data={amenities} />}
+
+      <Login />
 
       <div></div>
     </div>

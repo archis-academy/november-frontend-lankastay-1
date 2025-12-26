@@ -4,7 +4,7 @@ import fetchData from '../../lib/fetchData';
 import Button from '../Button/Button';
 import style from './Login.module.scss';
 import { Link, useNavigate } from 'react-router-dom';
-import { supabase } from '../../lib/supabaseClient';
+// import { supabase } from '../../lib/supabaseClient';
 
 const Login = ({ dataType, dataTypeDetail }) => {
   const [inputs, setInputs] = useState([]);
