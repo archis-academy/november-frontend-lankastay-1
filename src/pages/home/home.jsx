@@ -4,10 +4,12 @@ import SearchFilterBar from '../../Components/SearchFilterBar/SearchFilterBar';
 import Footer from '../../Components/footer/Footer';
 import HeroSection from '../../sections/HeroSection/heroSection';
 import MostPickedSection from '../../sections/mostPickedSection';
+import DashboardSidebar from '../../Components/dashboardSidebar/DashboardSidebar';
 
 export const Home = () => {
   return (
     <div>
+      <DashboardSidebar/>
       <Header isShort={true} />
       <HeroSection />
       <SearchFilterBar />
