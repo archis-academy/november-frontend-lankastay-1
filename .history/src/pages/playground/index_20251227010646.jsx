@@ -7,16 +7,12 @@ import Login from '../../Components/Login/Login.jsx';
 import Breadcrumb from '../../Components/Breadcrumb/breadcrumb.jsx';
 import Header from '../../Components/Header/Header.jsx';
 import Amentiti from '../../sections/mock/amentiti.jsx';
-import Modal from "../../Components/modal/modal.jsx";
 
 const Playground = () => {
   const [quickIcons, setQuickIcons] = useState([]);
   const [cards, setCards] = useState([]);
   const [amenities, setAmenities] = useState([]);
- const [isModalOpen, setIsModalOpen] = useState(true);
- const handleClose = () => {
-    setIsModalOpen(false);
-  };
+
   useEffect(() => {
     fetchData('quickStats').then((data) => setQuickIcons(data));
     fetchData('choise-cards').then((data) => setCards(data));
@@ -29,21 +25,6 @@ const Playground = () => {
     <div>
       <Header />
        <Breadcrumb />
-       <div style={{ padding: "20px" }}>
-      <h1>Uygulama Ekranı</h1>
-      <button onClick={() => setIsModalOpen(true)}>Modalı Tekrar Aç</button>
-
-     
-      <Modal 
-        isOpen={isModalOpen} 
-        type="error" 
-        title="Action Failed" 
-        message="Something went wrong, please try again." 
-        ctaText="Try Again" 
-        onCtaClick={() => console.log("CTA tıklandı!")} 
-        onClose={handleClose} 
-      />
-    </div>
       {cards.map((card) => (
         <ChoiseCard
           title={card.title}

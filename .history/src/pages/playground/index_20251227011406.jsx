@@ -7,7 +7,7 @@ import Login from '../../Components/Login/Login.jsx';
 import Breadcrumb from '../../Components/Breadcrumb/breadcrumb.jsx';
 import Header from '../../Components/Header/Header.jsx';
 import Amentiti from '../../sections/mock/amentiti.jsx';
-import Modal from "../../Components/modal/modal.jsx";
+import Modal from "./Components/modal/modal.jsx";
 
 const Playground = () => {
   const [quickIcons, setQuickIcons] = useState([]);
@@ -33,10 +33,10 @@ const Playground = () => {
       <h1>Uygulama Ekranı</h1>
       <button onClick={() => setIsModalOpen(true)}>Modalı Tekrar Aç</button>
 
-     
+      {/* 3. Modal Bileşeni */}
       <Modal 
         isOpen={isModalOpen} 
-        type="error" 
+        type="error"  // Hata ise "error" (Kırmızı), Başarı ise "success" (Yeşil)
         title="Action Failed" 
         message="Something went wrong, please try again." 
         ctaText="Try Again" 
