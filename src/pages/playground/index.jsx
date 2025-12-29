@@ -13,7 +13,10 @@ import DashboardCard from '../../Components/DashboardCard/DashboardCard.jsx';
 const Playground = () => {
   const [quickIcons, setQuickIcons] = useState([]);
   const [amenities, setAmenities] = useState([]);
-
+ const [isModalOpen, setIsModalOpen] = useState(false);
+ const handleClose = () => {
+    setIsModalOpen(false);
+  };
   useEffect(() => {
     fetchData('quickStats').then((data) => setQuickIcons(data));
 
