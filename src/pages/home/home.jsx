@@ -9,7 +9,6 @@ import DashboardSidebar from '../../Components/dashboardSidebar/DashboardSidebar
 export const Home = () => {
   return (
     <div>
-      <DashboardSidebar/>
       <Header isShort={true} />
       <HeroSection />
       <SearchFilterBar />
