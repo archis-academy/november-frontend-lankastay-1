@@ -13,7 +13,7 @@ const Playground = () => {
   const [quickIcons, setQuickIcons] = useState([]);
   const [cards, setCards] = useState([]);
   const [amenities, setAmenities] = useState([]);
- const [isModalOpen, setIsModalOpen] = useState(true);
+ const [isModalOpen, setIsModalOpen] = useState(false);
  const handleClose = () => {
     setIsModalOpen(false);
   };
@@ -30,13 +30,13 @@ const Playground = () => {
       <Header />
        <Breadcrumb />
        <div style={{ padding: "20px" }}>
-      <h1>Uygulama Ekranı</h1>
+      <h1 onClick={()=> setIsModalOpen(true)} >Uygulama Ekranı</h1>
       <button onClick={() => setIsModalOpen(true)}>Modalı Tekrar Aç</button>
 
      
       <Modal 
         isOpen={isModalOpen} 
-        type="error" 
+        type="success" 
         title="Action Failed" 
         message="Something went wrong, please try again." 
         ctaText="Try Again" 
