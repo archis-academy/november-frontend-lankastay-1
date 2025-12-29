@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './FAQ.scss';
+import { CaretIcon } from '../../../public/icons/icons';
 
 const faqData = [
   {
@@ -28,7 +29,6 @@ const FAQ = () => {
   const [activeIndex, setActiveIndex] = useState(null);
 
   const toggleAccordion = (index) => {
-    // Eğer tıklanan zaten açıksa kapat (null yap), değilse o indeksi aç
     setActiveIndex(activeIndex === index ? null : index);
   };
 
@@ -44,8 +44,8 @@ const FAQ = () => {
           >
             <div className="faq-question">
               <span>{item.question}</span>
-              <button className="toggle-btn">
-                <i className={`fas fa-chevron-${activeIndex === index ? 'up' : 'down'}`}></i>
+              <button className={`toggle-btn ${activeIndex === index ? 'rotated' : ''}`}>
+                <CaretIcon />
               </button>
             </div>
             {activeIndex === index && (
