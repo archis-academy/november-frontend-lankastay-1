@@ -7,7 +7,7 @@ import Login from '../../Components/Login/Login.jsx';
 import Breadcrumb from '../../Components/Breadcrumb/breadcrumb.jsx';
 import Header from '../../Components/Header/Header.jsx';
 import Amentiti from '../../sections/AmentitiSection/amentiti.jsx';
-import Dropdown from '../../Components/Dropdown/Dropdown.jsx';
+import DashboardCard from '../../Components/DashboardCard/DashboardCard.jsx';
 
 const Playground = () => {
   const [quickIcons, setQuickIcons] = useState([]);
@@ -24,7 +24,7 @@ const Playground = () => {
   return (
     <div>
       <Header />
-      <Dropdown/>
+      <DashboardCard/>
       <Breadcrumb />
 
       <div style={{ display: 'flex' }}>
