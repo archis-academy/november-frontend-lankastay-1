@@ -1,0 +1,15 @@
+.container{
+    .box{
+        display: flex;
+        max-width: 500px;
+        gap: 10px;
+        max-height: 40px;
+        align-items: center;
+        select{
+            border: 1px solid #DDDFE1;
+            border-radius: 6px;
+            padding: 8px 16px;
+        }
+    }
+    
+}
