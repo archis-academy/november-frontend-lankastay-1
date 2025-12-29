@@ -6,6 +6,7 @@ import Footer from '../../Components/footer/Footer';
 import HeroSection from '../../sections/HeroSection/heroSection';
 import MostPickedSection from '../../sections/mostPickedSection';
 import ChoiseSection from '../../sections/PopularChoiseSection/ChoiseSection';
+import FAQ from '../../sections/FAQSection/FAQ.jsx';
 
 export const Home = () => {
   return (
@@ -17,6 +18,7 @@ export const Home = () => {
         <MostPickedSection />
         <ChoiseSection />
         <ContactUs />
+        <FAQ />
         <Footer />
       </div>
     </div>
