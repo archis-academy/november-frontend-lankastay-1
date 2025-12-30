@@ -1,19 +1,26 @@
 import React from 'react';
 import Header from '../../Components/Header/Header';
 import SearchFilterBar from '../../Components/SearchFilterBar/SearchFilterBar';
+import ContactUs from '../../Components/ContactUs/ContactUs';
 import Footer from '../../Components/footer/Footer';
 import HeroSection from '../../sections/HeroSection/heroSection';
 import MostPickedSection from '../../sections/mostPickedSection';
-import DashboardSidebar from '../../Components/dashboardSidebar/DashboardSidebar';
+import ChoiseSection from '../../sections/PopularChoiseSection/ChoiseSection';
+import FAQ from '../../sections/FAQSection/FAQ.jsx';
 
 export const Home = () => {
   return (
     <div>
-      <Header isShort={true} />
-      <HeroSection />
-      <SearchFilterBar />
-      <MostPickedSection />
-      <Footer />
+      <div className='container'>
+        <Header isShort={true} />
+        <HeroSection />
+        <SearchFilterBar />
+        <MostPickedSection />
+        <ChoiseSection />
+        <ContactUs />
+        <FAQ />
+        <Footer />
+      </div>
     </div>
   );
 };
