@@ -4,7 +4,7 @@ import Input from '../inputComponent/Input';
 import fetchData from '../../lib/fetchData';
 import Button from '../Button/Button';
 import style from './Login.module.scss';
-// import { supabase } from '../../lib/supabaseClient';
+import { supabase } from '../../lib/supabaseClient';
 
 const requiredMessage = 'Bu alan zorunludur.';
 

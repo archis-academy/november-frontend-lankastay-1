@@ -1230,5 +1230,49 @@
       "priceText": "per night",
       "isPopularChoise": false
     }
+  ],
+  "side-bar": [
+    {
+      "id": 1,
+      "icon": "public/icons/sidebar-icons/dashboard.svg",
+      "label": "Dashboard",
+      "href": "/Dashboard"
+    },
+    {
+      "id": 2,
+      "icon": "public/icons/sidebar-icons/objectives.svg",
+      "label": "Objectives",
+      "href": "/Objectives"
+    },
+    {
+      "id": 3,
+      "icon": "public/icons/sidebar-icons/bookings.svg",
+      "label": "Bookings",
+      "href": "/Bookings"
+    },
+    {
+      "id": 4,
+      "icon": "public/icons/sidebar-icons/refund.svg",
+      "label": "Refunds",
+      "href": "/Refunds"
+    },
+    {
+      "id": 5,
+      "icon": "public/icons/sidebar-icons/message.svg",
+      "label": "Message",
+      "href": "/Messages"
+    },
+    {
+      "id": 6,
+      "icon": "public/icons/sidebar-icons/help.svg",
+      "label": "Help",
+      "href": "/Help"
+    },
+    {
+      "id": 7,
+      "icon": "public/icons/sidebar-icons/setting.svg",
+      "label": "Setting",
+      "href": "/Setting"
+    }
   ]
 }
