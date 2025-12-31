@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import fetchData from '../../lib/fetchData';
 import LocationSummary from '../../Components/LocationSummary/LocationSummary';
 import styles from './SummaryPage.module.scss';
+import BookingCriteria from '../../Components/BookingCriteria/BookingCriteria';
 
 const SummaryPage = () => {
   const [hotelDetails, setHotelDetails] = useState([]);
@@ -31,6 +32,7 @@ const SummaryPage = () => {
                     )}
 
                 </div>
+              
             </div>
         </div>
     );

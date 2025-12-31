@@ -11,6 +11,7 @@ import RegisterAdmin from './pages/RegisterAdmin/RegisterAdmin';
 import Dashboard from './pages/Dashboard';
 import SuccesPage from './pages/SuccesRegister/SuccesPage';
 import SummaryPage from "./pages/SummaryPage";
+import BookingPage from "./pages/BookingPage/BookingPage";
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -34,6 +35,7 @@ createRoot(document.getElementById('root')).render(
         <Route path='/breadcrumb/:id' element={<Breadcrumb />} />
         <Route path='/success-register' element={<SuccesPage />}></Route>
         <Route path='/summary/:id' element={<SummaryPage />}></Route>
+        <Route path='/booking-page/:id' element={<BookingPage />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>
