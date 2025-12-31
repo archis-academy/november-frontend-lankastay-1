@@ -4,6 +4,8 @@ import { useParams } from 'react-router-dom';
 import ProductDescription from '../../Components/ProductDescription/ProductDescription';
 import Breadcrumb from '../../Components/Breadcrumb/breadcrumb';
 import Amentiti from '../../sections/AmentitiSection/amentiti';
+import Treasure from '../../sections/TreasureSection/Treasure';
+
 const HotelDetail = () => {
   const [hotelDetails, setHotelDetails] = useState([]);
   const [amenities, setAmenities] = useState([]);
@@ -12,7 +14,7 @@ const HotelDetail = () => {
   const selectedHotel = hotelDetails?.find((hotel) => hotel?.id == id);
 
   useEffect(() => {
-    fetchData('hotelDetails').then((data) => setHotelDetails(data));
+    fetchData('hotelDetail').then((data) => setHotelDetails(data));
   }, []);
 
   useEffect(() => {
@@ -25,6 +27,9 @@ const HotelDetail = () => {
       <Breadcrumb currentPage={selectedHotel?.title} />
       <ProductDescription title={selectedHotel?.aboutTitle} desc={selectedHotel?.description} />
       {amenities?.length > 0 && <Amentiti data={amenities} />}
+      {hotelDetails.length > 0 && (
+         <Treasure data={hotelDetails} currentId={id} />
+      )}
     </div>
   );
 };
