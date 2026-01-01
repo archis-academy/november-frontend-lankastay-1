@@ -1,0 +1,32 @@
+.box {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  text-decoration: none;
+  span {
+    letter-spacing: 0.5px;
+    color: #757575;
+    line-height: 150%;
+    cursor: pointer;
+  }
+
+  img {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    filter: grayscale(1) brightness(0.8); 
+    transition: filter 0.2s ease;
+  }
+
+  &:hover {
+    img {
+      /* svg'yi maviye çekmek için filter */
+      filter: brightness(0) saturate(100%) invert(43%) sepia(57%) saturate(2897%)
+        hue-rotate(201deg) brightness(96%) contrast(94%);
+    }
+    span {
+      color: #4a85f6;
+      font-weight: 600;
+    }
+  }
+}

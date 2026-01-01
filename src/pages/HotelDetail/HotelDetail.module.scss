@@ -1,0 +1,26 @@
+.pageWrapper {
+  width: 100%;
+  margin: 0 auto; 
+  margin-bottom: 50px;
+}
+
+.titleSection {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+
+  .mainTitle {
+    color: #152C5B;
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .subTitle {
+    color: #B0B0B0;
+    font-size: 18px;
+    font-weight: 300;
+    font-family: 'Poppins', sans-serif;
+  }
+}

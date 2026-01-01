@@ -7,11 +7,16 @@ import Login from '../../Components/Login/Login.jsx';
 import Breadcrumb from '../../Components/Breadcrumb/breadcrumb.jsx';
 import Header from '../../Components/Header/Header.jsx';
 import Amentiti from '../../sections/AmentitiSection/amentiti.jsx';
+import DashboardCard from '../../Components/DashboardCard/DashboardCard.jsx';
+
 
 const Playground = () => {
   const [quickIcons, setQuickIcons] = useState([]);
   const [amenities, setAmenities] = useState([]);
-
+ const [isModalOpen, setIsModalOpen] = useState(false);
+ const handleClose = () => {
+    setIsModalOpen(false);
+  };
   useEffect(() => {
     fetchData('quickStats').then((data) => setQuickIcons(data));
 
@@ -23,6 +28,7 @@ const Playground = () => {
   return (
     <div>
       <Header />
+      <DashboardCard/>
       <Breadcrumb />
 
       <div style={{ display: 'flex' }}>
@@ -43,5 +49,11 @@ const Playground = () => {
     </div>
   );
 };
-
+const App = () => {
+  return (
+    <div className='App'>
+      <FAQ />
+    </div>
+  );
+};
 export default Playground;
