@@ -1,13 +1,11 @@
 section {
-  padding: 20px 8vw;
   .searchFilterBar {
     margin: 0 auto;
     display: flex;
-    max-width: 1200px;
     justify-content: space-between;
-    padding: 20px 30px;
     align-items: center;
     border-radius: 42px;
+    padding: 30px;
     background-color: $color-surface;
     .searchFilterBarIcons {
       display: flex;
@@ -16,6 +14,7 @@ section {
         background-color: $white;
         padding: 16px 20px;
         border-radius: 12px;
+        height: 60px;
         display: flex;
         align-items: center;
         gap: 10px;
@@ -33,8 +32,8 @@ section {
   }
 
   @media (max-width: 1200px) {
-    padding: 20px 4vw;
     .searchFilterBar {
+      margin: 40px 0;
       padding: 20px 20px;
       .searchFilterBarIcons {
         gap: 10px;
@@ -42,7 +41,6 @@ section {
     }
   }
   @media (max-width: 810px) {
-    padding: 10px 15px;
     .searchFilterBar {
       flex-direction: column;
       gap: 15px;
