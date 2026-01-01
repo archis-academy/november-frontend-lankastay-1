@@ -5,6 +5,8 @@ import ProductDescription from '../../Components/ProductDescription/ProductDescr
 import Breadcrumb from '../../Components/Breadcrumb/breadcrumb';
 import Amentiti from '../../sections/AmentitiSection/amentiti';
 import Treasure from '../../sections/TreasureSection/Treasure';
+import Header from '../../Components/Header/Header';
+import styles from './HotelDetail.module.scss';
 
 const HotelDetail = () => {
   const [hotelDetails, setHotelDetails] = useState([]);
@@ -23,14 +25,38 @@ const HotelDetail = () => {
   }, [selectedHotel]);
 
   return (
-    <div>
-      <Breadcrumb currentPage={selectedHotel?.title} />
-      <ProductDescription title={selectedHotel?.aboutTitle} desc={selectedHotel?.description} />
-      {amenities?.length > 0 && <Amentiti data={amenities} />}
-      {hotelDetails.length > 0 && (
-         <Treasure data={hotelDetails} currentId={id} />
-      )}
-    </div>
+   <>
+      <Header isShort={true} />
+
+      <div className={styles.pageWrapper}>
+        <div className={styles.titleSection}>
+          <h1 className={styles.mainTitle}>{selectedHotel?.title}</h1>
+          <span className={styles.subTitle}>{selectedHotel?.subtitle}</span>
+        </div>
+
+        <div className={styles.contentGrid}>
+          <div className={styles.leftArea}>
+            <Breadcrumb currentPage={selectedHotel?.title} />
+
+            <ProductDescription 
+              title={selectedHotel?.aboutTitle} 
+              desc={selectedHotel?.description} 
+            />
+            
+            {amenities?.length > 0 && <Amentiti data={amenities} />}
+          </div>
+
+          <div className={styles.rightArea}>
+
+          </div>
+
+        </div>
+        {hotelDetails.length > 0 && (
+           <Treasure data={hotelDetails} currentId={id} />
+        )}
+        
+      </div>
+    </>
   );
 };
 export default HotelDetail;
