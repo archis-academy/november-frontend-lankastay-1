@@ -8,6 +8,7 @@ import Treasure from '../../sections/TreasureSection/Treasure';
 import Header from '../../Components/Header/Header';
 import styles from './HotelDetail.module.scss';
 import ImageGrid from '../../Components/ProductPhotoGrid/ProductPhotoGrid';
+import BookingCard from '../../Components/Booking/bookingCard';
 
 const HotelDetail = () => {
   const [hotelDetails, setHotelDetails] = useState([]);
@@ -26,7 +27,7 @@ const HotelDetail = () => {
   }, [selectedHotel]);
 
   return (
-   <div className='container'>
+    <div className='container'>
       <Header isShort={true} />
 
       <div className={styles.pageWrapper}>
@@ -40,23 +41,21 @@ const HotelDetail = () => {
             <Breadcrumb currentPage={selectedHotel?.title} />
             <ImageGrid images={selectedHotel?.images} />
 
-            <ProductDescription 
-              title={selectedHotel?.aboutTitle} 
-              desc={selectedHotel?.description} 
-            />
-            
+            <div style={{display:"flex" , margin:"40px 0 20px 0"}}>
+              <ProductDescription
+                title={selectedHotel?.aboutTitle}
+                desc={selectedHotel?.description}
+              />
+
+              <BookingCard price={selectedHotel?.pricePerNight} currency={selectedHotel?.currency} />
+            </div>
+
             {amenities?.length > 0 && <Amentiti data={amenities} />}
           </div>
 
-          <div className={styles.rightArea}>
-
-          </div>
-
+          <div className={styles.rightArea}></div>
         </div>
-        {hotelDetails.length > 0 && (
-           <Treasure data={hotelDetails} currentId={id} />
-        )}
-        
+        {hotelDetails.length > 0 && <Treasure data={hotelDetails} currentId={id} />}
       </div>
     </div>
   );
