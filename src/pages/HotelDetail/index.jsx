@@ -7,6 +7,7 @@ import Amentiti from '../../sections/AmentitiSection/amentiti';
 import Treasure from '../../sections/TreasureSection/Treasure';
 import Header from '../../Components/Header/Header';
 import styles from './HotelDetail.module.scss';
+import ImageGrid from '../../Components/ProductPhotoGrid/ProductPhotoGrid';
 
 const HotelDetail = () => {
   const [hotelDetails, setHotelDetails] = useState([]);
@@ -25,7 +26,7 @@ const HotelDetail = () => {
   }, [selectedHotel]);
 
   return (
-   <>
+   <div className='container'>
       <Header isShort={true} />
 
       <div className={styles.pageWrapper}>
@@ -37,6 +38,7 @@ const HotelDetail = () => {
         <div className={styles.contentGrid}>
           <div className={styles.leftArea}>
             <Breadcrumb currentPage={selectedHotel?.title} />
+            <ImageGrid images={selectedHotel?.images} />
 
             <ProductDescription 
               title={selectedHotel?.aboutTitle} 
@@ -56,7 +58,7 @@ const HotelDetail = () => {
         )}
         
       </div>
-    </>
+    </div>
   );
 };
 export default HotelDetail;
