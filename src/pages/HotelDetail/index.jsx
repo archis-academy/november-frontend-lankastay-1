@@ -41,13 +41,13 @@ const HotelDetail = () => {
             <Breadcrumb currentPage={selectedHotel?.title} />
             <ImageGrid images={selectedHotel?.images} />
 
-            <div>
+            <div style={{display:"flex" , margin:"40px 0 20px 0"}}>
               <ProductDescription
                 title={selectedHotel?.aboutTitle}
                 desc={selectedHotel?.description}
               />
 
-              <BookingCard />
+              <BookingCard price={selectedHotel?.pricePerNight} currency={selectedHotel?.currency} />
             </div>
 
             {amenities?.length > 0 && <Amentiti data={amenities} />}
