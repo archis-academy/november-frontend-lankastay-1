@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import fetchData from '../../lib/fetchData';
+// import fetchData from '../../lib/fetchData';
 import Input from '../../Components/inputComponent/input';
 import style from './registerAdmin.module.scss';
 import Button from '../../Components/Button/Button';
@@ -9,14 +9,14 @@ const RegisterAdmin = () => {
   const [input, setInput] = useState([]);
   const [registerHotel, setRegisterHotel] = useState([]);
 
-  useEffect(() => {
-    fetchData('createAccountAdmin').then((data) => {
-      setInput(data);
-    });
-    fetchData('registerHotel').then((data) => {
-      setRegisterHotel(data);
-    });
-  }, []);
+  // useEffect(() => {
+  //   fetchData('createAccountAdmin').then((data) => {
+  //     setInput(data);
+  //   });
+  //   fetchData('registerHotel').then((data) => {
+  //     setRegisterHotel(data);
+  //   });
+  // }, []);
 
   return (
     <div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
-import fetchData from '../../lib/fetchData.js';
+// import fetchData from '../../lib/fetchData.js';
 import ChoiseCard from '../../Components/ChoiseCard/ChoiseCard';
 import QuickStats from '../../Components/quick-stats-component/quick_stats';
 import Login from '../../Components/Login/Login.jsx';
@@ -13,13 +13,13 @@ const Playground = () => {
   const [cards, setCards] = useState([]);
   const [amenities, setAmenities] = useState([]);
 
-  useEffect(() => {
-    fetchData('quickStats').then((data) => setQuickIcons(data));
-    fetchData('choise-cards').then((data) => setCards(data));
-    fetchData('hotelDetails').then((data) =>{
-      setAmenities(data[0]?.amenities);
-    });
-  }, []);
+  // useEffect(() => {
+  //   fetchData('quickStats').then((data) => setQuickIcons(data));
+  //   fetchData('choise-cards').then((data) => setCards(data));
+  //   fetchData('hotelDetails').then((data) =>{
+  //     setAmenities(data[0]?.amenities);
+  //   });
+  // }, []);
 
   return (
     <div>

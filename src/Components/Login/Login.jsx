@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import Input from '../inputComponent/input';
-import fetchData from '../../lib/fetchData';
+// import fetchData from '../../lib/fetchData';
 import Button from '../Button/Button';
 import style from './Login.module.scss';
 import { Link, useNavigate } from 'react-router-dom';
-import { supabase } from '../../lib/supabaseClient';
+// import { supabase } from '../../lib/supabaseClient';
 
 const Login = ({ dataType, dataTypeDetail }) => {
   const [inputs, setInputs] = useState([]);
@@ -29,32 +29,32 @@ const Login = ({ dataType, dataTypeDetail }) => {
   const resetFormState = (inputList = []) =>
     inputList.reduce((acc, { name }) => ({ ...acc, [name]: '' }), {});
 
-  useEffect(() => {
-    const loadInputs = async () => {
-      try {
-        const fetchedInputs = (await fetchData(activeDataType)) ?? [];
-        setInputs(fetchedInputs);
-        setForm(resetFormState(fetchedInputs));
-      } catch (err) {
-        setInputs([]);
-        setForm({});
-        setErrorMsg('Form configuration could not be loaded.');
-      }
-    };
+  // useEffect(() => {
+  //   const loadInputs = async () => {
+  //     try {
+  //       const fetchedInputs = (await fetchData(activeDataType)) ?? [];
+  //       setInputs(fetchedInputs);
+  //       setForm(resetFormState(fetchedInputs));
+  //     } catch (_err) {
+  //       setInputs([]);
+  //       setForm({});
+  //       setErrorMsg('Form configuration could not be loaded.');
+  //     }
+  //   };
 
-    const loadInputDetails = async () => {
-      try {
-        const fetchedDetails = (await fetchData(detailKey)) ?? [];
-        setInputsDetails(fetchedDetails);
-      } catch (err) {
-        setInputsDetails([]);
-      }
-    };
+  //   const loadInputDetails = async () => {
+  //     try {
+  //       const fetchedDetails = (await fetchData(detailKey)) ?? [];
+  //       setInputsDetails(fetchedDetails);
+  //     } catch (_err) {
+  //       setInputsDetails([]);
+  //     }
+  //   };
 
-    setErrorMsg('');
-    loadInputs();
-    loadInputDetails();
-  }, [activeDataType, detailKey]);
+  //   setErrorMsg('');
+  //   loadInputs();
+  //   loadInputDetails();
+  // }, [activeDataType, detailKey]);
 
   const detailConfig =
     inputsDetails?.length > 0
@@ -76,63 +76,62 @@ const Login = ({ dataType, dataTypeDetail }) => {
     setForm((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setErrorMsg('');
-    setLoading(true);
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   setErrorMsg('');
+  //   setLoading(true);
 
-    try {
-      const email = form.email?.trim();
-      const password = form.password;
+  //   try {
+  //     const email = form.email?.trim();
+  //     const password = form.password;
 
-      if (!email || !password) {
-        setErrorMsg('Email and password are required.');
-        return;
-      }
+  //     if (!email || !password) {
+  //       setErrorMsg('Email and password are required.');
+  //       return;
+  //     }
 
-      if (isRegister) {
-        const { error } = await supabase.auth.signUp({
-          email,
-          password,
-          options: {
-            data: {
-              name: form.name,
-              phoneNo: form.phoneNo,
-              country: form.country,
-              nic: form.nic,
-              username: form.username,
-            },
-          },
-        });
+  //     if (isRegister) {
+  //       const { error } = await supabase.auth.signUp({
+  //         email,
+  //         password,
+  //         options: {
+  //           data: {
+  //             name: form.name,
+  //             phoneNo: form.phoneNo,
+  //             country: form.country,
+  //             nic: form.nic,
+  //             username: form.username,
+  //           },
+  //         });
 
-        if (error) {
-          navigate('/success-register', {
-            state: { status: 'error', message: error.message },
-          });
-          return;
-        }
+  //       if (error) {
+  //         navigate('/success-register', {
+  //           state: { status: 'error', message: error.message },
+  //         });
+  //         return;
+  //       }
 
-        navigate('/success-register', { state: { status: 'success' } });
-        return;
-      }
+  //       navigate('/success-register', { state: { status: 'success' } });
+  //       return;
+  //     }
 
-      const { error } = await supabase.auth.signInWithPassword({
-        email,
-        password,
-      });
+  //     const { error } = await supabase.auth.signInWithPassword({
+  //       email,
+  //       password,
+  //     });
 
-      if (error) {
-        setErrorMsg(error.message);
-        return;
-      }
+  //     if (error) {
+  //       setErrorMsg(error.message);
+  //       return;
+  //     }
 
-      navigate('/');
-    } catch (err) {
-      setErrorMsg(err.message || 'Something went wrong.');
-    } finally {
-      setLoading(false);
-    }
-  };
+  //     navigate('/');
+  //   } catch (err) {
+  //     setErrorMsg(err.message || 'Something went wrong.');
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
 
   return (
     <div className={style.container}>
@@ -143,7 +142,7 @@ const Login = ({ dataType, dataTypeDetail }) => {
       </div>
 
       <div className={style.right}>
-        <form className={style.loginForm} onSubmit={handleSubmit}>
+        <form className={style.loginForm}>
           <img className={style.formLogo} src='/logo.svg' alt='' />
           <h1 className={style.title}>{title} Account</h1>
           {inputs.map((item) => (
