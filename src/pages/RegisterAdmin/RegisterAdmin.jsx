@@ -1,57 +1,192 @@
 import React, { useEffect, useState } from 'react';
-// import fetchData from '../../lib/fetchData';
-import Input from '../../Components/inputComponent/input';
+import { Link, useNavigate } from 'react-router-dom';
+import fetchData from '../../lib/fetchData';
+import Input from '../../Components/inputComponent/Input';
 import style from './registerAdmin.module.scss';
 import Button from '../../Components/Button/Button';
 import Footer from '../../Components/footer/Footer';
+// import { supabase } from '../../lib/supabaseClient';
+
+const requiredMessage = 'Bu alan zorunludur.';
+
+const buildInitialState = (items = []) =>
+  items.reduce((acc, item) => {
+    if (!item?.name) return acc;
+    return { ...acc, [item.name]: '' };
+  }, {});
 
 const RegisterAdmin = () => {
-  const [input, setInput] = useState([]);
-  const [registerHotel, setRegisterHotel] = useState([]);
+  const [adminFields, setAdminFields] = useState([]);
+  const [hotelFields, setHotelFields] = useState([]);
+  const [form, setForm] = useState({});
+  const [fieldErrors, setFieldErrors] = useState({});
+  const [touched, setTouched] = useState({});
+  const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [errorMsg, setErrorMsg] = useState('');
 
-  // useEffect(() => {
-  //   fetchData('createAccountAdmin').then((data) => {
-  //     setInput(data);
-  //   });
-  //   fetchData('registerHotel').then((data) => {
-  //     setRegisterHotel(data);
-  //   });
-  // }, []);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const load = async () => {
+      try {
+        const [adminData = [], hotelData = []] = await Promise.all([
+          fetchData('createAccountAdmin'),
+          fetchData('registerHotel'),
+        ]);
+        setAdminFields(adminData);
+        setHotelFields(hotelData);
+        setForm(buildInitialState([...adminData, ...hotelData]));
+        setFieldErrors({});
+        setTouched({});
+        setSubmitted(false);
+        setErrorMsg('');
+      } catch (err) {
+        setAdminFields([]);
+        setHotelFields([]);
+        setForm({});
+        setErrorMsg('Form verisi yuklenemedi.');
+      }
+    };
+
+    load();
+  }, []);
+
+  const allFields = [...adminFields, ...hotelFields];
+
+  const validateField = (field, value) => {
+    if (!value || String(value).trim() === '') return requiredMessage;
+
+    const type = field?.type?.toLowerCase();
+    if (type === 'email') {
+      const emailRegex = /\S+@\S+\.\S+/;
+      if (!emailRegex.test(String(value).trim())) return 'Gecerli bir email girin.';
+    }
+
+    return '';
+  };
+
+  const validateForm = () => {
+    const errors = {};
+    allFields.forEach((field) => {
+      if (!field?.name) return;
+      const err = validateField(field, form[field.name]);
+      if (err) errors[field.name] = err;
+    });
+    setFieldErrors(errors);
+    return errors;
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
+
+    setFieldErrors((prev) => {
+      const next = { ...prev };
+      const err = validateField(allFields.find((f) => f.name === name) || {}, value);
+      if (err) next[name] = err;
+      else delete next[name];
+      return next;
+    });
+  };
+
+  const handleBlur = (e) => {
+    const { name, value } = e.target;
+    setTouched((prev) => ({ ...prev, [name]: true }));
+    const err = validateField(allFields.find((f) => f.name === name) || {}, value);
+    setFieldErrors((prev) => {
+      const next = { ...prev };
+      if (err) next[name] = err;
+      else delete next[name];
+      return next;
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setSubmitted(true);
+    setErrorMsg('');
+
+    const errors = validateForm();
+    if (Object.keys(errors).length > 0) {
+      setErrorMsg('Lutfen zorunlu alanlari doldurun.');
+      return;
+    }
+
+    const email = form.email?.trim();
+    const password = form.password;
+    if (!email || !password) {
+      setErrorMsg('Email ve sifre zorunludur.');
+      return;
+    }
+
+    try {
+      setLoading(true);
+      const { password: _password, email: _email, ...metadata } = form;
+      const { error } = await supabase.auth.signUp({
+        email,
+        password,
+        options: {
+          data: {
+            role: 'admin',
+            ...metadata,
+          },
+        },
+      });
+
+      if (error) {
+        setErrorMsg(error.message || 'Kayit basarisiz. Tekrar deneyin.');
+        return;
+      }
+
+      navigate('/success-register', { state: { status: 'success' } });
+    } catch (err) {
+      setErrorMsg(err.message || 'Bir hata olustu.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const renderField = (field) => {
+    const fieldError = fieldErrors[field.name];
+    const showError = fieldError && (submitted || touched[field.name]);
+
+    return (
+      <Input
+        key={field.id}
+        name={field.name}
+        id={field.id}
+        label={field.label}
+        placeholder={field.placeholder}
+        type={field.type}
+        className={style.adminInputWrapper}
+        inputClassName={style.adminInput}
+        value={form[field.name] ?? ''}
+        onChange={handleChange}
+        onBlur={handleBlur}
+        error={fieldError}
+        showError={!!showError}
+      />
+    );
+  };
 
   return (
     <div>
       <div className={style.mainContainer}>
         <img className={style.headerLogo} src='/logo.svg' alt='' />
-        <div className={style.container}>
+        <form className={style.container} onSubmit={handleSubmit}>
           <div className={style.left}>
-            <img src='/logo.svg' alt='' />
-            {input.map((item) => (
-              <Input
-                label={item.label}
-                placeholder={item.placeholder}
-                type={item.type}
-                id={item.id}
-                className={style.adminInputWrapper}
-                inputClassName={style.adminInput}
-              />
-            ))}
+            <img className={style.leftLogo} src='/logo.svg' alt='' />
+            {adminFields.map(renderField)}
           </div>
           <div className={style.right}>
             <h1>Register Your Hotel</h1>
-            {registerHotel.map((item) => (
-              <Input
-                className={style.adminInputWrapper}
-                inputClassName={style.adminInput}
-                label={item.label}
-                placeholder={item.placeholder}
-                type={item.type}
-                id={item.id}
-              />
-            ))}
-            <Button text={'Register'} />
-            <a href=''>Login</a>
+            {hotelFields.map(renderField)}
+            {errorMsg && <p className={style.errorText}>{errorMsg}</p>}
+            <Button text={loading ? 'Loading...' : 'Register'} type='submit' disabled={loading} />
+            <Link to='/login'>Login</Link>
           </div>
-        </div>
+        </form>
       </div>
       <Footer />
     </div>
