@@ -10,8 +10,6 @@ import Login from './Components/Login/Login';
 import RegisterAdmin from './pages/RegisterAdmin/RegisterAdmin';
 import Dashboard from './pages/Dashboard';
 import SuccesPage from './pages/SuccesRegister/SuccesPage';
-
-import Dashboard from './pages/Dashboard/Dashboard';
 import Setting from './pages/Settings/Setting';
 import Messages from './pages/Message/Message';
 import Booking from './pages/Bookings/Booking';
@@ -19,15 +17,9 @@ import Help from './pages/Help/Help';
 import Refund from './pages/Refunds/Refund';
 import Objectives from './pages/Objectives/Objectives';
 import DashboardSidebar from './Components/dashboardSidebar/DashboardSidebar';
+import DashboardLayout from "./pages/DashboardLayout/DashboardLayout";
 
-const DashboardLayout = () => (
-  <div style={{ display: 'flex', minHeight: '100vh' }}>
-    <DashboardSidebar />
-    <div style={{ flex: 1 }}>
-      <Outlet />
-    </div>
-  </div>
-);
+
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -51,7 +43,7 @@ createRoot(document.getElementById('root')).render(
         <Route path='/breadcrumb/:id' element={<Breadcrumb />} />
         <Route path='/success-register' element={<SuccesPage />}></Route>
 
-        <Route element={<DashboardLayout />}>
+        <Route element={<DashboardLayout  /> }>
           <Route path='/Dashboard' element={<Dashboard />}></Route>
           <Route path='/Setting' element={<Setting />}></Route>
           <Route path='/Messages' element={<Messages />}></Route>

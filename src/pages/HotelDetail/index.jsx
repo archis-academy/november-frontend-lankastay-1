@@ -4,6 +4,11 @@ import { useParams } from 'react-router-dom';
 import ProductDescription from '../../Components/ProductDescription/ProductDescription';
 import Breadcrumb from '../../Components/Breadcrumb/breadcrumb';
 import Amentiti from '../../sections/AmentitiSection/amentiti';
+import Treasure from '../../sections/TreasureSection/Treasure';
+import Header from '../../Components/Header/Header';
+import styles from './HotelDetail.module.scss';
+import ImageGrid from '../../Components/ProductPhotoGrid/ProductPhotoGrid';
+
 const HotelDetail = () => {
   const [hotelDetails, setHotelDetails] = useState([]);
   const [amenities, setAmenities] = useState([]);
@@ -12,7 +17,7 @@ const HotelDetail = () => {
   const selectedHotel = hotelDetails?.find((hotel) => hotel?.id == id);
 
   useEffect(() => {
-    fetchData('hotelDetails').then((data) => setHotelDetails(data));
+    fetchData('hotelDetail').then((data) => setHotelDetails(data));
   }, []);
 
   useEffect(() => {
@@ -21,10 +26,38 @@ const HotelDetail = () => {
   }, [selectedHotel]);
 
   return (
-    <div>
-      <Breadcrumb currentPage={selectedHotel?.title} />
-      <ProductDescription title={selectedHotel?.aboutTitle} desc={selectedHotel?.description} />
-      {amenities?.length > 0 && <Amentiti data={amenities} />}
+   <div className='container'>
+      <Header isShort={true} />
+
+      <div className={styles.pageWrapper}>
+        <div className={styles.titleSection}>
+          <h1 className={styles.mainTitle}>{selectedHotel?.title}</h1>
+          <span className={styles.subTitle}>{selectedHotel?.subtitle}</span>
+        </div>
+
+        <div className={styles.contentGrid}>
+          <div className={styles.leftArea}>
+            <Breadcrumb currentPage={selectedHotel?.title} />
+            <ImageGrid images={selectedHotel?.images} />
+
+            <ProductDescription 
+              title={selectedHotel?.aboutTitle} 
+              desc={selectedHotel?.description} 
+            />
+            
+            {amenities?.length > 0 && <Amentiti data={amenities} />}
+          </div>
+
+          <div className={styles.rightArea}>
+
+          </div>
+
+        </div>
+        {hotelDetails.length > 0 && (
+           <Treasure data={hotelDetails} currentId={id} />
+        )}
+        
+      </div>
     </div>
   );
 };

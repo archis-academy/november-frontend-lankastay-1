@@ -53,13 +53,12 @@
   position: relative;
   color: $white;
   height: auto;
-  gap: 16px;
+ 
 
   .choiseTop {
     position: relative;
     .image {
       width: 100%;
-      height: 180px;
       object-fit: cover;
       border-radius: 15px;
     }
