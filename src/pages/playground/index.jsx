@@ -1,20 +1,20 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 // import fetchData from '../../lib/fetchData.js';
-import ChoiseCard from '../../Components/ChoiseCard/ChoiseCard';
-import QuickStats from '../../Components/quick-stats-component/quick_stats';
+import ChoiseCard from '../../Components/ChoiseCard/ChoiseCard.jsx';
+import QuickStats from '../../Components/quick-stats-component/quick_stats.jsx';
 import Login from '../../Components/Login/Login.jsx';
 import Breadcrumb from '../../Components/Breadcrumb/breadcrumb.jsx';
 import Header from '../../Components/Header/Header.jsx';
 import Amentiti from '../../sections/AmentitiSection/amentiti.jsx';
 import DashboardCard from '../../Components/DashboardCard/DashboardCard.jsx';
-
+import SearchFilterBarDashboard from '../../Components/SearchFilterBarDashboard/SearchFilterBarDashboard.jsx';
 
 const Playground = () => {
   const [quickIcons, setQuickIcons] = useState([]);
   const [amenities, setAmenities] = useState([]);
- const [isModalOpen, setIsModalOpen] = useState(false);
- const handleClose = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const handleClose = () => {
     setIsModalOpen(false);
   };
   useEffect(() => {
@@ -28,7 +28,7 @@ const Playground = () => {
   return (
     <div>
       <Header />
-      <DashboardCard/>
+      <DashboardCard />
       <Breadcrumb />
 
       <div style={{ display: 'flex' }}>
