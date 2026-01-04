@@ -18,16 +18,17 @@ const Playground = () => {
     setIsModalOpen(false);
   };
   useEffect(() => {
-    fetchData('quickStats').then((data) => setQuickIcons(data));
+    // fetchData('quickStats').then((data) => setQuickIcons(data));
 
-    fetchData('hotelDetails').then((data) => {
-      setAmenities(data[0]?.amenities);
-    });
+    // fetchData('hotelDetails').then((data) => {
+    //   setAmenities(data[0]?.amenities);
+    // });
   }, []);
 
   return (
     <div>
       <Header />
+      <SearchFilterBarDashboard/>
       <DashboardCard />
       <Breadcrumb />
 
