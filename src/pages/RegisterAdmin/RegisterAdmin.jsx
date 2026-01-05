@@ -5,7 +5,7 @@ import Input from '../../Components/inputComponent/Input';
 import style from './registerAdmin.module.scss';
 import Button from '../../Components/Button/Button';
 import Footer from '../../Components/footer/Footer';
-import { supabase } from '../../lib/supabaseClient';
+// import { supabase } from '../../lib/supabaseClient';
 
 const requiredMessage = 'Bu alan zorunludur.';
 

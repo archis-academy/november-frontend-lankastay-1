@@ -1,10 +1,7 @@
 .header {
   width: 100%;
   padding: 16px 0;
-  background: #ffffff;
-  @media (max-width: 810px) {
-    padding: 24px 15px;
-  }
+  background-color: $white;
 }
 
 .shortHeader {

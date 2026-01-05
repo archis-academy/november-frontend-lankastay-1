@@ -6,19 +6,21 @@ import Footer from '../../Components/footer/Footer';
 import HeroSection from '../../sections/HeroSection/heroSection';
 import MostPickedSection from '../../sections/mostPickedSection';
 import ChoiseSection from '../../sections/PopularChoiseSection/ChoiseSection';
-
-
+import FAQ from '../../sections/FAQSection/FAQ.jsx';
 
 export const Home = () => {
   return (
     <div>
-      <Header isShort={false} />
-      <HeroSection />
-      <SearchFilterBar />
-      <MostPickedSection />
-      <ChoiseSection />
-      <ContactUs />
-      <Footer />
+      <div className='container'>
+        <Header isShort={true} />
+        <HeroSection />
+        <SearchFilterBar />
+        <MostPickedSection />
+        <ChoiseSection />
+        <ContactUs />
+        <FAQ />
+        <Footer />
+      </div>
     </div>
   );
 };
