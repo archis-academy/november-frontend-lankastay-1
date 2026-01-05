@@ -1,4 +1,3 @@
-import React from 'react';
 import DashboardSidebar from '../../Components/dashboardSidebar/DashboardSidebar';
 import { Outlet } from 'react-router-dom';
 
