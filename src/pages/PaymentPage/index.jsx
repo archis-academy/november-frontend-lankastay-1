@@ -6,21 +6,20 @@ import styles from './PaymentPage.module.scss';
 import Header from '../../Components/Header/Header';
 import fetchData from '../../lib/fetchData';
 import { useParams } from 'react-router-dom';
+import BookingCriteria from '../../Components/BookingCriteria/BookingCriteria';
+import LocationSummary from '../../Components/LocationSummary/LocationSummary';
 
 const PaymentLayout = () => {
   const [step, setStep] = useState(1);
   const { id } = useParams();
 
   const [hotelDetail, setHotelDetail] = useState([]);
+  const [nights, setNights] = useState(1);
 
   useEffect(() => {
-    console.log("id", id);
-    fetchData('hotelDetail').then((data) =>
-      setHotelDetail(data?.find((hotel) => hotel?.id == id))
-    );
+    console.log('id', id);
+    fetchData('hotelDetail').then((data) => setHotelDetail(data?.find((hotel) => hotel?.id == id)));
   }, [id]);
-
-  console.log('otel-detay', hotelDetail);
 
   return (
     <>
@@ -30,7 +29,23 @@ const PaymentLayout = () => {
         <StepIndicator currentStep={step} />
       </div>
 
-      {step === 1 && <p>Booking</p>}
+      {step === 1 && (
+        <div style={{ display: 'flex' }}>
+          <LocationSummary
+            image={hotelDetail.images?.[0]}
+            locationName={hotelDetail.title}
+            location={hotelDetail.subtitle}
+          />
+
+          <BookingCriteria
+            price={hotelDetail?.pricePerNight || 0}
+            nights={nights}
+            setNights={setNights}
+          />
+
+          <button onClick={() => setStep(2)}>Book Now</button>
+        </div>
+      )}
 
       {step === 2 && <PaymentScreen />}
 

@@ -28,6 +28,7 @@ const Treasure = ({ data, currentId }) => {
              return (
               <div key={hotel.id} className={styles.item}>
                   <ChoiseCard
+                    id = {hotel?.id}
                     image={hotel.images?.[0]} 
                     title={hotel.title}
                     location={hotel.subtitle}

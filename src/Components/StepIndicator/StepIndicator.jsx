@@ -4,14 +4,14 @@ import styles from "./StepIndicator.module.scss";
 const StepIndicator = ({ currentStep }) => {
   const steps = [
     { id: 1, icon: "/icons/StepIndicator/click.svg" },
-    { id: 2, icon: "/icons/StepIndicator/click.svg" },
+    { id: 2, icon: "/icons/StepIndicator/step-2.svg" },
     { id: 3, icon: "/icons/StepIndicator/step-3.svg" },
   ];
 
   return (
     <div className={styles.stepIndicator}>
       {steps.map((step, index) => {
-        const isCompleted = step.id < currentStep;
+        const isCompleted = step.id <= currentStep;
 
         return (
           <div className={styles.stepItem} key={step.id}>

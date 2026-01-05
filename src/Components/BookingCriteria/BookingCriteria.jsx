@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import styles from './BookingCriteria.module.scss';
 
-const BookingCriteria = ({ price }) => {
-  const [nights, setNights] = useState(1); 
+const BookingCriteria = ({ price, nights, setNights }) => {
+
 
   const artir = () => {
     setNights(nights + 1);

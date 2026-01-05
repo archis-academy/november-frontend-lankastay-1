@@ -1,9 +1,11 @@
 import React from 'react';
 import styles from './ChoiseCard.module.scss';
+import { Router, useNavigate } from 'react-router-dom';
 
-function ChoiseCard({ image, title, location, price, priceText, isPopularChoise }) {
+function ChoiseCard({ image, title, location, price, priceText, isPopularChoise,id }) {
+  const navigate = useNavigate();
   return (
-    <div className={isPopularChoise ? styles.popularCard : styles.choiseCard}>
+    <div className={isPopularChoise ? styles.popularCard : styles.choiseCard} onClick={()=> navigate(`/hotel-detail/${id}`) } >
       <div className={styles.choiseTop}>
         <img className={styles.image} src={image} alt={title} />
         {price && (

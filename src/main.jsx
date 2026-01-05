@@ -36,10 +36,10 @@ createRoot(document.getElementById('root')).render(
             <Login dataType={'createAccountUser'} dataTypeDetail={'registerAccountDetail'} />
           }
         ></Route>
-        <Route path='/admin-register' element={<RegisterAdmin />}></Route>
         <Route path='/hotel-detail/:id' element={<HotelDetail />} />
-        <Route path='/breadcrumb/:id' element={<Breadcrumb />} />
+        <Route path='/booking/:id' element={<PaymentPage />} />
         <Route path='/success-register' element={<SuccesPage />}></Route>
+        <Route path='/admin-register' element={<RegisterAdmin />}></Route>
         <Route element={<DashboardLayout />}>
           <Route path='/Dashboard' element={<Dashboard />}></Route>
           <Route path='/Setting' element={<Setting />}></Route>
@@ -49,7 +49,6 @@ createRoot(document.getElementById('root')).render(
           <Route path='/Refunds' element={<Refund />}></Route>
           <Route path='/Objectives' element={<Objectives />}></Route>
         </Route>
-        <Route path='/payment/:id' element={<PaymentPage />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>
