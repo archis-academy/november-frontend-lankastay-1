@@ -1,0 +1,22 @@
+.previousCardSectionWrapper {
+    padding: 20px;
+  display: grid;
+  gap: 5px;
+  .previousCardSectionTitle {
+    color: #464e5f;
+    font-weight: normal;
+    font-size: 16px;
+  }
+  .previousCardSectionDescription {
+    opacity: 0.4;
+    font-size: 12px;
+  }
+  .previousCardSectionContainer {
+    border-top: 1px solid #e0e0e0;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px; 
+    width: 100%;
+    padding-top: 14px;
+  }
+}
