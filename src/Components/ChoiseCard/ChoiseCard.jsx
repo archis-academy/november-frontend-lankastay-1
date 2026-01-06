@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from './ChoiseCard.module.scss';
 
-function ChoiseCard({ image, title, location, price, priceText, isPopularChoise }) {
+function ChoiseCard({ image, title, location, price, priceText, isPopularChoise, id }) {
   return (
-    <div className={isPopularChoise ? styles.popularCard : styles.choiseCard}>
+    <div className={isPopularChoise ? styles.popularCard : styles.choiseCard} onClick={()=> Router.push(`/hotel-detail/${id}`)}>
       <div className={styles.choiseTop}>
         <img className={styles.image} src={image} alt={title} />
         {price && (
