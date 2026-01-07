@@ -11,7 +11,7 @@ import RegisterAdmin from './pages/RegisterAdmin/RegisterAdmin';
 import Dashboard from './pages/Dashboard';
 import SuccesPage from './pages/SuccesRegister/SuccesPage';
 import DashboardLayout from './pages/DashboardLayout/DashboardLayout.jsx';
-import BookingPage from './pages/BookingPage/BookingPage.jsx';
+import PaymentPage from './pages/PaymentPage/PaymentPage.jsx';
 import Setting from './pages/Settings/Setting.jsx';
 import Messages from './pages/Message/Message.jsx';
 import Booking from './pages/Bookings/Booking.jsx';
@@ -35,11 +35,11 @@ createRoot(document.getElementById('root')).render(
             <Login dataType={'createAccountUser'} dataTypeDetail={'registerAccountDetail'} />
           }
         ></Route>
-        <Route path='/admin-register' element={<RegisterAdmin />}></Route>
+        
         <Route path='/hotel-detail/:id' element={<HotelDetail />} />
-        <Route path='/breadcrumb/:id' element={<Breadcrumb />} />
+        <Route path='/booking/:id' element={<PaymentPage />}></Route>
         <Route path='/success-register' element={<SuccesPage />}></Route>
-        <Route path='/booking-page/:id' element={<BookingPage />}></Route>
+        <Route path='/admin-register' element={<RegisterAdmin />}></Route>
         <Route element={<DashboardLayout />}>
           <Route path='/Dashboard' element={<Dashboard />}></Route>
           <Route path='/Setting' element={<Setting />}></Route>
