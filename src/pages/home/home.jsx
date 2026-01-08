@@ -12,7 +12,7 @@ export const Home = () => {
   return (
     <div>
       <div className='container'>
-        <Header isShort={true} />
+        <Header isShort={false} />
         <HeroSection />
         <SearchFilterBar />
         <MostPickedSection />

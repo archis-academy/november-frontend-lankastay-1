@@ -16,6 +16,7 @@ function ChoiseSection() {
         .map((item) => (
           <ChoiseCard
             key={item.id}
+            id={item?.id}
             image={item.image}
             title={item.title}
             location={item.location}
