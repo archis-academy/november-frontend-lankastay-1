@@ -10,8 +10,8 @@ const StepIndicator = ({ currentStep }) => {
 
   return (
     <div className={styles.stepIndicator}>
-      {steps.map((step, index) => {
-        const isCompleted = step.id < currentStep;
+      {steps.map((step,index) => {
+        const isCompleted = step.id <= currentStep;
 
         return (
           <div className={styles.stepItem} key={step.id}>
@@ -34,6 +34,9 @@ const StepIndicator = ({ currentStep }) => {
                 />
               )}
             </div>
+
+          {index=== 0 && <div className={styles.divider}></div>}
+          {index=== 1 && <div className={styles.divider}></div>}
           </div>
         );
       })}

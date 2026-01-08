@@ -47,7 +47,7 @@ const HotelDetail = () => {
                 desc={selectedHotel?.description}
               />
 
-              <BookingCard price={selectedHotel?.pricePerNight} currency={selectedHotel?.currency} id={id} />
+              <BookingCard price={selectedHotel?.pricePerNight}  currency={selectedHotel?.currency} id={id} />
             </div>
 
             {amenities?.length > 0 && <Amentiti data={amenities} />}

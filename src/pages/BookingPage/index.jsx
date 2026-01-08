@@ -10,6 +10,7 @@ import BookingCriteria from '../../Components/BookingCriteria/BookingCriteria';
 import LocationSummary from '../../Components/LocationSummary/LocationSummary';
 import PaymentSuccess from '../../Components/PaymentSuccess/PaymentSuccess';
 import { Link } from 'react-router-dom';
+import Button from '../../Components/Button/Button';
 
 const PaymentLayout = () => {
   const [step, setStep] = useState(1);
@@ -19,57 +20,56 @@ const PaymentLayout = () => {
   const [nights, setNights] = useState(1);
 
   useEffect(() => {
-    console.log('id', id);
     fetchData('hotelDetail').then((data) => {
-      setHotelDetail(
-        data?.find((hotel) => hotel?.id == id)
-      );
+      setHotelDetail(data?.find((hotel) => hotel?.id == id));
     });
   }, [id]);
 
   return (
     <>
-      <Header isShort={false} />
+      <Header isShort={true} />
 
       <div className={styles.stepWrapper}>
         <StepIndicator currentStep={step} />
       </div>
 
       {step === 1 && (
-        <div style={{ display: 'flex' }}>
-          <LocationSummary
-            image={hotelDetail?.images?.[0]}
-            locationName={hotelDetail?.title}
-            location={hotelDetail?.subtitle}
-          />
+        <div className='container'>
+          <h1 className={styles.stepTitle}>Booking Information</h1>
+          <h5 className={styles.stepSubtitle}>Please fill up the blank fields below</h5>
 
-          <BookingCriteria
-            price={hotelDetail?.pricePerNight || 0}
-            nights={nights}
-            setNights={setNights}
-          />
+          <div className={styles.stepContainer }>
+            <LocationSummary
+              image={hotelDetail?.images?.[0]}
+              locationName={hotelDetail?.title}
+              location={hotelDetail?.subtitle}
+            />
 
-          <button onClick={() => setStep(2)}>
-            Book Now
-          </button>
+            <div className={styles.stepContainerDivider} ></div>
+
+            <BookingCriteria
+              price={hotelDetail?.pricePerNight || 0}
+              nights={nights}
+              setNights={setNights}
+            />
+          </div>
+  <div className={styles.buttonContainer }>
+          <Button text="Book Now" onClick={()=> setStep(2)} />
+          <Button text="Cancel" className="" /></div>
         </div>
       )}
 
       {step === 2 && (
         <div>
           <PaymentScreen />
-          <button onClick={() => setStep(3)}>
-            Pay Now
-          </button>
+          <button onClick={() => setStep(3)}>Pay Now</button>
         </div>
       )}
 
       {step === 3 && (
         <div>
           <PaymentSuccess />
-          <Link to="/Dashboard">
-            Go to Dashboard
-          </Link>
+          <Link to='/Dashboard'>Go to Dashboard</Link>
         </div>
       )}
 

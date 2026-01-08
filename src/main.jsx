@@ -12,7 +12,7 @@ import SuccesPage from './pages/SuccesRegister/SuccesPage';
 import DashboardLayout from './pages/DashboardLayout/DashboardLayout.jsx';
 import Setting from './pages/Settings/Setting.jsx';
 import Messages from './pages/Message/Message.jsx';
-import Booking from './pages/Bookings/Booking.jsx';
+// import Booking from './pages/Bookings/Booking.jsx';
 import Help from './pages/Help/Help.jsx';
 import Refund from './pages/Refunds/Refund.jsx';
 import Objectives from './pages/Objectives/Objectives.jsx';
@@ -42,7 +42,7 @@ createRoot(document.getElementById('root')).render(
           <Route path='/Dashboard' element={<Dashboard />}></Route>
           <Route path='/Setting' element={<Setting />}></Route>
           <Route path='/Messages' element={<Messages />}></Route>
-          <Route path='/Bookings' element={<Booking />}></Route>
+          {/* <Route path='/Bookings' element={<Booking />}></Route> */}
           <Route path='/Help' element={<Help />}></Route>
           <Route path='/Refunds' element={<Refund />}></Route>
           <Route path='/Objectives' element={<Objectives />}></Route>

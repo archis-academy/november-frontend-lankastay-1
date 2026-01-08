@@ -1,0 +1,38 @@
+.stepIndicator {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+  width: 100%;
+}
+
+.stepItem {
+  display: flex;
+  align-items: center;
+}
+
+.stepCircle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.stepLine {
+  width: 60px;
+  height: 2px;
+  background:$color-border;
+
+}
+
+.divider {
+    min-width: 40px;
+    height: 2px;
+    background-color: $color-border;
+}
+
+.stepIcon,
+.checkIcon {
+  width: 60px;
+  height: 60px;
+}
