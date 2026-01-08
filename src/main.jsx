@@ -5,19 +5,18 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Home } from './pages/home/home';
 import Playground from './pages/playground/index.jsx';
 import HotelDetail from './pages/HotelDetail';
-import Breadcrumb from './Components/Breadcrumb/breadcrumb';
 import Login from './Components/Login/Login';
 import RegisterAdmin from './pages/RegisterAdmin/RegisterAdmin';
 import Dashboard from './pages/Dashboard';
 import SuccesPage from './pages/SuccesRegister/SuccesPage';
 import DashboardLayout from './pages/DashboardLayout/DashboardLayout.jsx';
-import PaymentPage from './pages/PaymentPage/PaymentPage.jsx';
 import Setting from './pages/Settings/Setting.jsx';
 import Messages from './pages/Message/Message.jsx';
 import Booking from './pages/Bookings/Booking.jsx';
 import Help from './pages/Help/Help.jsx';
 import Refund from './pages/Refunds/Refund.jsx';
 import Objectives from './pages/Objectives/Objectives.jsx';
+import BookingPage from './pages/BookingPage/index';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -35,9 +34,8 @@ createRoot(document.getElementById('root')).render(
             <Login dataType={'createAccountUser'} dataTypeDetail={'registerAccountDetail'} />
           }
         ></Route>
-        
         <Route path='/hotel-detail/:id' element={<HotelDetail />} />
-        <Route path='/booking/:id' element={<PaymentPage />}></Route>
+        <Route path='/booking/:id' element={<BookingPage />} />
         <Route path='/success-register' element={<SuccesPage />}></Route>
         <Route path='/admin-register' element={<RegisterAdmin />}></Route>
         <Route element={<DashboardLayout />}>
