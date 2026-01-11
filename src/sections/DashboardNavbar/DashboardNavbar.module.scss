@@ -1,0 +1,51 @@
+.dashboardNavbar {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+  .dashboardNavbarLeft {
+    h2 {
+      font-size: 20px;
+      line-height: 150%;
+      color: #0a0a0a;
+      font-weight: 600;
+      letter-spacing: 0.15px;
+    }
+    p {
+      font-size: 14px;
+      line-height: 150%;
+      color: #757575;
+      letter-spacing: 0.25px;
+    }
+  }
+  .dashboardNavbarRight {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    .ring {
+      border-right: 2px solid #c2c2c2;
+      padding: 15px 30px;
+    }
+    .userImage {
+      background-color: #bfbfbf;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+    }
+    .userDetails {
+      h2 {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 150%;
+        color: #0a0a0a;
+        letter-spacing: 0.5px;
+      }
+      p {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 150%;
+        color: #0a0a0a;
+        letter-spacing: 0.4px;
+      }
+    }
+  }
+}
