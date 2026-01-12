@@ -7,14 +7,13 @@ import style from './Dashboard.module.scss';
 const Dashboard = () => {
   return (
     <div style={{ backgroundColor: '#F5F6F8  ' }}>
-     
-      <SearchFilterBarDashboard />
-      <DashboardNavbar/>
-      <SearchFilterBarDashboard />
+
+      
       <div>
         <UpcomingStaysCardSection />
-      <div className={style.stayCards} >
-        <PreviousCardSection />
+        <div className={style.stayCards}>
+          <PreviousCardSection />
+        </div>
       </div>
     </div>
   );

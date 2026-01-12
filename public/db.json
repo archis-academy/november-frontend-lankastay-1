@@ -1285,7 +1285,9 @@
       "country": "Main Street, Galle , Sri Lanka ",
       "initPayment": "Initial Payment $200",
       "totalPayment": "Total Payment $400",
-      "image":"/images/choise-card-images/blue-origin.png"
+      "image": "/images/choise-card-images/blue-origin.png"
+    }
+  ],
   "previous-card": [
     {
       "id": 1,
