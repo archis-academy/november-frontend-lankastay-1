@@ -1,100 +1,85 @@
-
 .card {
-  width: 320px; 
-  font-family: 'Poppins', sans-serif;  
+  width:320px;
+  padding: 24px;
+  background: #ffffff;
+  border-radius: 12px;
+  font-family: 'Poppins', sans-serif; 
 
   h3 {
-    color: #152C5B;
     font-size: 16px;
-    margin-bottom: 10px;
     font-weight: 500;
+    color: #152c5b;
+    margin-bottom: 12px;
   }
+}
 
-  .counterRow {
+
+.counterRow, .dateRow {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.counterRow {
+  .btnMinus, .btnPlus {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    background-color: #ffffff; 
-    border: 1px solid #E0E0E0; 
-    border-radius: 4px;
-    padding: 5px;
-    margin-bottom: 25px;
-    gap: 10px;
-
-    button {
-      width: 45px;
-      height: 45px;
-      border: none;
-      color: #ffffff;
-      font-size: 24px;
-      border-radius: 4px;
-      cursor: pointer;
-      display: flex;
-      padding: 0;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .btnMinus { background-color: #E74C3C; } 
-    .btnPlus { background-color: #1ABC9C; }  
-
-    .nightText {
-      font-size: 16px;
-      color: #152C5B;
-      font-weight: 400;
-    }
-  }
-
-  .dateRow {
-    display: flex;
     justify-content: center;
-    background-color: #ffffff; 
-    border: 1px solid #E0E0E0; 
-    padding: 12px;
-    border-radius: 5px;
-    margin-bottom: 25px;
-
-    input {
-      border: none;
-      background: transparent;
-      width: 195px;
-      font-size: 16px;
-      color: #152C5B;
-      font-weight: 400;
-      outline: none;
-      text-align: center;
-    }
   }
 
-  .priceInfo {
+  .btnMinus { background-color: #ff5e5e; } 
+  .btnPlus { background-color: #1abc9c; }  
 
-    margin-top: 15px;
-
-    .grayLabel {
-        color: #B0B0B0;
-        font-size: 24px;
-        font-weight: 300;
-        margin-bottom: 5px;
-    }
-
-    .money {
-      font-size: 24px; 
-      font-weight: 500;
-      color: #152C5B;
-      margin-left: 5px;
-    }
+  .nightText {
+    flex: 1; 
+    text-align: center;
+    font-size: 16px;
+    color: #b0b0b0;
     
-    .smallText {
-      color: #b0b0b0;
-      font-size: 24px;
-      margin-top: 5px;
-      font-weight: 300;
+    b { color: #152c5b; font-size: 18px; }
+  }
+}
 
-      .nightCount {
-          color: #152C5B;
-          font-weight: 500;
-          margin-left: 5px;
-      }
-    }
+.dateRow {
+  position: relative;
+  
+  :global(.react-datepicker-wrapper) {
+    width: 100%;
+  }
+
+  .dateInput {
+    width: 100%;
+    height: 45px;
+    padding: 0 15px 0 45px;
+    background-color: #f5f6f8; 
+    border: none;
+    border-radius: 8px; 
+    font-size: 16px;
+    font-weight: 500;
+    color: #152c5b;
+    cursor: pointer;
+    outline: none;
+
+   
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23152c5b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='4' width='18' height='18' rx='2' ry='2'%3E%3C/rect%3E%3Cline x1='16' y1='2' x2='16' y2='6'%3E%3C/line%3E%3Cline x1='8' y1='2' x2='8' y2='6'%3E%3C/line%3E%3Cline x1='3' y1='10' x2='21' y2='10'%3E%3C/line%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: 15px center;
+  }
+}
+
+.priceInfo {
+  margin-top: 20px;
+  .grayLabel {
+    color: #b0b0b0;
+    font-size: 16px;
+    .money { color: #152c5b; font-weight: 700; }
   }
 }

@@ -18,7 +18,7 @@ const PaymentSuccess = () => {
         We have sent all the information.
       </p>
 
-      <Button text='Go to dashboard' />
+      
     </div>
   );
 };
