@@ -53,7 +53,7 @@ const Login = ({ dataType, dataTypeDetail }) => {
       try {
         const fetchedDetails = (await fetchData(detailKey)) ?? [];
         setInputsDetails(fetchedDetails);
-      } catch (err) {
+      } catch () {
         setInputsDetails([]);
       }
     };
