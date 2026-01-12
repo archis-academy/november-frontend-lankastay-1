@@ -1,54 +1,38 @@
 .container {
   min-height: 100vh;
-  height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 40px 16px;
+  background: url('../../../public/images/login-signup/login-bg.png') no-repeat center;
+  background-size: cover;
+}
+
+.box {
+  width: min(520px, 100%);
+  padding: 32px 24px;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.85);
+  display: grid;
+  justify-items: center;
+  gap: 16px;
+  text-align: center;
+}
+
+.logo {
+  width: 220px;
+}
+
+.buttonDiv {
   width: 100%;
-  background: url('/images/login-signup/login-bg.png') center/cover no-repeat;
   display: flex;
   justify-content: center;
-  align-items: center;
-  .box {
-    background-color: #ffffffe5;
-    width: 90%;
-    height: 90%;
-    text-align: center;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    padding: 40px;
-    border-radius: 10px;
-    .logo {
-      max-width: 280px;
-    }
-    img {
-      margin: 0 auto;
-    }
-    h1 {
-      font-size: 64px;
-      font-weight: 500;
-      color: $color-primary;
-      @media (max-width: 800px) {
-        font-size: 40px;
-      }
-    }
-    p {
-      font-size: 24px;
-      color: $color-navy;
-      font-weight: 500;
-      @media (max-width: 800px) {
-        font-size: 18px;
-      }
-    }
-    .errorTitle {
-      color: #e74c3c;
-    }
-    .errorText {
-      color: #e74c3c;
-    }
-    .buttonDiv {
-      font-size: 24px;
-      @media (max-width: 800px) {
-        font-size: 18px;
-      }
-    }
-  }
 }
+
+.errorTitle {
+  color: #d14343;
+}
+
+.errorText {
+  color: #d14343;
+}
+

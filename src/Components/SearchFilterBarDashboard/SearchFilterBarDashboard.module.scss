@@ -1,0 +1,46 @@
+.searchFilterBarDashboard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-height: 50px;
+
+  gap: 10px;
+  width: 100%;
+  .searchBar {
+    width: 100%;
+    position: relative;
+
+    img {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+    
+    }
+    input {
+      width: 100%;
+      padding: 12px 12px 12px 20px;
+      border: none;
+      border-radius: 16px;
+      padding-left: 34px;
+      &::placeholder {
+        color: #404040;
+      }
+    }
+  }
+  .filterBar {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    select {
+      min-width: 100px;
+      padding: 0%;
+      border: none;
+      cursor: pointer;
+      background-color: transparent;
+    }
+  }
+  select {
+    color: #404040 !important;
+  }
+}

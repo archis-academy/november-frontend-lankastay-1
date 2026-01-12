@@ -25,7 +25,7 @@ export default defineConfig([
       },
     },
     rules: {
-      'no-unused-vars': ['error', { varsIgnorePattern: '^(React|^_|[A-Z_])', argsIgnorePattern: '^_' }],
+      'no-unused-vars': ['error', { varsIgnorePattern: '^(React|[A-Z_])', argsIgnorePattern: '^_' }],
     },
   },
 ])
