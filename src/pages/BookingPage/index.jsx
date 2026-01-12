@@ -27,7 +27,7 @@ const PaymentLayout = () => {
 
   return (
     <>
-      <Header isShort={true} />
+      <Header isShort={false} />
 
       <div className={styles.stepWrapper}>
         <StepIndicator currentStep={step} />
@@ -38,7 +38,7 @@ const PaymentLayout = () => {
           <h1 className={styles.stepTitle}>Booking Information</h1>
           <h5 className={styles.stepSubtitle}>Please fill up the blank fields below</h5>
 
-          <div className={styles.stepContainer }>
+          <div className={styles.stepContainer}>
             <LocationSummary
               image={hotelDetail?.images?.[0]}
               locationName={hotelDetail?.title}
@@ -53,18 +53,24 @@ const PaymentLayout = () => {
               setNights={setNights}
             />
           </div>
-  <div className={styles.buttonContainer }>
-          <Button text="Book Now" onClick={()=> setStep(2)} />
-          <Button text="Cancel" className="" /></div>
+          <div className={styles.buttonContainer}>
+            <Button text="Book Now" onClick={() => setStep(2)} />
+            <Button text="Cancel" onClick={() => setStep(1)}  /></div>
         </div>
       )}
 
-      {step === 2 && (
-        <div>
-          <PaymentScreen />
-          <button onClick={() => setStep(3)}>Pay Now</button>
-        </div>
-      )}
+    {step === 2 && (
+  <div className="container">
+  
+    <PaymentScreen hotel={hotelDetail} nights={nights} />
+
+    <div className={styles.buttonContainer}>
+      <Button text="Pay Now" onClick={() => setStep(3)} />
+   
+      <Button text="Cancel" onClick={() => navigate(-1)} />
+    </div>
+  </div>
+)}
 
       {step === 3 && (
         <div>

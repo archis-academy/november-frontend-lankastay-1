@@ -65,18 +65,7 @@ const PaymentScreen = () => {
       </div>
 
       
-      <div className={styles['payment-screen__actions']}>
-        <button type="button" className={styles['payment-screen__pay-button']}>
-          Pay Now
-        </button>
-
-        <button
-          type="button"
-          className={styles['payment-screen__cancel-button']}
-        >
-          Cancel
-        </button>
-      </div>
+      
     </div>
   );
 };
