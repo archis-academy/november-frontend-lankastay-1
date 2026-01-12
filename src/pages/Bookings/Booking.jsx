@@ -1,11 +1,12 @@
-import React from 'react'
+import SearchFilterBarDashboard from '../../Components/SearchFilterBarDashboard/SearchFilterBarDashboard';
+import style from './Booking.module.scss';
 
 const Booking = () => {
   return (
-    <div>
-      Booking
+    <div className={style.bookingContainer}>
+      <SearchFilterBarDashboard />
     </div>
-  )
-}
+  );
+};
 
-export default Booking
+export default Booking;
