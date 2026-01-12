@@ -1286,6 +1286,60 @@
       "initPayment": "Initial Payment $200",
       "totalPayment": "Total Payment $400",
       "image":"/images/choise-card-images/blue-origin.png"
+  "previous-card": [
+    {
+      "id": 1,
+      "date": "12 Sep - 16 Sep",
+      "price": "4 Nights / $500",
+      "title": "Ocean Land",
+      "street": "Frenc Street 346",
+      "country": "Trincomalee, Sri Lanka",
+      "image": "/images/choise-card-images/ocean-land.png"
+    },
+    {
+      "id": 2,
+      "image": "/images/choise-card-images/choiseCard5.png",
+      "date": "2 Oct - 5 Oct",
+      "price": "3 Nights / $150",
+      "title": "The Lake Hotel",
+      "street": "Galle to Colombo Road 245, ",
+      "country": "Main Street, Galle, Sri Lanka"
+    },
+    {
+      "id": 3,
+      "date": "29 Oct - 31 Oct",
+      "image": "/images/choise-card-images/stark-house.png",
+      "price": "2 Nights / $300",
+      "title": "Stark House",
+      "street": "Beach Road 289, ",
+      "country": "Dehiwala, Sri Lanka"
+    },
+    {
+      "id": 4,
+      "date": "11 Nov - 13 Nov",
+      "price": "2 Nights / $120",
+      "image": "/images/choise-card-images/blue-origin.png",
+      "title": "Blue Origin Fams",
+      "street": "Galle to Colombo Road 245, ",
+      "country": "Main Street, Galle, Sri Lanka"
+    },
+    {
+      "id": 5,
+      "date": "2 Dec - 3 Dec",
+      "price": "1 Nights / $180",
+      "image": "/images/choise-card-images/vinna-vill.png",
+      "title": "Vinna Vill",
+      "street": "China Fort Road 12",
+      "country": "Beruwala, Sri Lanka"
+    },
+    {
+      "id": 6,
+      "date": "30 Dec - 1 Jan",
+      "price": "2 Nights / $100",
+      "image": "/images/choise-card-images/bobox.png",
+      "title": "Bobox",
+      "street": "Anniewatta Circular Road 2",
+      "country": "Kandy, Sri Lanka"
     }
   ]
 }
