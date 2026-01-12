@@ -35,7 +35,7 @@ const Login = ({ dataType, dataTypeDetail }) => {
         const fetchedInputs = (await fetchData(activeDataType)) ?? [];
         setInputs(fetchedInputs);
         setForm(resetFormState(fetchedInputs));
-      } catch (err) {
+      } catch () {
         setInputs([]);
         setForm({});
         setErrorMsg('Form configuration could not be loaded.');
@@ -46,7 +46,7 @@ const Login = ({ dataType, dataTypeDetail }) => {
       try {
         const fetchedDetails = (await fetchData(detailKey)) ?? [];
         setInputsDetails(fetchedDetails);
-      } catch (err) {
+      } catch () {
         setInputsDetails([]);
       }
     };

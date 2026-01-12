@@ -7,7 +7,7 @@ const ProductDescription = ({title, desc}) => {
       
       <div className={styles['product-container']}>
         
-        <h2 className={styles.title}>About the place</h2>
+        <h2 className={styles.title}>{title}</h2>
 
         <p className={styles.text}>
           {desc}
