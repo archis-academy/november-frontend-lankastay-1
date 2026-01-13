@@ -25,8 +25,11 @@
   }
 
   .logo {
-    margin-top: 40px;
+   
     width: 190px;
+    @media (max-width: 1200px) {
+      margin-top: 40px;
+    }
   }
   .box {
     display: grid;
