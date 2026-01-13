@@ -26,7 +26,7 @@
     height: 40px;
     border: none;
     border-radius: 8px;
-    color: white;
+    background-color:#F5F6F8 ;
     font-size: 22px;
     font-weight: bold;
     cursor: pointer;
@@ -35,16 +35,16 @@
     justify-content: center;
   }
 
-  .btnMinus { background-color: #ff5e5e; } 
-  .btnPlus { background-color: #1abc9c; }  
+  .btnMinus { background-color:#E74C3C ; } 
+  .btnPlus { background-color: #1ABC9C; }  
 
   .nightText {
     flex: 1; 
     text-align: center;
     font-size: 16px;
-    color: #b0b0b0;
+    color: #152C5B;
     
-    b { color: #152c5b; font-size: 18px; }
+  
   }
 }
 
@@ -59,7 +59,7 @@
     width: 100%;
     height: 45px;
     padding: 0 15px 0 45px;
-    background-color: #f5f6f8; 
+    background-color: #F5F6F8; 
     border: none;
     border-radius: 8px; 
     font-size: 16px;
