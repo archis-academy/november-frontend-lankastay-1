@@ -1,8 +1,11 @@
 .dashboardNavbar {
   display: flex;
   justify-content: space-between;
-  margin: 20px 0;
+  margin-bottom: 40px;
   .dashboardNavbarLeft {
+    display: flex;
+    align-items: center;
+    gap: 12px;
     h2 {
       font-size: 20px;
       line-height: 150%;
@@ -17,19 +20,83 @@
       letter-spacing: 0.25px;
     }
   }
+  .titleBlock {
+    display: grid;
+    gap: 2px;
+    @media (max-width: 600px) {
+      display: none;
+    }
+  }
+  .menuButton {
+    display: none;
+    background: transparent;
+    width: 40px;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+
   .dashboardNavbarRight {
     display: flex;
     align-items: center;
     gap: 24px;
     .ring {
+      position: relative;
       border-right: 2px solid #c2c2c2;
       padding: 15px 30px;
     }
+    .ringButton {
+      background: transparent;
+      border: none;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+    .notificationsPanel {
+      position: absolute;
+      top: calc(100% + 10px);
+      right: 10px;
+      width: 220px;
+      background: #ffffff;
+      border: 2px solid #bcc3d1;
+      border-radius: 10px;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+      padding: 12px 14px;
+      z-index: 10;
+    }
+    .notificationsHeader {
+      display: grid;
+      align-items: center;
+      gap: 9px;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 150%;
+      color: #757575;
+      margin-bottom: 8px;
+     p{
+      font-weight: 600;
+          color: #152C5B;
+
+     }
+      
+      ul {
+         padding-left: 17px;
+        li:first-child {
+          color: #152C5B;
+        }
+      }
+    }
+
     .userImage {
       background-color: #bfbfbf;
       border-radius: 50%;
       width: 45px;
       height: 45px;
+      @media (max-width: 600px) {
+        display: none;
+      }
     }
     .userDetails {
       h2 {
@@ -46,6 +113,11 @@
         color: #0a0a0a;
         letter-spacing: 0.4px;
       }
+    }
+  }
+  @media (max-width: 1200px) {
+    .menuButton {
+      display: flex;
     }
   }
 }
