@@ -1,9 +1,7 @@
 .card {
-  width:320px;
+  width: 324px;
   padding: 24px;
-  background: #ffffff;
-  border-radius: 12px;
-  font-family: 'Poppins', sans-serif; 
+  font-family: 'Poppins', sans-serif;
 
   h3 {
     font-size: 16px;
@@ -13,73 +11,94 @@
   }
 }
 
-
-.counterRow, .dateRow {
+.counterRow {
   display: flex;
   align-items: center;
+  background-color: #f5f6f8;
+  border-radius: 8px;
+  overflow: hidden;
   margin-bottom: 25px;
+
+  .btnMinus,
+  .btnPlus {
+    width: 45px;
+    height: 45px;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  .btnMinus {
+    background-color: #e74c3c;
+  }
+
+  .btnPlus {
+    background-color: #1abc9c;
+  }
+
+  .nightText {
+    flex: 1;
+    text-align: center;
+    font-size: 16px;
+    color: #152c5b;
+    font-weight: 400;
+  }
 }
 
-.counterRow {
-  .btnMinus, .btnPlus {
-    width: 40px;
-    height: 40px;
-    border: none;
-    border-radius: 8px;
-    background-color:#F5F6F8 ;
-    font-size: 22px;
-    font-weight: bold;
-    cursor: pointer;
+.dateWrapper {
+  display: flex;
+  align-items: center;
+  background-color: #f5f6f8;
+  border-radius: 8px;
+  overflow: hidden;
+  height: 45px;
+
+  .iconBox {
+    background-color: #152c5b;
+    width: 50px;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
   }
 
-  .btnMinus { background-color:#E74C3C ; } 
-  .btnPlus { background-color: #1ABC9C; }  
-
-  .nightText {
-    flex: 1; 
-    text-align: center;
-    font-size: 16px;
-    color: #152C5B;
-    
-  
-  }
-}
-
-.dateRow {
-  position: relative;
-  
   :global(.react-datepicker-wrapper) {
-    width: 100%;
+    flex: 1;
+    display: flex;
   }
 
   .dateInput {
     width: 100%;
-    height: 45px;
-    padding: 0 15px 0 45px;
-    background-color: #F5F6F8; 
+    height: 100%;
     border: none;
-    border-radius: 8px; 
+    background: transparent;
     font-size: 16px;
-    font-weight: 500;
     color: #152c5b;
-    cursor: pointer;
+    font-weight: 500;
     outline: none;
-
-   
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23152c5b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='4' width='18' height='18' rx='2' ry='2'%3E%3C/rect%3E%3Cline x1='16' y1='2' x2='16' y2='6'%3E%3C/line%3E%3Cline x1='8' y1='2' x2='8' y2='6'%3E%3C/line%3E%3Cline x1='3' y1='10' x2='21' y2='10'%3E%3C/line%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: 15px center;
+    cursor: pointer;
+    text-align: center;
+    padding-right: 50px;
   }
 }
+
 
 .priceInfo {
-  margin-top: 20px;
-  .grayLabel {
+  margin-top: 30px;
+
+  .grayLabel,
+  .smallText {
+    font-size: 24px;
     color: #b0b0b0;
-    font-size: 16px;
-    .money { color: #152c5b; font-weight: 700; }
+    margin: 0;
+
+    .money,
+    .nightCount {
+      color: #152c5b;
+      font-weight: 700;
+    }
   }
 }
+

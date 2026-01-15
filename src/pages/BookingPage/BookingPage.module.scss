@@ -62,8 +62,8 @@
 }
 
 .stepContainerDivider {
-  width: 2px;
-  min-height: 300px;
+  width: 1px;
+  min-height: 308px;
   background-color: $color-border;
 }
 
@@ -88,7 +88,7 @@
 
   .primaryButton {
     font-family: $primary-font;
-    background-color: #1e40af;
+    background-color:#003DFC ;
     color: white;
     box-shadow: 0 4px 14px rgba(30, 64, 175, 0.3);
   }
@@ -117,7 +117,7 @@
     transition: transform 0.2s;
 
     &:hover {
-      transform: translateY(-2px); // Üzerine gelince hafif yükselme efekti
+      transform: translateY(-2px); 
     }
   }
 }

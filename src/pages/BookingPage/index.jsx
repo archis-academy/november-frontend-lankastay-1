@@ -36,6 +36,7 @@ const PaymentLayout = () => {
       </div>
 
       <div className="container">
+   
         {step === 1 && (
           <div>
             <h1 className={styles.stepTitle}>Booking Information</h1>
@@ -55,26 +56,26 @@ const PaymentLayout = () => {
               />
             </div>
             <div className={styles.buttonContainer}>
-              <Button text="Book Now" onClick={() => setStep(2)} />
-              <Link to={`/hotel-detail/${id}`} style={{ textDecoration: 'none' }}>
-                <Button text="Cancel" />
+          
+              <Button text="Book Now" onClick={() => setStep(2)} className={styles.primaryButton} />
+              
+              <Link to={`/hotel-detail/${id}`} style={{ textDecoration: 'none', width: '100%', display: 'flex', justifyContent: 'center' }}>
+                <Button text="Cancel" className={styles.secondaryButton} />
               </Link>
             </div>
           </div>
         )}
 
-       
         {step === 2 && (
           <div>
             <PaymentScreen hotelDetail={hotelDetail} nights={nights} />
             <div className={styles.buttonContainer}>
-              <Button text="Pay Now" onClick={() => setStep(3)} />
-              <Button text="Cancel" onClick={() => setStep(1)} />
+              <Button text="Pay Now" onClick={() => setStep(3)} className={styles.primaryButton} />
+              <Button text="Cancel" onClick={() => setStep(1)} className={styles.secondaryButton} />
             </div>
           </div>
         )}
-
-      
+        
         {step === 3 && (
           <div className={styles.successWrapper}>
             <PaymentSuccess />
