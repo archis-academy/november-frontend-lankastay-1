@@ -1,20 +1,48 @@
 .container {
+  position: relative;
   height: 100vh;
   border-right: 1px solid gray;
   max-width: 300px;
+  width: 100%;
   background-color: #ffffff;
   padding: 40px 56px;
   gap: 56px;
   display: flex;
   flex-direction: column;
+  .closeButton {
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 36px;
+    height: 36px;
+    border: none;
+    background: #ffffff;
+    cursor: pointer;
+  }
+  .closeLine {
+    font-weight: 700;
+  }
+
   .logo {
-    width: 190px ;
+   
+    width: 190px;
+    @media (max-width: 1200px) {
+      margin-top: 40px;
+    }
   }
   .box {
     display: grid;
     gap: 32px;
     > :nth-child(4) {
       margin-top: 32px;
+    }
+  }
+  @media (max-width: 1200px) {
+    .closeButton {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
     }
   }
 }

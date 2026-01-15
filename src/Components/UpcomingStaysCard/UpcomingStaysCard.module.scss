@@ -1,12 +1,16 @@
 .card {
   display: flex;
-  max-height: 245px;
   align-items: center;
   max-width: 500px;
   border-radius: 20px;
   border: 2px solid #bcc3d1;
   color: #152c5b;
   font-size: 16px;
+  padding: 5px;
+  @media (max-width: 600px) {
+    font-size: 12px;
+    display: grid;
+  }
   .imageContainer {
     max-width: 180px;
     max-height: 225px;
@@ -21,9 +25,17 @@
   .infoContainer {
     display: grid;
     gap: 9px;
+    padding: 0px 10px;
+    @media (max-width: 600px) {
+      font-size: 12px;
+      gap: 3px;
+    }
     .address {
       font-weight: 600;
       font-size: 16px;
+      @media (max-width: 600px) {
+        font-size: 12px;
+      }
     }
   }
 }
