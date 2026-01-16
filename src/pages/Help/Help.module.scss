@@ -1,0 +1,22 @@
+.container {
+  background-color: #ffffff;
+  padding: 18px 20px;
+  border: 1px solid #eff4fa;
+  border-radius: 8px;
+  @media (max-width:500px) {
+      padding: 18px 10px;
+  }
+  .header {
+    border-bottom: 1px solid #edf2f6;
+    color: #464e5f;
+    margin: 14px;
+      @media (max-width: 500px) {
+        margin: 0;
+      }
+    .subtitle {
+      font-size: 14px;
+      opacity: 0.4;
+      margin-bottom: 10px;
+    }
+  }
+}

@@ -35,16 +35,10 @@ const DashboardLayout = () => {
     setIsSidebarOpen((prev) => !prev);
   };
 
-  const sidebarClassName = [
-    style.sidebarWrapper,
-    isSidebarOpen ? style.sidebarOpen : null,
-  ]
+  const sidebarClassName = [style.sidebarWrapper, isSidebarOpen ? style.sidebarOpen : null]
     .filter(Boolean)
     .join(' ');
-  const backdropClassName = [
-    style.backdrop,
-    isSidebarOpen ? style.backdropOpen : null,
-  ]
+  const backdropClassName = [style.backdrop, isSidebarOpen ? style.backdropOpen : null]
     .filter(Boolean)
     .join(' ');
 
