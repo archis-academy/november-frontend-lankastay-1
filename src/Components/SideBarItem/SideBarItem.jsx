@@ -5,7 +5,7 @@ const SideBarItem = ({ icon, label, href }) => {
   return (
     <NavLink to={href} className={({ isActive }) => `${style.box} ${isActive ? style.active : ''}`}>
       <img src={icon} alt={label} />
-      <span>{label}</span>
+      <p>{label}</p>
     </NavLink>
   );
 };

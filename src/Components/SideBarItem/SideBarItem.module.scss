@@ -3,8 +3,7 @@
   gap: 16px;
   align-items: center;
   text-decoration: none;
-
-  span {
+  p {
     letter-spacing: 0.5px;
     color: #757575;
     line-height: 150%;
@@ -25,14 +24,16 @@
       filter: brightness(0) saturate(100%) invert(43%) sepia(57%) saturate(2897%) hue-rotate(201deg)
         brightness(96%) contrast(94%);
     }
-    span {
+    p {
       color: #4a85f6;
       font-weight: 600;
     }
   }
 
   &.active {
-    span {
+      border-right: 4px solid #4a85f6;
+
+    p {
       color: #4a85f6;
       font-weight: 700;
     }

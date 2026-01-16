@@ -1343,5 +1343,79 @@
       "street": "Anniewatta Circular Road 2",
       "country": "Kandy, Sri Lanka"
     }
+  ],
+  "questions": [
+    {
+      "general-questions": [
+        {
+          "id": 1,
+          "question": "How do I book a hotel room on your website?",
+          "answer": "Simply enter your destination, check-in and check-out dates, and the number of guests. Browse the available hotels, select a room, and proceed with the booking by providing your details and payment information."
+        },
+        {
+          "id": 2,
+          "question": "Can I modify or cancel my reservation after booking?",
+          "answer": "Yes, you can modify or cancel your reservation from the “My Bookings” section. Changes and cancellations depend on the hotel’s policy and the rate type you selected. Some bookings may be free to cancel, while others may include fees."
+        },
+        {
+          "id": 3,
+          "question": "Do I need to create an account to make a reservation?",
+          "answer": "You can book as a guest without creating an account. However, creating an account makes it easier to manage your bookings, save traveler details, and access exclusive deals."
+        },
+        {
+          "id": 4,
+          "question": "How do I check my booking details?",
+          "answer": "After booking, you’ll receive a confirmation email with your reservation details. You can also view your booking anytime in the “My Bookings” section by logging into your account."
+        }
+      ]
+    },
+    {
+      "Payment-Pricing": [
+        {
+          "id": 5,
+          "question": "What payment methods do you accept?",
+          "answer": "We accept major credit and debit cards such as Visa, Mastercard, and American Express. Depending on your location and the hotel, additional payment options may also be available at checkout."
+        },
+        {
+          "id": 6,
+          "question": "Is my payment information secure?",
+          "answer": "Yes. We use secure encryption and trusted payment gateways to protect your payment information. Your data is processed safely and is never shared without your consent."
+        },
+        {
+          "id": 7,
+          "question": "Are there any additional fees or taxes included in the price?",
+          "answer": "Taxes and fees may vary depending on the hotel and destination. Any additional charges will be clearly shown before you confirm your booking so you can review the final total price."
+        },
+        {
+          "id": 8,
+          "question": "Do you offer any discounts or promo codes?",
+          "answer": "Yes, we occasionally offer special discounts and promo codes. You can apply a promo code during checkout if available, and you may also find limited-time deals on our homepage."
+        }
+      ]
+    },
+    {
+      "Cancellations-Refunds": [
+        {
+          "id": 9,
+          "question": "What is your cancellation policy?",
+          "answer": "Cancellation policies vary by hotel and room type. Some bookings allow free cancellation until a specific date, while others may be non-refundable. You can always check the cancellation terms before confirming your reservation."
+        },
+        {
+          "id": 10,
+          "question": "How long does it take to receive a refund after cancellation?",
+          "answer": "Refunds are typically processed within 5–10 business days, depending on your bank or payment provider. Once approved, the refunded amount will be returned to your original payment method."
+        },
+        {
+          "id": 11,
+          "question": "Will I be charged if I don’t show up at the hotel?",
+          "answer": "In most cases, yes. If you don’t show up, the hotel may charge a no-show fee, which is often the full amount of the first night or the entire booking, depending on the policy."
+        },
+        {
+          "id": 12,
+          "question": "Can I modify my booking without extra charges?",
+          "answer": "It depends on the hotel’s rules and the rate you selected. Some bookings allow free changes, while others may have modification fees or price differences. Any extra charges will be shown before you confirm changes."
+        }
+      ]
+    }
   ]
 }

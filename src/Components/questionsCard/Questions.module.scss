@@ -1,0 +1,15 @@
+.item {
+  width: 100%;
+  padding: 12px;
+  border-left: 4px solid transparent;
+  cursor: pointer;
+  color: #757575;
+  font-size: 14px;
+  font-weight: 400;
+  border-left: 4px solid #edf2f6;
+}
+
+.active {
+  border-left-color: #4a85f6;
+  color: #4a85f6;
+}

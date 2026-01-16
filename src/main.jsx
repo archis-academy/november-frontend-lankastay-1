@@ -40,13 +40,13 @@ createRoot(document.getElementById('root')).render(
         <Route path='/breadcrumb/:id' element={<Breadcrumb />} />
         <Route path='/success-register' element={<SuccesPage />}></Route>
         <Route element={<DashboardLayout />}>
-          <Route path='/Dashboard' element={<Dashboard />}></Route>
-          <Route path='/Setting' element={<Setting />}></Route>
-          <Route path='/Messages' element={<Messages />}></Route>
-          <Route path='/Bookings' element={<Booking />}></Route>
-          <Route path='/Help' element={<Help />}></Route>
-          <Route path='/Refunds' element={<Refund />}></Route>
-          <Route path='/Objectives' element={<Objectives />}></Route>
+          <Route path='/dashboard' element={<Dashboard />}></Route>
+          <Route path='/setting' element={<Setting />}></Route>
+          <Route path='/messages' element={<Messages />}></Route>
+          <Route path='/bookings' element={<Booking />}></Route>
+          <Route path='/help' element={<Help />}></Route>
+          <Route path='/refunds' element={<Refund />}></Route>
+          <Route path='/objectives' element={<Objectives />}></Route>
         </Route>
       </Routes>
     </BrowserRouter>
