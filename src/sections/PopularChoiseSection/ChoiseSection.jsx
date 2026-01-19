@@ -12,7 +12,7 @@ function ChoiseSection() {
   return (
     <div className={styles.choiseGrid}>
       {choiseData
-        .filter((item) => item.id >= 6)
+        ?.filter((item) => item.id >= 6)
         .map((item) => (
           <ChoiseCard
             key={item.id}
