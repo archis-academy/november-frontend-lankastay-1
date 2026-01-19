@@ -28,7 +28,7 @@ const HotelDetail = () => {
 
   return (
     <div className='container'>
-      <Header isShort={true} />
+      <Header isShort={false} />
 
       <div className={styles.pageWrapper}>
         <div className={styles.titleSection}>
@@ -47,7 +47,7 @@ const HotelDetail = () => {
                 desc={selectedHotel?.description}
               />
 
-              <BookingCard price={selectedHotel?.pricePerNight} currency={selectedHotel?.currency} />
+              <BookingCard price={selectedHotel?.pricePerNight}  currency={selectedHotel?.currency} id={id} />
             </div>
 
             {amenities?.length > 0 && <Amentiti data={amenities} />}

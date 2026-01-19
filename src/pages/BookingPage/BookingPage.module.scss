@@ -1,15 +1,185 @@
-.pageContainer {
+.PaymentHeader {
   display: flex;
-  justify-content: center; 
-  padding-top: 50px;
-  min-height: 100vh;
-  background-color: #f9f9f9;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px 0;
+  background: #ffffff;
 }
 
-.contentWrapper {
-  width: 100%;
-  max-width: 1100px;
-  padding: 0 20px;
+.logoWrapper {
   display: flex;
-  justify-content: flex-end; 
+  justify-content: center;
+  padding: 16px 0;
+}
+
+.logoWrapper {
+  width: 100%;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.headerLogo {
+  height: 32px;
+  margin-bottom: 12px;
+}
+
+.stepWrapper {
+  padding: 16px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 16px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 32px;
+}
+
+.stepTitle {
+  font-family: $primary-font;
+  font-size: 36px;
+  color: $color-navy;
+  font-weight: $font-semibold;
+  text-align: center;
+}
+
+.stepSubtitle {
+  font-family: $primary-font;
+  font-size: 18px;
+  color: $color-text-muted;
+  font-weight: $font-thin;
+  text-align: center;
+}
+
+
+.stepContainer {
+  display: flex;
+  flex-direction: row; 
+  flex-wrap: wrap;    
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+
+ 
+  & > div:not(.stepContainerDivider) {
+    flex: 1 1 350px; 
+    max-width: 450px;
+
+    
+    @media (max-width: 780px) {
+      flex: 1 1 100%;
+      max-width: 100%;
+    }
+  }
+}
+
+.stepContainerDivider {
+  width: 1px;
+  min-height: 300px;
+  background-color: $color-border;
+
+  @media (max-width: 780px) {
+    display: none;
+  }
+}
+
+
+@media (max-width: 780px) {
+  .stepTitle {
+    font-size: 26px;
+    padding: 0 15px;
+  }
+  
+  .stepSubtitle {
+    font-size: 15px;
+    padding: 0 15px;
+  }
+
+  .buttonContainer {
+    margin-top: 20px;
+    padding: 0 30px; 
+  }
+}
+
+
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 300px;
+  margin: 20px auto;
+
+  button {
+    width: 100%;
+    padding: 14px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+
+
+  .primaryButton {
+    font-weight: 500;
+    font-size: 24px;
+    font-family: $primary-font;
+    background-color:#003DFC ;
+    color: white;
+    box-shadow: 0 4px 14px rgba(30, 64, 175, 0.3);
+  }
+
+
+  .secondaryButton {
+    font-weight: 500;
+    font-size: 18px;
+    background-color: #F5F6F8;
+    color: #B0B0B0;
+
+    &:hover {
+      background-color: #e5e7eb;
+    }
+  }
+
+.dashboardButton {
+  width: 100%; 
+  max-width: 400px; 
+  height: 58px;
+  font-family: $primary-font;
+  background-color: white;
+  color: $color-primary;
+  padding: 12px 40px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 500;
+  font-size: 20px;
+  box-shadow: 0 8px 20px rgba(50, 82, 223, 0.2);
+  cursor: pointer;
+  transition: all 0.2s ease; 
+  display: block;
+  margin: 0 auto;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(50, 82, 223, 0.3);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  // RESPONSIVE AYARI
+  @media (max-width: 480px) {
+    height: 50px; 
+    font-size: 18px; 
+    padding: 10px 20px;
+    width: 90%; 
+  }
+}
 }

@@ -1,17 +1,15 @@
 import React from 'react';
 import styles from './PaymentSuccess.module.scss';
-import styles from './Button.'
+import Button from '../Button/Button';
 
 const PaymentSuccess = () => {
   return (
     <div className={styles.wrapper}>
-      <h2 className={styles.title}>
-        Yay! Payment Completed
-      </h2>
+      <h2 className={styles.title}>Yay! Payment Completed</h2>
 
       <img
-        src="/images/PaymentSuccess/payment.png"
-        alt="Payment Success"
+        src='/images/PaymentSuccess/payment.png'
+        alt='Payment Success'
         className={styles.image}
       />
 
@@ -20,9 +18,7 @@ const PaymentSuccess = () => {
         We have sent all the information.
       </p>
 
-      <button className={styles.button}>
-        Go to dashboard
-      </button>
+      
     </div>
   );
 };
