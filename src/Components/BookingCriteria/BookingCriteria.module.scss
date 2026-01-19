@@ -12,6 +12,7 @@
 }
 
 .counterRow {
+  width: 100%;
   display: flex;
   align-items: center;
   background-color: #f5f6f8;
@@ -64,11 +65,6 @@
     flex-shrink: 0;
   }
 
-  :global(.react-datepicker-wrapper) {
-    flex: 1;
-    display: flex;
-  }
-
   .dateInput {
     width: 100%;
     height: 100%;
@@ -82,6 +78,11 @@
     text-align: center;
     padding-right: 50px;
   }
+
+  .react-datepicker-wrapper {
+    display: block !important;
+    width: 100%;
+  }
 }
 
 
@@ -90,15 +91,15 @@
 
   .grayLabel,
   .smallText {
-    font-size: 24px;
+    font-size: 22px;
     color: #b0b0b0;
     margin: 0;
 
     .money,
     .nightCount {
       color: #152c5b;
-      font-weight: 700;
+      font-weight: 500;
+      font-size: 22px;
     }
   }
 }
-

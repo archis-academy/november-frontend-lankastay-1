@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Header from '../../Components/Header/Header';
 import Footer from '../../Components/Footer/Footer';
@@ -14,9 +14,11 @@ import styles from './BookingPage.module.scss';
 const PaymentLayout = () => {
   const [step, setStep] = useState(1);
   const { id } = useParams();
-
   const [hotelDetail, setHotelDetail] = useState(null);
   const [nights, setNights] = useState(1);
+  
+ 
+  const paymentFormRef = useRef();
 
   useEffect(() => {
     fetchData('hotelDetail').then((data) => {
@@ -24,7 +26,12 @@ const PaymentLayout = () => {
     });
   }, [id]);
 
- 
+  const handlePayNow = () => {
+    if (paymentFormRef.current && paymentFormRef.current.validate()) {
+      setStep(3); 
+    }
+  };
+
   if (!hotelDetail && step !== 3) return <div className="container">Loading...</div>;
 
   return (
@@ -36,7 +43,6 @@ const PaymentLayout = () => {
       </div>
 
       <div className="container">
-   
         {step === 1 && (
           <div>
             <h1 className={styles.stepTitle}>Booking Information</h1>
@@ -56,9 +62,7 @@ const PaymentLayout = () => {
               />
             </div>
             <div className={styles.buttonContainer}>
-          
               <Button text="Book Now" onClick={() => setStep(2)} className={styles.primaryButton} />
-              
               <Link to={`/hotel-detail/${id}`} style={{ textDecoration: 'none', width: '100%', display: 'flex', justifyContent: 'center' }}>
                 <Button text="Cancel" className={styles.secondaryButton} />
               </Link>
@@ -68,9 +72,9 @@ const PaymentLayout = () => {
 
         {step === 2 && (
           <div>
-            <PaymentScreen hotelDetail={hotelDetail} nights={nights} />
+            <PaymentScreen ref={paymentFormRef} hotelDetail={hotelDetail} nights={nights} />
             <div className={styles.buttonContainer}>
-              <Button text="Pay Now" onClick={() => setStep(3)} className={styles.primaryButton} />
+              <Button text="Pay Now" onClick={handlePayNow} className={styles.primaryButton} />
               <Button text="Cancel" onClick={() => setStep(1)} className={styles.secondaryButton} />
             </div>
           </div>
@@ -81,9 +85,7 @@ const PaymentLayout = () => {
             <PaymentSuccess />
             <div className={styles.buttonContainer}>
               <Link to="/Dashboard" style={{ textDecoration: 'none', width: '100%', maxWidth: '300px' }}>
-                <button className={styles.dashboardButton}>
-                  Go to dashboard
-                </button>
+                <button className={styles.dashboardButton}>Go to dashboard</button>
               </Link>
             </div>
           </div>

@@ -29,12 +29,22 @@
     gap: 40px;
   }
 
+  &__divider {
+    width: 1px; 
+    background-color: #E5E5E5; 
+    margin: 0 10px;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
   &__summary {
     flex: 1;
     padding: 15px;
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 22px;
 
     h3 {
       font-family: $primary-font;
@@ -51,7 +61,7 @@
     }
   }
 
- 
+
   &__price {
     font-family: $primary-font;
     font-size: 24px;
@@ -62,17 +72,25 @@
   }
 
   &__price-label {
-    font-weight: 600;
+    font-family: $primary-font;
+    font-size: 24px;
+    font-weight: 400;
+    color: $color-navy;
+
   }
 
   &__price-value {
-    font-weight: 400;
+    font: $primary-font;
+    font-size: 24px;
+    font-weight: 700;
+    color: $color-navy;
   }
 
   &__form {
     flex: 1;
     display: flex;
     flex-direction: column;
+    gap: 20px;
   }
 
   &__input-group {
@@ -86,12 +104,13 @@
       font-size: 16px;
       color: #152c5b;
     }
+
   }
 
- 
+
   .inputDiv {
     background-color: #f5f6f8;
-    border-radius: 12px;
+    border-radius: 4px;
     padding: 0 16px;
     height: 45px;
     display: flex;
@@ -121,7 +140,7 @@
     }
   }
 
-  /* ACTIONS */
+
   &__actions {
     margin-top: 40px;
     display: flex;
@@ -129,7 +148,8 @@
     align-items: center;
     gap: 16px;
   }
- &__pay-button {
+
+  &__pay-button {
     width: 280px;
     height: 48px;
     background: $color-primary;
@@ -164,7 +184,7 @@
     }
   }
 
-   &__cancel-button {
+  &__cancel-button {
     width: 280px;
     height: 48px;
     background: #f5f6f8;
@@ -199,7 +219,7 @@
     }
   }
 
- 
+
   @media (max-width: 768px) {
     &__content {
       flex-direction: column;
@@ -211,7 +231,7 @@
     }
   }
 
- 
+
   @media (max-width: 480px) {
     padding: 16px;
 
@@ -228,5 +248,26 @@
     &__cancel-button {
       width: 100%;
     }
+  }
+}
+
+.errorText {
+  color: #ff4d4f;
+  font-size: 13px;
+  margin-top: 5px;
+  font-weight: 500;
+  display: block;
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

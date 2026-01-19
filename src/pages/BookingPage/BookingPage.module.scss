@@ -53,19 +53,59 @@
   text-align: center;
 }
 
+
 .stepContainer {
   display: flex;
-  justify-content: space-between;
+  flex-direction: row; 
+  flex-wrap: wrap;    
+  justify-content: center;
   align-items: center;
-  max-width: 900px;
-  margin: 20px auto;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+
+ 
+  & > div:not(.stepContainerDivider) {
+    flex: 1 1 350px; 
+    max-width: 450px;
+
+    
+    @media (max-width: 780px) {
+      flex: 1 1 100%;
+      max-width: 100%;
+    }
+  }
 }
 
 .stepContainerDivider {
   width: 1px;
-  min-height: 308px;
+  min-height: 300px;
   background-color: $color-border;
+
+  @media (max-width: 780px) {
+    display: none;
+  }
 }
+
+
+@media (max-width: 780px) {
+  .stepTitle {
+    font-size: 26px;
+    padding: 0 15px;
+  }
+  
+  .stepSubtitle {
+    font-size: 15px;
+    padding: 0 15px;
+  }
+
+  .buttonContainer {
+    margin-top: 20px;
+    padding: 0 30px; 
+  }
+}
+
 
 .buttonContainer {
   display: flex;
@@ -87,6 +127,8 @@
 
 
   .primaryButton {
+    font-weight: 500;
+    font-size: 24px;
     font-family: $primary-font;
     background-color:#003DFC ;
     color: white;
@@ -95,6 +137,8 @@
 
 
   .secondaryButton {
+    font-weight: 500;
+    font-size: 18px;
     background-color: #F5F6F8;
     color: #B0B0B0;
 
@@ -103,21 +147,39 @@
     }
   }
 
-  .dashboardButton {
-    font-family: $primary-font;
-    background-color: white;
-    color: $color-primary;
-    padding: 12px 40px;
-    border-radius: 8px;
-    border: none;
-    border-color: $color-primary;
-    font-weight: 500;
-    box-shadow: 0 8px 20px rgba(50, 82, 223, 0.2);
-    cursor: pointer;
-    transition: transform 0.2s;
+.dashboardButton {
+  width: 100%; 
+  max-width: 400px; 
+  height: 58px;
+  font-family: $primary-font;
+  background-color: white;
+  color: $color-primary;
+  padding: 12px 40px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 500;
+  font-size: 20px;
+  box-shadow: 0 8px 20px rgba(50, 82, 223, 0.2);
+  cursor: pointer;
+  transition: all 0.2s ease; 
+  display: block;
+  margin: 0 auto;
 
-    &:hover {
-      transform: translateY(-2px); 
-    }
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(50, 82, 223, 0.3);
   }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  // RESPONSIVE AYARI
+  @media (max-width: 480px) {
+    height: 50px; 
+    font-size: 18px; 
+    padding: 10px 20px;
+    width: 90%; 
+  }
+}
 }
