@@ -10,7 +10,8 @@
     justify-content: space-between;
     gap: 4rem;
     min-width: 100%;
-
+    margin-bottom: 50px;
+    margin-top: 40px;
     @media (max-width: 768px) {
       flex-direction: column;
       text-align: center;
@@ -39,6 +40,9 @@
       color: #152c5b;
       line-height: 100%;
       margin-bottom: 1.5rem;
+      @media (max-width:960px) {
+        font-size: 30px;
+      }
     }
 
     .hero-description {
@@ -51,6 +55,7 @@
 
       @media (max-width: 960px) {
         padding-right: 0;
+        font-size: 14px;
       }
     }
 
