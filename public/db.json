@@ -1137,49 +1137,56 @@
   "registerHotel": [
     {
       "id": 8,
-      "name": "hotelName",
-      "label": "Hotel Name",
-      "placeholder": "Full Name",
+      "name": "title",
+      "label": "Title",
+      "placeholder": "Hotel Name",
       "type": "text",
       "column": "right"
     },
     {
       "id": 9,
-      "name": "registrationNo",
-      "label": "Registration No",
-      "placeholder": "PVT(Ltd)",
+      "name": "subtitle",
+      "label": "Subtitle",
+      "placeholder": "Subtitle",
       "type": "text",
       "column": "right"
     },
     {
       "id": 10,
-      "name": "address",
-      "label": "Address",
-      "placeholder": "Location",
+      "name": "aboutTitle",
+      "label": "About Title",
+      "placeholder": "About Title",
       "type": "text",
       "column": "right"
     },
     {
       "id": 11,
-      "name": "uploadImages",
-      "label": "Upload Images",
-      "placeholder": "Upload",
+      "name": "images",
+      "label": "Images",
+      "placeholder": "Image URL",
       "type": "text",
       "column": "right"
     },
     {
       "id": 12,
-      "name": "uploadDocuments",
-      "label": "Upload Documents",
-      "placeholder": "Upload",
-      "type": "text",
+      "name": "pricePerNight",
+      "label": "Price Per Night",
+      "placeholder": "Price Per Night",
+      "type": "number",
       "column": "right"
     },
     {
       "id": 13,
-      "name": "facilities",
-      "label": "Facilities",
-      "placeholder": "Describe",
+      "name": "currency",
+      "label": "Currency",
+      "placeholder": "Currency",
+      "type": "text",
+      "column": "right"
+    } ,{
+      "id": 14,
+      "name": "priceLabel",
+      "label": "Price Label",
+      "placeholder": "Price Label",
       "type": "text",
       "column": "right"
     }

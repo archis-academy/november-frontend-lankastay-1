@@ -5,6 +5,7 @@ import Input from '../../Components/inputComponent/Input';
 import style from './registerAdmin.module.scss';
 import Button from '../../Components/Button/Button';
 import Footer from '../../Components/footer/Footer';
+import { postDataToApi } from '../../lib/api';
 // import { supabase } from '../../lib/supabaseClient';
 
 const requiredMessage = 'Bu alan zorunludur.';
@@ -34,9 +35,13 @@ const RegisterAdmin = () => {
           fetchData('createAccountAdmin'),
           fetchData('registerHotel'),
         ]);
+
         setAdminFields(adminData);
         setHotelFields(hotelData);
+
+        // ✅ admin + hotel alanlarının hepsi için form başlangıç state'i oluşturulur
         setForm(buildInitialState([...adminData, ...hotelData]));
+
         setFieldErrors({});
         setTouched({});
         setSubmitted(false);
@@ -93,6 +98,7 @@ const RegisterAdmin = () => {
   const handleBlur = (e) => {
     const { name, value } = e.target;
     setTouched((prev) => ({ ...prev, [name]: true }));
+
     const err = validateField(allFields.find((f) => f.name === name) || {}, value);
     setFieldErrors((prev) => {
       const next = { ...prev };
@@ -100,6 +106,16 @@ const RegisterAdmin = () => {
       else delete next[name];
       return next;
     });
+  };
+
+  // EKLENDİ: Hotel alanlarının değerlerini "form" içinden çekip payload oluşturur
+  // Kısaca: hotelFields -> name'leri al -> form[name] değerlerini bir objede topla
+  const getHotelPayload = () => {
+    return hotelFields.reduce((acc, field) => {
+      if (!field?.name) return acc;
+      acc[field.name] = form[field.name];
+      return acc;
+    }, {});
   };
 
   const handleSubmit = async (e) => {
@@ -122,6 +138,16 @@ const RegisterAdmin = () => {
 
     try {
       setLoading(true);
+
+      // Sadece otel bilgilerini API'ye gönder
+      const hotelPayload = getHotelPayload();
+      await postDataToApi('hotels', hotelPayload);
+
+      // ----------------------------------------------------
+      // Aşağıdaki supabase kısmı  
+      // ----------------------------------------------------
+
+      /*
       const { password: _password, email: _email, ...metadata } = form;
       const { error } = await supabase.auth.signUp({
         email,
@@ -138,10 +164,12 @@ const RegisterAdmin = () => {
         setErrorMsg(error.message || 'Kayit basarisiz. Tekrar deneyin.');
         return;
       }
+      */
 
+      //Başarılıysa yönlendir
       navigate('/success-register', { state: { status: 'success' } });
     } catch (err) {
-      setErrorMsg(err.message || 'Bir hata olustu.');
+      setErrorMsg(err?.message || 'Bir hata olustu.');
     } finally {
       setLoading(false);
     }
