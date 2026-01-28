@@ -56,8 +56,13 @@ const HotelOwnersSection = () => {
               <div className={style.colDate}>{person.date}</div>
 
               <div className={style.colAction}>
-                <button className={style.iconBtn}>✏️</button>
-                <button className={style.iconBtn}>🗑️</button>
+                <button className={style.iconBtn}>
+                  <img src="/icons/HotelOwners/pencil.svg" alt="Edit" />
+                </button>
+
+                <button className={style.iconBtn}>
+                  <img src="/icons/HotelOwners/delete.svg" alt="Delete"/>
+                </button>
               </div>
             </div>
           ))}
