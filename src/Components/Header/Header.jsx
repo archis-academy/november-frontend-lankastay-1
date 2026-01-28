@@ -20,7 +20,9 @@ const Header = () => {
     <header className={styles.header}>
       <div className={styles.inner}>
         <div className={styles.logo}>
+          <a href='/'>
           <img src='/logo.svg' alt='LankaStay Logo' />
+          </a>
         </div>
 
         <button
