@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./amentiti.module.scss";
-import QuickStats from "../../Components/quick-stats-component/quick_stats";
+import QuickStats from '../../Components/quickStats';
 
 const Amentiti = ({ data }) => {
   return (
@@ -11,7 +11,7 @@ const Amentiti = ({ data }) => {
 
         return (
           <QuickStats
-            key={item.id}
+            key={item.id} 
             number={item.value}   
             content={item.label}  
             iconUrl={currentUrl}
