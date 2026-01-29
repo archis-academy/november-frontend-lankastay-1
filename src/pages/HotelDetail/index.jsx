@@ -9,6 +9,9 @@ import Header from '../../Components/Header/Header';
 import styles from './HotelDetail.module.scss';
 import ImageGrid from '../../Components/ProductPhotoGrid/ProductPhotoGrid';
 import BookingCard from '../../Components/Booking/bookingCard';
+import Housing from '../../Components/Housing/Housing';
+import Housing from '<div styleName={} />
+<div styleName={}></div>Components/Housing/TreasureChoose.scss';
 
 const HotelDetail = () => {
   const [hotelDetails, setHotelDetails] = useState([]);

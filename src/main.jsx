@@ -16,7 +16,6 @@ import Help from './pages/Help/Help.jsx';
 import Refund from './pages/Refunds/Refund.jsx';
 import Objectives from './pages/Objectives/Objectives.jsx';
 import BookingPage from './pages/BookingPage/index';
-
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
