@@ -20,9 +20,9 @@ const HotelOwnersSection = () => {
 
       <div className={style.searchArea}>
 
-        <SearchFilterBarDashboard />
+        <SearchFilterBarDashboard isAdmin />
 
-        <button className={style.addButton}>Add Owner +</button>
+        
       </div>
 
       <div className={style.listCard}>
