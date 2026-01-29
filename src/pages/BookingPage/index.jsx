@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Header from '../../Components/Header/Header';
-import Footer from '../../Components/Footer/Footer';
+import Footer from '../../Components/footer/Footer';
 import StepIndicator from '../../Components/StepIndicator/StepIndicator';
 import PaymentScreen from '../../Components/PaymentScreen/PaymentScreen';
 import BookingCriteria from '../../Components/BookingCriteria/BookingCriteria';
