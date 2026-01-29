@@ -1,0 +1,134 @@
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  font-family: 'Open Sans', sans-serif; 
+}
+
+.topHeader h3 {
+  color: #4A85F6;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 100%;
+  margin: 0;
+}
+
+.searchArea {
+  width: 100%;
+  margin-bottom: 10px;  
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  
+}
+
+.listCard {
+  background-color: white;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+
+  .listTitle {
+    color: #222B45;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 16px;
+    margin-bottom: 24px;
+  }
+}
+
+.rowHeader, .rowItem {
+  display: grid;
+  grid-template-columns: 2fr 150px 1fr 1fr; 
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid #EFF0F6;
+}
+
+.rowHeader {
+  color: #8F9BB3; 
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 16px;
+}
+
+.rowItem {
+  color: #222B45;
+  font-size: 14px;
+  
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.colName {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  .nameInfo {
+    display: flex;
+    flex-direction: column;
+    .nameText { font-weight: 600; color: #222B45; }
+    .emailText { font-size: 12px; color: #8F9BB3; margin-top: 2px; }
+  }
+}
+
+.colRole {
+  display: flex;        
+  justify-content: center; 
+  align-items: center;    
+
+  .badge {
+    width: 120px;
+    height: 26px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    font-size: 12px;
+    font-weight: 600;
+    color: white;
+
+    &.blueBadge { 
+      background-color: #0095FF; 
+    }
+    
+    &.grayBadge { 
+      background-color: #F7F9FC; 
+      color: #8F9BB3; 
+      border: 1px solid #EDF1F7;
+    }
+  }
+}
+
+.colAction {
+  display: flex;
+  gap: 15px;
+  
+  .iconBtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    color: #8F9BB3;
+    opacity: 0.8;
+    transition: 0.2s ease;
+
+    img{
+      width: 20px;
+      height: 20px;
+      display: block;
+    }
+    
+    &:hover {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+  }
+}

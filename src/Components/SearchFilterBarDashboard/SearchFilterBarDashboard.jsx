@@ -1,6 +1,7 @@
+import Button from '../Button/Button';
 import style from './SearchFilterBarDashboard.module.scss';
 
-const SearchFilterBarDashboard = () => {
+const SearchFilterBarDashboard = ({isAdmin=false}) => {
   return (
     <div className={style.searchFilterBarDashboard}>
       <div className={style.searchBar}>
@@ -8,6 +9,7 @@ const SearchFilterBarDashboard = () => {
         <input type='text' placeholder='Search documents' />
       </div>
       <div className={style.filterBar}>
+        {isAdmin &&         <button className={style.addButton}>Add Owner +</button>}
         <select name='' id=''>
           <option value=''>Sort By</option>
         </select>
