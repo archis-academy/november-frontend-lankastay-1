@@ -3,7 +3,6 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Home } from './pages/home/home';
-import Playground from './pages/playground/index.jsx';
 import HotelDetail from './pages/HotelDetail';
 import Login from './Components/Login/Login';
 import RegisterAdmin from './pages/RegisterAdmin/RegisterAdmin';
@@ -23,7 +22,6 @@ createRoot(document.getElementById('root')).render(
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/playground' element={<Playground />} />
         <Route
           path='/login'
           element={<Login dataType={'loginAccount'} dataTypeDetail={'loginAccountDetail'} />}
